@@ -1,12 +1,11 @@
 export interface Product {
 	id: string
-	title: string
+	tipo: string
 	description: string
 	price: number
-	discountPercentage?: number
-	rating?: number
+	amount:string
 	stock?: number
-	brand?: string
+	brand: string
 	category: string
 	url: string
 	quantity?: number

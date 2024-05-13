@@ -9,21 +9,22 @@ interface Props {
 }
 
 export default function CartItem({ product }: Props) {
+	const {amount,brand,category,description,quantity,tipo,url}= product
 	const removeFromCart = useCartStore(state => state.removeFromCart)
 	return (
 		<li className='flex justify-between items-center gap-4  mb-1 shadow-md '>
 			<div className='flex items-center gap-3'>
 				<Image
-					src={product.url}
-					alt={product.title}
+					src={url}
+					alt={tipo}
 					width={60}
 					height={60}
 					// className='h-10 w-10 rounded-full mr-4'
 				/>
 				<div className='flex flex-col'>
-					<span className='font-bold flex-1'>{product.title}</span>
-					<span className='text-gray-600 font-bold'>${product.price}</span>
-					<span>Quantity: {product.quantity}</span>
+					<span className='font-bold flex-1'>{tipo} {description} {brand} {amount}</span>
+					<span className='text-gray-400 font-bold'>${product.price}</span>
+					<span>Cantidad: {quantity}</span>
 				</div>
 			</div>
 			<div>
