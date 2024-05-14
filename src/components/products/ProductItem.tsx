@@ -8,7 +8,7 @@ export const ProductItem = (item: Product) => {
     <div className="bg-gray-800 rounded-lg shadow-md p-3">
       <div className="relative w-full  mb-4 flex justify-center items-center">
         <Image
-          src={url}
+          src={url}          
           width={200}
           height={200}
           // objectFit="cover"
