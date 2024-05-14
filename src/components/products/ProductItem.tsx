@@ -11,7 +11,7 @@ export const ProductItem = (item: Product) => {
           src={url}
           width={200}
           height={200}
-          objectFit="cover"
+          // objectFit="cover"
           alt={tipo}
           className=" rounded-lg"
         />
