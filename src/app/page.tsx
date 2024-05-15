@@ -1,5 +1,6 @@
-import { Cart, ProductsGrid } from "@/components";
+import {  ProductsGrid } from "@/components";
 import { useProduct } from "@/hooks/useProduct";
+
 
 export default async function HomePage() {
   const { products } = await useProduct();
