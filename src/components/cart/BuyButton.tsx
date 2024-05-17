@@ -1,6 +1,5 @@
 import { Product } from "@/types";
 import { Button } from "../ui/button";
-import { redirect } from "next/navigation";
 interface Prop {
   listCart: Product[];
 }

@@ -9,7 +9,7 @@ interface Props {
 }
 
 export default function CartItem({ product }: Props) {
-	const {amount,brand,category,description,quantity,tipo,url}= product
+	const {amount,brand,description,quantity,tipo,url}= product
 	const removeFromCart = useCartStore(state => state.removeFromCart)
 	return (
 		<li className='flex justify-between items-center gap-4  mb-1 shadow-md '>
