@@ -1,6 +1,6 @@
-import { useProduct } from "@/hooks/useProduct";
 import { ProductItem } from "./ProductItem";
 import { Product } from "@/types";
+import { Title } from "../ui/Title";
 
 interface Prop {
   title: string;
@@ -10,7 +10,7 @@ export const ProductsGrid = async ({ title, products }: Prop) => {
   if (products.length !== 0) {
     return (
       <div className="w-4/5 flex flex-col gap-5">
-        <h1 className="text-2xl font-semibold">{title}</h1>
+        <Title>{title}</Title>
         <div className=" grid grid-cols-2 md:grid-cols-5  gap-4">
           {products.length === 0 ? (
             <></>

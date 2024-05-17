@@ -36,9 +36,9 @@ export const Cart = ({ className }: Prop) => {
             <span className="text-lg font-bold">Total:</span>
             <span className="text-xl font-bold">${total.toFixed(2)}</span>
           </div>
-          <div className="flex justify-end py-3">
+          {/* <div className="flex justify-end py-3">
             {cart && <BuyButton listCart={cart} />}
-          </div>
+          </div> */}
         </>
       )}
     </section>

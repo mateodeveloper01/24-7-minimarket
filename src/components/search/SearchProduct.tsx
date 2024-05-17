@@ -7,7 +7,12 @@ import { SearchProductItem } from "./SearchProductItem";
 
 import { index, indexObject, searchClient } from "./indexObject";
 
-export const SearchProduct = ({ products }: { products: Product[] }) => {
+interface Prop {
+  products: Product[];
+  className?: string;
+}
+
+export const SearchProduct = ({ products, className }: Prop) => {
   const [query, setQuery] = useState("");
   const [result, setResult] = useState<any[]>([]);
 
@@ -33,22 +38,24 @@ export const SearchProduct = ({ products }: { products: Product[] }) => {
         indexName="products"
         future={{ preserveSharedStateOnUnmount: true }}
       >
-        <form>
-          <input
-            type="search"
-            onChange={handleChange}
-            className="text-black py-1 px-2"
-            value={query}
-            placeholder="buscar"
-          />
-        </form>
-        {result.length !== 0 && (
-          <div className="fixed bg-black">
-            {result.map((result) => (
-              <SearchProductItem key={result.objectID} product={result} />
-            ))}
-          </div>
-        )}
+        <div className={`flex flex-col w-4/5 ${className}`}>
+          <form>
+            <input
+              type="search"
+              onChange={handleChange}
+              className="text-black py-1 px-2"
+              value={query}
+              placeholder="buscar"
+            />
+          </form>
+          {result.length !== 0 && (
+            <div className="bg-black  p-2 ">
+              {result.map((result) => (
+                <SearchProductItem key={result.objectID} product={result} />
+              ))}
+            </div>
+          )}
+        </div>
       </InstantSearchNext>
     </Suspense>
   );

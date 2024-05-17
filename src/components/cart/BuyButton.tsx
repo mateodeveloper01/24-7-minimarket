@@ -1,11 +1,16 @@
+'use client'
 import { Product } from "@/types";
 import { Button } from "../ui/button";
+import useFromStore from "@/hooks/useFromStore";
+import { useCartStore } from "@/stores/useCartStore";
 interface Prop {
   listCart: Product[];
 }
-export const BuyButton = ({ listCart }: Prop) => {
+export const BuyButton = () => {
+  const cart = useFromStore(useCartStore, (state) => state.cart);
+
   const buyButton = () => {
-    const message = listCart
+    const message = cart!
       .map(
         ({ quantity, tipo, description, brand, amount, price }) =>
           `${quantity} ${tipo} ${description} ${brand} ${amount} - ${price}`,
