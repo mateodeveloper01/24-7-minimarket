@@ -21,7 +21,7 @@ export default function RootLayout({
 
         <main className="py-8">{children}</main>
         <footer className="text-center leading-[4rem] opacity-70">
-          © {new Date().getFullYear()} ecommerce-sheets
+          © {new Date().getFullYear()} mateo-dev
         </footer>
       </body>
     </html>

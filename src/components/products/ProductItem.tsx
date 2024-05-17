@@ -13,7 +13,7 @@ export const ProductItem = (item: Product) => {
           height={200}
           fill={false}
           alt={tipo}
-          className=" rounded-lg"
+          className=" rounded-lg bg-white"
         />
       </div>
       <div className="text-xl font-bold mb-2">

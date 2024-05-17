@@ -31,7 +31,7 @@ export const SearchProduct = ({ products }: { products: Product[] }) => {
         <input
           type="search"
           onChange={handleChange}
-          className="text-black"
+          className="text-black py-1 px-2"
           value={query}
           placeholder="buscar"
         />
