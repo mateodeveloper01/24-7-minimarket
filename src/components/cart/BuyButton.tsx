@@ -3,9 +3,7 @@ import { Product } from "@/types";
 import { Button } from "../ui/button";
 import useFromStore from "@/hooks/useFromStore";
 import { useCartStore } from "@/stores/useCartStore";
-interface Prop {
-  listCart: Product[];
-}
+
 export const BuyButton = () => {
   const cart = useFromStore(useCartStore, (state) => state.cart);
 

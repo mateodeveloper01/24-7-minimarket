@@ -1,7 +1,7 @@
 import { Cart } from "@/components";
 import { BuyButton } from "@/components/cart/BuyButton";
 
-export default function () {
+export default function pedido() {
   return (
     <div className="flex flex-col gap-4">
       <Cart />
