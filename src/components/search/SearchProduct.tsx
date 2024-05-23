@@ -6,6 +6,7 @@ import { Suspense, useEffect, useState } from "react";
 import { SearchProductItem } from "./SearchProductItem";
 
 import { index, indexObject, searchClient } from "./indexObject";
+import { Input } from "../ui/input";
 
 interface Prop {
   products: Product[];
@@ -40,10 +41,10 @@ export const SearchProduct = ({ products, className }: Prop) => {
       >
         <div className={`flex flex-col w-4/5 ${className}`}>
           <form>
-            <input
+            <Input
               type="search"
               onChange={handleChange}
-              className="text-black py-1 px-2"
+              className=" py-1 px-2"
               value={query}
               placeholder="buscar"
             />

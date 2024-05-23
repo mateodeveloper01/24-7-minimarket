@@ -4,22 +4,28 @@ import { useProduct } from "@/hooks/useProduct";
 
 export default async function HomePage() {
   const { products } = await useProduct();
+  const categories = [
+    "Almacen",
+    "Bebidas",
+    "Frescos",
+    "Limpieza",
+    "Golosinas",
+    "otros",
+  ];
   return (
     <div className="flex flex-col items-center justify-center gap-10">
-        <SearchProduct products={products} />
+      <SearchProduct products={products} />
 
-      <ProductsGrid
-        title={"Productos Almacen"}
-        products={products.filter((i) => i.category === "Almacen")}
-      />
-      {/* <ProductsGrid title={"Productos Alicante"} products={products} /> */}
+      {categories.map((item) => (
+        <ProductsGrid
+          key={item}
+          title={`Productos ${item}`}
+          products={products.filter((i) => i.category === item)}
+        />
+      ))}
 
-      <ProductsGrid
-        title={"Bebidas"}
-        products={products.filter((i) => i.category === "Bebidas")}
-      />
       {/* <Cart/> */}
-      <AboutMe/>
+      <AboutMe />
     </div>
   );
 }

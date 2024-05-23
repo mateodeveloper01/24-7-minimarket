@@ -1,8 +1,8 @@
-// import { FaTrashAlt } from "react-icons/fa"
 
 import { Product } from "../../types.d"
 import Image from "next/image"
 import { useCartStore } from "../../stores/useCartStore"
+import { useImage } from "@/hooks/useImage"
 
 interface Props {
 	product: Product
@@ -15,7 +15,7 @@ export default function CartItem({ product }: Props) {
 		<li className='flex justify-between items-center gap-4  mb-1 shadow-md '>
 			<div className='flex items-center gap-3'>
 				<Image
-					src={url}
+					src={useImage(product)}
 					alt={tipo}
 					width={60}
 					height={60}

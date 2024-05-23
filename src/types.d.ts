@@ -4,7 +4,7 @@ export interface Product {
 	description: string
 	price: number
 	amount:string
-	stock?: number
+	stock: boolean
 	brand: string
 	category: string
 	url: string

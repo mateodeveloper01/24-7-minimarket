@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { AddCartButton } from "../cart/AddCartButton";
 import { Product } from "@/types";
+import { useImage } from "@/hooks/useImage";
 
 export const ProductItem = (item: Product) => {
   const { tipo, url, price, description, brand, amount } = item;
@@ -8,7 +9,7 @@ export const ProductItem = (item: Product) => {
     <div className="bg-gray-800 rounded-lg shadow-md p-3">
       <div className="relative w-full  mb-4 flex justify-center items-center">
         <Image
-          src={url}
+          src={useImage(item)}
           width={200}
           height={200}
           fill={false}
