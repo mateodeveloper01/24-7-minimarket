@@ -13,7 +13,8 @@ export const AddCartButton = ({ product }: { product: Product }) => {
     addToCart(product);
     toast({
       title:'Agregado',
-      variant:'aggregate'
+      variant:'aggregate',
+      duration:500
     })
   };
   return (

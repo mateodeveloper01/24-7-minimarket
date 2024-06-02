@@ -28,11 +28,11 @@ export default function confirmacion() {
       references: formData.get("references") as string,
       pay_method: formData.get("pay_method") as string,
     };
-    BuyButton(orderInfo,cart!,total!)
+    BuyButton(orderInfo, cart!, total!);
   };
 
   return (
-    <div className="flex flex-col gap-4 w-3/5">
+    <div className="flex flex-col gap-4 md:w-2/5 max-md:w-full max-md:px-6">
       <form action={submit} className="flex flex-col gap-4">
         <Label>Nombre y apellido</Label>
         <Input name="name" />
