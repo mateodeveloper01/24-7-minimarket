@@ -3,7 +3,12 @@ import PocketBase from "pocketbase";
 
 export const useProduct = async () => {
   const client = new PocketBase(process.env.NEXT_PUBLIC_BACKEND_URL);
-  const productsList = await client.collection("products").getList(1, 12);
+  const productsList = await client
+    .collection("products")
+    .getList(1,20, {
+      cache: "no-cache",
+    });
+  // console.log(productsList);
   const products: Product[] = productsList.items.map((item) => {
     return {
       id: item.id as string,

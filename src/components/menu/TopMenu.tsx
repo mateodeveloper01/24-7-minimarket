@@ -1,35 +1,41 @@
+'use client'
 import Link from "next/link";
-import {
-  Button,
-  Cart,
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-} from "@/components";
 import { ShoppingCart } from "lucide-react";
+import { useCartStore } from "@/stores/useCartStore";
+import Image from "next/image";
+import { useEffect, useState } from "react";
 
-export const TopMenu = async () => {
+export const TopMenu = () => {
+  const totalPrice = useCartStore((state) => state.totalPrice);
+  const [iconSize, setIconSize] = useState(100); // Tamaño inicial del ícono
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIconSize(50); // Tamaño reducido del ícono
+      } else {
+        setIconSize(100); // Tamaño original del ícono
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup event listener on unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
     <header className="sticky top-0 flex justify-center py-2 px-10 bg-black z-50">
-      <div className="flex justify-between w-[900px] ">
-        <Link href={"/"}>24/7 MiniMarket</Link>
-        <Link href={"/pedido"}>
+      <div className="flex justify-between w-[900px] items-center ">
+        <Link href={"/"}> <Image src="/favicon.ico" alt="Favicon" width={iconSize} height={iconSize} className="mr-2 transition-all duration-300" /></Link>
+       
+
+        <Link href={"/pedido"} className="flex gap-2">
           <ShoppingCart />
-          {/* <Button>Terminar pedido</Button> */}
+          <p>${totalPrice}</p>
         </Link>
-        {/* <DropdownMenu>
-          <DropdownMenuTrigger className="flex justify-center items-center ">
-            <ShoppingCart />
-          </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-4/5 py-3">
-            <Cart />
-            <div className="flex justify-end py-3">
-              <Link href={"/pedido"}>
-                <Button>Terminar pedido</Button>
-              </Link>
-            </div>
-          </DropdownMenuContent>
-        </DropdownMenu> */}
+        
       </div>
     </header>
   );

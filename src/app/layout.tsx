@@ -2,7 +2,7 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
-import { TopMenu } from "@/components";
+import { Toaster, TopMenu } from "@/components";
 
 export const metadata: Metadata = {
   title: "ecommerce-sheets",
@@ -20,6 +20,7 @@ export default function RootLayout({
         <TopMenu />
 
         <main className="py-8 flex justify-center">{children}</main>
+        <Toaster/>
         <footer className="text-center leading-[4rem] opacity-70">
           © {new Date().getFullYear()} almond_developments
         </footer>
