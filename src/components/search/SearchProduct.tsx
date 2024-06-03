@@ -44,13 +44,13 @@ export const SearchProduct = ({ products, className }: Prop) => {
             <Input
               type="search"
               onChange={handleChange}
-              className=" py-1 px-2"
+              className=" py-1 px-2 border-black"
               value={query}
               placeholder="buscar"
             />
           </form>
           {result.length !== 0 && (
-            <div className="bg-black  p-2 ">
+            <div className="p-2 ">
               {result.map((result) => (
                 <SearchProductItem key={result.objectID} product={result} />
               ))}

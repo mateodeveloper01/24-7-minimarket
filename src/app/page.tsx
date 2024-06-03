@@ -1,17 +1,18 @@
 import { AboutMe, ProductsGrid } from "@/components";
 import { SearchProduct } from "@/components/search/SearchProduct";
 import { useProduct } from "@/hooks/useProduct";
+export const categories = [
+  "almacen",
+  "bebidas",
+  "frescos",
+  "limpieza",
+  "golosinas",
+  "otros",
+];
 
 export default async function HomePage() {
   const { products } = await useProduct();
-  const categories = [
-    "almacen",
-    "bebidas",
-    "frescos",
-    "limpieza",
-    "golosinas",
-    "otros",
-  ];
+ 
   return (
     <div className="flex flex-col items-center justify-center gap-10">
       <SearchProduct products={products} />

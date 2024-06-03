@@ -1,9 +1,10 @@
-'use client'
+"use client";
 import Link from "next/link";
 import { ShoppingCart } from "lucide-react";
 import { useCartStore } from "@/stores/useCartStore";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { categories } from "@/app/page";
 
 export const TopMenu = () => {
   const totalPrice = useCartStore((state) => state.totalPrice);
@@ -18,24 +19,34 @@ export const TopMenu = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
 
     // Cleanup event listener on unmount
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
   return (
-    <header className="sticky top-0 flex justify-center py-2 px-10 bg-black z-50">
+    <header className="sticky top-0 flex justify-center py-2 px-10 bg-background z-50">
       <div className="flex justify-between w-[900px] items-center ">
-        <Link href={"/"}> <Image src="/favicon.ico" alt="Favicon" width={iconSize} height={iconSize} className="mr-2 transition-all duration-300" /></Link>
-       
-
+        <Link href={"/"}>
+          <Image
+            src="/favicon.ico"
+            alt="Favicon"
+            width={iconSize}
+            height={iconSize}
+            className="mr-2 transition-all duration-300"
+          />
+        </Link>
+        <ul className="flex gap-2">
+          {categories.map((item:string)=>
+          <Link href={`/${item}`} className="capitalize text-xl font-semibold hover:underline">{item}</Link>
+          )}
+        </ul>
         <Link href={"/pedido"} className="flex gap-2">
           <ShoppingCart />
           <p>${totalPrice}</p>
         </Link>
-        
       </div>
     </header>
   );

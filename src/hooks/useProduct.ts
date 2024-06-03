@@ -1,13 +1,25 @@
 import { Product } from "@/types";
 import PocketBase from "pocketbase";
 
-export const useProduct = async () => {
+export const useProduct = async (perPage?: number, category?: string) => {
   const client = new PocketBase(process.env.NEXT_PUBLIC_BACKEND_URL);
-  const productsList = await client
-    .collection("products")
-    .getList(1,20, {
-      cache: "no-cache",
-    });
+
+  let productsList;
+  if (category) {
+    productsList = await client
+      .collection("products")
+      .getList(1, perPage ? perPage : 20, {
+        cache: "no-cache",
+        filter: category ? `category = '${category}'` : undefined,
+      });
+  } else {
+    productsList = await client
+      .collection("products")
+      .getList(1, perPage ? perPage : 20, {
+        cache: "no-cache",
+      });
+  }
+
   // console.log(productsList);
   const products: Product[] = productsList.items.map((item) => {
     return {

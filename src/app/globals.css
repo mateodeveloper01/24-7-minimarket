@@ -4,8 +4,8 @@
 
 @layer base {
   :root {
-    --background: 240 10% 3.9%;
-    --foreground: 240 10% 3.9%;
+    --background: rgb(230, 215, 183);
+    --foreground: black;
 
     --card: 0 0% 100%;
     --card-foreground: 240 10% 3.9%;
@@ -35,10 +35,10 @@
     --radius: 0.5rem;
   }
 
-  @media (prefers-color-scheme: dark) {
+  /* @media (prefers-color-scheme: dark) {
     :root {
-      --background: 240 10% 3.9%;
-      --foreground: 0 0% 98%;
+      --background: rgb(230, 215, 183);
+      --foreground: black;
 
       --card: 240 10% 3.9%;
       --card-foreground: 0 0% 98%;
@@ -64,8 +64,8 @@
       --border: 240 3.7% 15.9%;
       --input: 240 3.7% 15.9%;
       --ring: 240 4.9% 83.9%;
-    }
-  }
+    } */
+  /* } */
 
   * {
     @apply border-border;
