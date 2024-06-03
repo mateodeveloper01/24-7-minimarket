@@ -4,7 +4,7 @@ import { ShoppingCart } from "lucide-react";
 import { useCartStore } from "@/stores/useCartStore";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { categories } from "@/app/page";
+import { categories } from "@/schemas/categories";
 
 export const TopMenu = () => {
   const totalPrice = useCartStore((state) => state.totalPrice);
