@@ -38,7 +38,7 @@ export const TopMenu = () => {
             className="mr-2 transition-all duration-300"
           />
         </Link>
-        <ul className="flex gap-2">
+        <ul className="hidden gap-2 md:flex">
           {categories.map((item:string)=>
           <Link key={item} href={`/${item}`} className="capitalize text-xl font-semibold hover:underline">{item}</Link>
           )}
