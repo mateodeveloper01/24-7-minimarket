@@ -40,7 +40,7 @@ export const TopMenu = () => {
         </Link>
         <ul className="flex gap-2">
           {categories.map((item:string)=>
-          <Link href={`/${item}`} className="capitalize text-xl font-semibold hover:underline">{item}</Link>
+          <Link key={item} href={`/${item}`} className="capitalize text-xl font-semibold hover:underline">{item}</Link>
           )}
         </ul>
         <Link href={"/pedido"} className="flex gap-2">
