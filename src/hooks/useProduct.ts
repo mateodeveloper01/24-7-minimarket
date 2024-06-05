@@ -9,8 +9,7 @@ export const useProduct = async (perPage?: number, category?: string) => {
     productsList = await client
       .collection("products")
       .getList(1, perPage ? perPage : 20, {
-        cache: "no-cache",
-        // filter:'stock = true'
+        // cache: "no-cache",
         filter: category ? `category = '${category}' && stock = true` : 'stock = true',
       
       });
@@ -18,7 +17,8 @@ export const useProduct = async (perPage?: number, category?: string) => {
     productsList = await client
       .collection("products")
       .getList(1, perPage ? perPage : 20, {
-        cache: "no-cache",
+        // cache: "no-cache",
+        cache:'reload'
       });
   }
 

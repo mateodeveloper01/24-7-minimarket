@@ -2,6 +2,7 @@ import Image from "next/image";
 import { AddCartButton } from "../cart/AddCartButton";
 import { Product } from "@/types";
 import { useImage } from "@/hooks/useImage";
+import { ProductTitle } from "./ProductTitle";
 
 export const ProductItem = (item: Product) => {
   const { tipo, price, description, brand, amount } = item;
@@ -19,12 +20,11 @@ export const ProductItem = (item: Product) => {
       </div>
       <div className="text-xl font-bold">${price}</div>
 
-      <p className="text-xl font-semibold mb-2 capitalize-first-letter">
+      <ProductTitle amount={amount} brand={brand} description={description} tipo={tipo} />
+      {/* <p className="text-xl font-semibold mb-2 capitalize-first-letter">
         {tipo} {description} <span className="capitalize">{brand} </span>
         {amount}
-      </p>
-      {/* <div className="text-gray-600 mb-2">{description}</div> */}
-      {/* <div className="text-gray-500 mb-4">{category}</div> */}
+      </p> */}
       <div className="flex justify-end">
         <AddCartButton product={{ ...item }} />
       </div>

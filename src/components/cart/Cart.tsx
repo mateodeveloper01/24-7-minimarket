@@ -20,13 +20,13 @@ export const Cart = ({ className }: Prop) => {
         <h2>Agrega productos al carrito para realizar tu compra</h2>
       ) : (
         <>
-          <ul>
+          <ul className="flex flex-col gap-2">
             {cart?.map((product) => (
               <CartItem key={product.id} product={product} />
             ))}
           </ul>
-          <div className="flex justify-between items-center mt-4">
-            <span className="text-lg font-bold">Total:</span>
+          <div className="flex justify-end items-center gap-10 mt-4 pr-10">
+            <span className="text-lg font-bold">Sub-Total:</span>
             <span className="text-xl font-bold">${totalPrice.toFixed(2)}</span>
           </div>
         </>
