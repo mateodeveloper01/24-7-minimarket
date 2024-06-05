@@ -76,3 +76,6 @@
     @apply bg-background text-foreground;
   }
 }
+.capitalize-first-letter::first-letter {
+  @apply uppercase; /* Usando Tailwind para la capitalización */
+}

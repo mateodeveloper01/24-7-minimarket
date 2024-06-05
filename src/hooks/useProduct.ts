@@ -10,7 +10,9 @@ export const useProduct = async (perPage?: number, category?: string) => {
       .collection("products")
       .getList(1, perPage ? perPage : 20, {
         cache: "no-cache",
-        filter: category ? `category = '${category}'` : undefined,
+        // filter:'stock = true'
+        filter: category ? `category = '${category}' && stock = true` : 'stock = true',
+      
       });
   } else {
     productsList = await client
