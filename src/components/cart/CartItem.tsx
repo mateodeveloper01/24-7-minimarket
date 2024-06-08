@@ -1,7 +1,6 @@
 import { Product } from "../../types.d";
 import Image from "next/image";
 import { useCartStore } from "../../stores/useCartStore";
-import { useImage } from "@/hooks/useImage";
 import { Trash2 } from "lucide-react";
 import { ProductTitle } from "../products/ProductTitle";
 import { Quantity } from "../products/Quantity";
@@ -11,12 +10,12 @@ interface Props {
 }
 
 export default function CartItem({ product }: Props) {
-  const { amount, brand, description, quantity, tipo } = product;
+  const { amount, brand, description, quantity, tipo,url } = product;
   const removeFromCart = useCartStore((state) => state.removeFromCart);
   return (
     <li className="flex justify-between items-center gap-4 shadow-md ">
         <Image
-          src={useImage(product)}
+          src={url}
           alt={tipo}
           width={70}
           height={70}
