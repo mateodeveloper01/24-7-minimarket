@@ -3,16 +3,14 @@ import { Product } from "@/types";
 export const useProduct = async (perPage?: number, category?: string) => {
   const products: Product[] = await fetch(
     `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/products`,
-      { next: { revalidate: 86400 } },
-    )
-      .then((res) => res.json())
-    return {products}
-  }
-
+    { next: { revalidate: 43200 } },
+  ).then((res) => res.json());
+  return { products };
+};
 
 // export const useProduct = async (perPage?: number, category?: string) => {
 //   console.log(process.env.NODE_ENV);
-  // const client = new PocketBase(process.env.NEXT_PUBLIC_BACKEND_URL);
+// const client = new PocketBase(process.env.NEXT_PUBLIC_BACKEND_URL);
 
 //   let productsList;
 //   if (category) {
@@ -21,7 +19,7 @@ export const useProduct = async (perPage?: number, category?: string) => {
 //       .getList(1, perPage ? perPage : 20, {
 //         // cache: "no-cache",
 //         filter: category ? `category = '${category}' && stock = true` : 'stock = true',
-      
+
 //       });
 //   } else {
 //     productsList = await client

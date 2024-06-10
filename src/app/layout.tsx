@@ -1,7 +1,7 @@
 // 'use client'
 import type { Metadata } from "next";
 
-import { Toaster, TopMenu } from "@/components";
+import { BottomMenu, Toaster, TopMenu, WhatsappButton } from "@/components";
 
 export const metadata: Metadata = {
   title: "Mini market",
@@ -20,10 +20,14 @@ export default function RootLayout({
         <TopMenu />
 
         <main className="py-8 flex justify-center">{children}</main>
-        <Toaster/>
+        <Toaster />
         <footer className="text-center leading-[4rem] opacity-70">
           © {new Date().getFullYear()} almond_developments
         </footer>
+        <WhatsappButton/>
+
+        <BottomMenu/>
+        
       </body>
     </html>
   );

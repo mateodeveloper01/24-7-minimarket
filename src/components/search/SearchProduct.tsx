@@ -7,6 +7,7 @@ import { SearchProductItem } from "./SearchProductItem";
 
 import { index, indexObject, searchClient } from "./indexObject";
 import { Input } from "../ui/input";
+import { Search } from "lucide-react";
 
 interface Prop {
   products: Product[];
@@ -44,9 +45,9 @@ export const SearchProduct = ({ products, className }: Prop) => {
             <Input
               type="search"
               onChange={handleChange}
-              className=" py-1 px-2 border-black"
+              className="py-6 border-black text-md"
               value={query}
-              placeholder="buscar"
+              placeholder={`Buscar cualquiera de nuestros productos `}//${<Search />}
             />
           </form>
           {result.length !== 0 && (

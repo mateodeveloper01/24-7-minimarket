@@ -1,10 +1,19 @@
 "use client";
 import Link from "next/link";
-import { ShoppingCart } from "lucide-react";
+import { AlignJustify, ShoppingCart } from "lucide-react";
 import { useCartStore } from "@/stores/useCartStore";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { categories } from "@/schemas/categories";
+
+import { Button } from "../ui/button";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "../ui/sheet";
 
 export const TopMenu = () => {
   const totalPrice = useCartStore((state) => state.totalPrice);
@@ -39,15 +48,44 @@ export const TopMenu = () => {
           />
         </Link>
         <ul className="hidden gap-2 md:flex">
-          {categories.map((item:string)=>
-          <Link key={item} href={`/${item}`} className="capitalize text-xl font-semibold hover:underline">{item}</Link>
-          )}
+          {categories.map((item: string) => (
+            <Link
+              key={item}
+              href={`/${item}`}
+              className="capitalize text-xl font-semibold hover:underline"
+            >
+              {item}
+            </Link>
+          ))}
         </ul>
-        <Link href={"/pedido"} className="flex gap-2">
+        <Link href={"/pedido"} className="flex gap-2 max-md:hidden">
           <ShoppingCart />
           <p>${totalPrice}</p>
         </Link>
       </div>
+
+      <Sheet>
+        <SheetTrigger>
+          <AlignJustify />
+        </SheetTrigger>
+        <SheetContent className="flex flex-col">
+        <Link
+              href={`/`}
+              className="text-2xl pb-4  hover:underline uppercase border-b-2 border-black"
+            >
+              Inicio
+            </Link>
+          {categories.map((item: string) => (
+            <Link
+              key={item}
+              href={`/${item}`}
+              className="text-2xl pb-4  hover:underline uppercase border-b-2 border-black"
+            >
+              {item}
+            </Link>
+          ))}
+        </SheetContent>
+      </Sheet>
     </header>
   );
 };

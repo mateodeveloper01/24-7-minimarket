@@ -6,7 +6,7 @@ import { ProductTitle } from "./ProductTitle";
 export const ProductItem = (item: Product) => {
   const { tipo, price, description, brand, amount,url } = item;
   return (
-    <div className="border border-black rounded-lg shadow-md p-3">
+    <div className="border border-black rounded-lg shadow-md p-3 bg-card flex flex-col justify-between">
       <div className="relative w-full  mb-4 flex justify-center items-center">
         <Image
           src={url}
