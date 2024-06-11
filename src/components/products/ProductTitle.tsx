@@ -7,7 +7,7 @@ interface Props {
 
 export const ProductTitle = ({ amount, brand, description, tipo }: Props) => {
   return (
-    <p className="text-xl font-semibold mb-2 capitalize-first-letter">
+    <p className="text-base font-semibold mb-2 capitalize-first-letter md:text-xl">
       {tipo} {description} <span className="capitalize">{brand} </span>
       {amount}
     </p>

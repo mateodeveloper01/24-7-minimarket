@@ -64,8 +64,8 @@ export const TopMenu = () => {
         </Link>
       </div>
 
-      <Sheet>
-        <SheetTrigger>
+      <Sheet >
+        <SheetTrigger className="md:hidden">
           <AlignJustify />
         </SheetTrigger>
         <SheetContent className="flex flex-col">

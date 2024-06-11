@@ -3,7 +3,7 @@ import { Product } from "@/types";
 export const useProduct = async (perPage?: number, category?: string) => {
   const products: Product[] = await fetch(
     `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/products`,
-    { next: { revalidate: 43200 } },
+    { next: { revalidate: 3600 } },
   ).then((res) => res.json());
   return { products };
 };
