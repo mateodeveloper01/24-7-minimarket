@@ -46,8 +46,8 @@ export const MyFormItem = <
               Transferencia bancaria
             </SelectItem>
             <SelectItem value="Mercado pago">Link de mercado pago</SelectItem>
-            <SelectItem value="Targeta de debito">Targeta de debito</SelectItem>
-            <SelectItem value="Targeta de credito">
+            <SelectItem value="Tarjeta de debito">Targeta de debito</SelectItem>
+            <SelectItem value="Tarjeta de credito">
               Targeta de credito(12% recargo)
             </SelectItem>
           </SelectContent>
@@ -75,7 +75,7 @@ export const MyFormItem = <
               Retiro en Av.Revolución de Mayo 1510
             </SelectItem>
             <SelectItem value="Lima">Retiro en Lima 1109</SelectItem>
-            <SelectItem value="envio">Nesecito que me lo envien</SelectItem>
+            <SelectItem value="envio">Nececito que me lo envien</SelectItem>
           </SelectContent>
         </Select>
       </FormItem>
