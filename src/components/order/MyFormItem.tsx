@@ -75,7 +75,7 @@ export const MyFormItem = <
               Retiro en Av.Revolución de Mayo 1510
             </SelectItem>
             <SelectItem value="Lima">Retiro en Lima 1109</SelectItem>
-            <SelectItem value="envio">Nececito que me lo envien</SelectItem>
+            <SelectItem value="envio">Necesito que me lo envien</SelectItem>
           </SelectContent>
         </Select>
       </FormItem>
