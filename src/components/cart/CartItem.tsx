@@ -10,31 +10,31 @@ interface Props {
 }
 
 export default function CartItem({ product }: Props) {
-  const { amount, brand, description, quantity, tipo,url } = product;
+  const { amount, brand, description, quantity, tipo, url } = product;
   const removeFromCart = useCartStore((state) => state.removeFromCart);
   return (
-    <li className="flex justify-between items-center gap-4 shadow-md ">
-        <Image
-          src={url}
-          alt={tipo}
-          width={70}
-          height={70}
-          className="h-full object-cover bg-white"
+    <li className="flex justify-between items-center gap-4 shadow-md  py-2">
+      <Image
+        src={url}
+        alt={tipo}
+        width={70}
+        height={70}
+        className="h-full object-cover bg-white"
+      />
+      <div className="flex flex-col md:flex-row w-full justify-around">
+        <ProductTitle
+          amount={amount}
+          brand={brand}
+          description={description}
+          tipo={tipo}
         />
-          <ProductTitle
-            amount={amount}
-            brand={brand}
-            description={description}
-            tipo={tipo}
-          />
-		  <Quantity id={product.id}/>
-          {/* <p>
-            <span>Cantidad: {quantity}</span> x
-            <span className="text-gray-600 font-bold"> ${product.price}</span>
-          </p> */}
-      <div className="w-20 flex justify-center items-center gap-4 pr-10">
+
+        <Quantity id={product.id} />
+      </div>
+
+      <div className="w-20 flex justify-center items-center gap-4  md:pr-10 flex-col md:flex-row">
         <p className=" font-bold">${quantity! * product.price!}</p>
-		<button
+        <button
           title="Remove Item"
           className="text-red-500 hover:text-red-600  text-center"
           onClick={() => removeFromCart(product)}

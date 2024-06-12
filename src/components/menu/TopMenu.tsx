@@ -36,7 +36,7 @@ export const TopMenu = () => {
     };
   }, []);
   return (
-    <header className="sticky top-0 flex justify-center py-2 px-10 bg-background z-50">
+    <header className="sticky top-0 flex justify-center py-2 px-10 bg-background z-50 w-full">
       <div className="flex justify-between w-[900px] items-center ">
         <Link href={"/"}>
           <Image

@@ -1,9 +1,20 @@
+"use client";
 import Image from "next/image";
+import { Button } from "../ui/button";
 
 export const WhatsappButton = () => {
   return (
     <div className="fixed bottom-24 right-0">
-      <Image src={"/whatsapp.svg"} width={80} height={80} alt='whatsapp'  />
+      <button
+        onClick={() =>
+          window.open(
+            `https://api.whatsapp.com/send?phone=${process.env.NEXT_PUBLIC_WPP_NUMBER}`,
+            "_blank",
+          )
+        }
+      >
+        <Image src={"/whatsapp.svg"} width={80} height={80} alt="whatsapp" />
+      </button>
     </div>
   );
 };

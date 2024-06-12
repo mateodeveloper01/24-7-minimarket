@@ -13,19 +13,15 @@ export const Branchs = () => {
   ];
 
   return (
-    <div className="w-4/5">
+    <div>
       <Title>Sucursales</Title>
 
       <div>
         {/* <h2 className="text-xl">Sucursales</h2> */}
         {branchs.map(({ title, url }: any) => (
           <div key={title} className="py-1">
-            <h3 className="py-2 ">{title}</h3>
-            <iframe
-              src={url}
-              className="w-4/5 h-4/5 rounded-md"
-              loading="lazy"
-            ></iframe>
+            <h3 className="py-2">{title}</h3>
+            <iframe src={url} className="rounded-md" loading="lazy"></iframe>
           </div>
         ))}
       </div>

@@ -4,6 +4,7 @@ declare global {
         NODE_ENV: "development" | "production";
         
         NEXT_PUBLIC_BACKEND_URL:string
+        NEXT_PUBLIC_WPP_NUMBER:number
         
         // NEXTAUTH_SECRET: string; //Session Secret
         // APP_JWT_SECRET: string; //Authorization Token secret

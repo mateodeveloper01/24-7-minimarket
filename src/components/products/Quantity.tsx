@@ -34,14 +34,14 @@ export const Quantity = ({ id }: { id: string }) => {
     <div className="flex gap-4 items-center">
       <Button
         onClick={decrementQuantity}
-        className="rounded-full bg-gray-400"
+        className="rounded-full bg-gray-400 p-4"
       >
         -
       </Button>
       {quantity}
       <Button
         onClick={incrementQuantity}
-        className="rounded-full bg-gray-400"
+        className="rounded-full bg-gray-400 p-4"
       >
         +
       </Button>

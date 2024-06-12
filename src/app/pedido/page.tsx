@@ -1,15 +1,10 @@
-import { Button, Cart } from "@/components";
-import Link from "next/link";
+import { Cart, OrderForm } from "@/components";
 
 export default function pedido() {
   return (
-    <div className="flex flex-col gap-4 md:w-3/5">
+    <div className="flex flex-col gap-4 md:w-4/5 max-w-[800px] ">
       <Cart />
-      <div className="px-4 flex justify-end">
-        <Link href={"/confirmacion"}>
-          <Button>Confirmar pedido</Button>
-        </Link>
-      </div>
+      <OrderForm />
     </div>
   );
 }

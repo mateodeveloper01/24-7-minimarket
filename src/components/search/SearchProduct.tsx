@@ -15,6 +15,7 @@ interface Prop {
 }
 
 export const SearchProduct = ({ products, className }: Prop) => {
+  
   const [query, setQuery] = useState("");
   const [result, setResult] = useState<any[]>([]);
 
@@ -40,7 +41,7 @@ export const SearchProduct = ({ products, className }: Prop) => {
         indexName="products"
         future={{ preserveSharedStateOnUnmount: true }}
       >
-        <div className={`flex flex-col w-4/5 ${className}`}>
+        <div className={`flex flex-col w-4/5 pt-10 ${className}`}>
           <form>
             <Input
               type="search"
