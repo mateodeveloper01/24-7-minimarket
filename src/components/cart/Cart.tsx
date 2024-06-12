@@ -11,14 +11,11 @@ interface Prop {
 export const Cart = ({ className }: Prop) => {
   const cart = useFromStore(useCartStore, (state) => state.cart);
   const totalPrice = useFromStore(useCartStore, (state) => state.totalPrice);
-  
 
   return (
     <section className={` px-6 ${className}`}>
       <h3 className="text-2xl font-bold mb-4">Carrito</h3>
-      {!totalPrice ? (
-        <h2>Agrega productos al carrito para realizar tu compra</h2>
-      ) : (
+      {totalPrice && (
         <>
           <ul className="flex flex-col gap-2">
             {cart?.map((product) => (
