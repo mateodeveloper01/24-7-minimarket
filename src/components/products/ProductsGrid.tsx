@@ -10,8 +10,8 @@ interface Prop {
   className?: string;
 }
 export const ProductsGrid = async ({ category, perPage, className }: Prop) => {
-  const { products } = await useProduct(40, category);
-
+  const { getProducts } = useProduct();
+  const products = await getProducts()
   const productsList = products
     .filter((i) => i.category === category)
     .slice(0, perPage);

@@ -21,7 +21,7 @@ export default async function RootLayout({
         <main className="py-8 flex justify-center w-full">{children}</main>
         <Toaster />
         <footer className="text-center leading-[4rem] opacity-70">
-          © {new Date().getFullYear()} almond_developments
+          © {new Date().getFullYear()} mateo_developments
         </footer>
       </body>
     </html>

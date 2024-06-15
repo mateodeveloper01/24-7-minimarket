@@ -16,7 +16,8 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const { products } = await useProduct();
+  const { getProducts } = useProduct();
+  const products = await getProducts();
 
   return (
     <main className="flex flex-col items-center">

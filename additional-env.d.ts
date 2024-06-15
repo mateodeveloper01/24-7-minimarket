@@ -5,7 +5,7 @@ declare global {
         
         NEXT_PUBLIC_BACKEND_URL:string
         NEXT_PUBLIC_WPP_NUMBER:number
-        
+        DATABASE_URL:string
         // NEXTAUTH_SECRET: string; //Session Secret
         // APP_JWT_SECRET: string; //Authorization Token secret
         // NEXTAUTH_URL: string;

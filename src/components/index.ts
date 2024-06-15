@@ -30,3 +30,6 @@ export * from "./ui/drawer";
 export * from "./ui/carousel"
 export * from "./ui/card"
 export * from "./ui/form"
+export * from "./ui/table"
+export * from "./ui/sheet"
+export * from "./ui/switch"

@@ -1,12 +1,25 @@
+import { ProductSchemaType } from "@/app/dashboard/_components/ProductForm";
 import { Product } from "@/types";
+import axios, { AxiosResponse } from "axios";
+export const useProduct = (perPage?: number, category?: string) => {
+  const url = `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/products`
+  const getProducts = async()=>{
+    const products: Product[] = await fetch(
+      url ,
+      { next: { revalidate: 3600 } },
+    ).then((res) => res.json());
+    return products
+  }
+  const uploadProduct =async (id:string,product:any )=>{
+    const res = await axios.patch(`${url}/${id}`,product)
+    return res.data
+  }
 
-export const useProduct = async (perPage?: number, category?: string) => {
-  const products: Product[] = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/products`,
-    { next: { revalidate: 3600 } },
-  ).then((res) => res.json());
-  return { products };
+
+  return { getProducts,uploadProduct };
 };
+
+
 
 // export const useProduct = async (perPage?: number, category?: string) => {
 //   console.log(process.env.NODE_ENV);

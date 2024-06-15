@@ -11,7 +11,6 @@ import {
   Select,
   SelectContent,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
@@ -24,7 +23,9 @@ export const MyFormItem = <
   label,
   placeholder,
   setDeliveryMethod,
+  type = "text",
 }: {
+  type?: React.HTMLInputTypeAttribute
   field: ControllerRenderProps<TFieldValues, TName>;
   label?: string;
   placeholder?: string;
@@ -63,8 +64,8 @@ export const MyFormItem = <
         <Select
           defaultValue={field.value}
           onValueChange={(item) => {
-            field.onChange(item)
-            setDeliveryMethod && setDeliveryMethod(item)
+            field.onChange(item);
+            setDeliveryMethod && setDeliveryMethod(item);
           }}
         >
           <SelectTrigger>
@@ -86,7 +87,7 @@ export const MyFormItem = <
     <FormItem>
       <FormLabel>{label}</FormLabel>
       <FormControl>
-        <Input placeholder={placeholder} {...field} />
+        <Input type={type} placeholder={placeholder} {...field} />
       </FormControl>
       {/* <FormDescription>This is your public display name.</FormDescription> */}
       <FormMessage />
