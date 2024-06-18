@@ -9,7 +9,7 @@ export const ProductItem = (item: Product) => {
     <div className="border border-black rounded-lg shadow-md p-3 bg-card flex flex-col justify-between">
       <div className="relative w-full  mb-4 flex justify-center items-center">
         <Image
-          src={url}
+          src={url?url:"no_image_product.png"}
           width={200}
           height={200}
           fill={false}

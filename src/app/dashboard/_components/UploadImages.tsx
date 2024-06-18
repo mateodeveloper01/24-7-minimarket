@@ -10,7 +10,7 @@ export const UploadImages = ({ onUpload }: Props) => {
       onUpload(acceptedFiles[0]);
     }
     // create.mutate(formData);
-  }, []);
+  }, [onUpload]);
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     multiple: false,

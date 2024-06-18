@@ -7,55 +7,51 @@ import {
   FormItem,
   FormLabel,
   Switch,
+
 } from "@/components";
 import { MyFormItem } from "@/components/order/MyFormItem";
 import { ProductSchema } from "@/schemas/products";
 import { Product } from "@/types";
-import { DevTool } from "@hookform/devtools";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { UploadImages } from "./UploadImages";
 import { useState } from "react";
-import { useProduct } from "@/hooks/useProduct";
+import { createProduct } from "@/hooks/useProduct";
 interface Props {
-  product: Product;
+  product?: Product; 
 }
 export type ProductSchemaType = z.infer<typeof ProductSchema>;
 
 export const ProductForm = ({ product }: Props) => {
-  const { uploadProduct } = useProduct();
-  const { amount, brand, category, description, price, stock, tipo, id } =
-    product;
+  const create = createProduct();
   const [image, setImage] = useState<File | null>(null);
 
   const form = useForm<ProductSchemaType>({
     resolver: zodResolver(ProductSchema),
     defaultValues: {
-      tipo,
-      amount,
-      brand,
-      category,
-      description,
-      price:price.toString(),
-      stock,
-      // image: "",
+      tipo: product ? product.tipo : "",
+      amount: product ? product.amount : "",
+      brand: product ? product.brand : "",
+      category: product ? product.category : "",
+      description: product ? product.description : "",
+      price: product ? product.price.toString() : "",
+      stock: product ? product.stock : true,
     },
   });
   const onSubmit = async (values: ProductSchemaType) => {
-    const formData = new FormData();
-    Object.entries(values).forEach(([key, value]) => {
-      formData.append(key, value.toString());
-    });
-    if (image) {
-      formData.append("image", image);
-      const res = await uploadProduct(id, formData);
-      console.log(res);
-    }
+    // const formData = new FormData();
+    // Object.entries(values).forEach(([key, value]) => {
+    //   formData.append(key, value.toString());
+    // });
+    if (image) return;
+
+    create.mutate(values);
+
     // console.log(formData);
-    
-    const res = await uploadProduct(id, values);
-    console.log(res);
+
+    // const res = await uploadProduct(id, values);
+    // console.log(res);
   };
   return (
     <Form {...form}>
@@ -86,7 +82,6 @@ export const ProductForm = ({ product }: Props) => {
           name="amount"
           render={({ field }) => <MyFormItem field={field} label="Cantidad" />}
         />
-
         <FormField
           control={form.control}
           name="price"
@@ -115,10 +110,8 @@ export const ProductForm = ({ product }: Props) => {
           )}
         />
         <UploadImages onUpload={setImage} />
-
+        {/* <DevTool control={form.control} /> */}
         <Button type="submit">Guardar</Button>
-
-        <DevTool control={form.control} />
       </form>
     </Form>
   );

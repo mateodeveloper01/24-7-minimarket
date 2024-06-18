@@ -15,7 +15,7 @@ export default function CartItem({ product }: Props) {
   return (
     <li className="flex justify-between items-center gap-4 shadow-md  py-2">
       <Image
-        src={url}
+        src={url ? url : "no_image_product.png"}
         alt={tipo}
         width={70}
         height={70}

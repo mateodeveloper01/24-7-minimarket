@@ -1,19 +1,18 @@
+"use client";
 import { ProductItem } from "./ProductItem";
 import { Title } from "../ui/Title";
 import Link from "next/link";
-import { useProduct } from "@/hooks/useProduct";
 import { Button } from "../ui/button";
+import { getProduct } from "@/hooks/useProduct";
 
 interface Prop {
   category: string;
   perPage?: number;
   className?: string;
 }
-export const ProductsGrid = async ({ category, perPage, className }: Prop) => {
-  const { getProducts } = useProduct();
-  const products = await getProducts()
-  const productsList = products
-    .filter((i) => i.category === category)
+export const ProductsGrid =  ({ category, perPage, className }: Prop) => {
+  const { products } = getProduct(category);
+  const productsList = products!
     .slice(0, perPage);
   if (productsList.length !== 0) {
     return (
@@ -26,7 +25,7 @@ export const ProductsGrid = async ({ category, perPage, className }: Prop) => {
         </div>
         <div className={className}>
           {productsList.map((product) => (
-            <ProductItem {...product} key={product.tipo} />
+            <ProductItem {...product} key={product.id} />
           ))}
         </div>
       </div>
