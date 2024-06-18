@@ -26,9 +26,13 @@ import {
   DropdownMenuContent,
   DropdownMenuTrigger,
   Input,
+  Sheet,
+  SheetContent,
 } from "@/components";
 import { useState } from "react";
 import {  SheetProduct } from "./SheetProduct";
+import { Product } from "@/types";
+import { ProductForm } from "../ProductForm";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -43,6 +47,9 @@ export function DataTable<TData, TValue>({
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [rowSelection, setRowSelection] = useState({});
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
+  
+  const [open, setOpen] = useState(false);
+  const [product, setProduct] = useState({});
   const table = useReactTable({
     data,
     columns,
@@ -133,6 +140,11 @@ export function DataTable<TData, TValue>({
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
                 <TableRow
+                  onClick={()=>{
+                    setProduct(row.original as Product)
+                    setOpen(true)
+                    // console.log(().id)}
+                    }}
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
                 >
@@ -177,6 +189,18 @@ export function DataTable<TData, TValue>({
           Siguiente
         </Button>
       </div>
+      <Sheet open={open} onOpenChange={() => setOpen(!open)}>
+        {/* <SheetClose
+          onClick={() => setOpen(false)}
+          className=" absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary"
+        >
+          <X className="h-4 w-4" />
+          <span className="sr-only">Close</span>
+        </SheetClose> */}
+        <SheetContent>
+          <ProductForm  product={product as Product}/>
+        </SheetContent>
+      </Sheet>
     </div>
   );
 }

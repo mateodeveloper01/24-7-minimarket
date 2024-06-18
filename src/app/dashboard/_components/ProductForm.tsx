@@ -7,7 +7,6 @@ import {
   FormItem,
   FormLabel,
   Switch,
-
 } from "@/components";
 import { MyFormItem } from "@/components/order/MyFormItem";
 import { ProductSchema } from "@/schemas/products";
@@ -17,14 +16,16 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { UploadImages } from "./UploadImages";
 import { useState } from "react";
-import { createProduct } from "@/hooks/useProduct";
+import { createProduct, updateProduct } from "@/hooks/useProduct";
 interface Props {
-  product?: Product; 
+  product?: Product;
 }
 export type ProductSchemaType = z.infer<typeof ProductSchema>;
 
 export const ProductForm = ({ product }: Props) => {
   const create = createProduct();
+  const update = updateProduct();
+
   const [image, setImage] = useState<File | null>(null);
 
   const form = useForm<ProductSchemaType>({
@@ -39,15 +40,21 @@ export const ProductForm = ({ product }: Props) => {
       stock: product ? product.stock : true,
     },
   });
-  const onSubmit = async (values: ProductSchemaType) => {
+  const onSubmit = (values: ProductSchemaType) => {
     // const formData = new FormData();
     // Object.entries(values).forEach(([key, value]) => {
     //   formData.append(key, value.toString());
     // });
     if (image) return;
 
-    create.mutate(values);
-
+    if (product) {
+      // console.log('editarr');
+      // console.log({...values,id:product.id});
+      update.mutate({ ...values, id: product.id });
+    } else {
+      // console.log(values);
+      create.mutate(values);
+    }
     // console.log(formData);
 
     // const res = await uploadProduct(id, values);

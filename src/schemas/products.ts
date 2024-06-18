@@ -1,4 +1,4 @@
-import { boolean, nativeEnum, number, object, string } from "zod";
+import { boolean, nativeEnum, object, string } from "zod";
 import { fileSchema } from "./file";
 import { Category } from "@prisma/client";
 
@@ -11,5 +11,6 @@ export const ProductSchema = object({
   category: string(nativeEnum(Category)),
   stock: boolean(),
   image: fileSchema.optional(),
+  id: string().optional(),
   // url         String
 });

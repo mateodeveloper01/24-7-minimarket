@@ -10,10 +10,9 @@ interface Prop {
   perPage?: number;
   className?: string;
 }
-export const ProductsGrid =  ({ category, perPage, className }: Prop) => {
-  const { products } = getProduct(category);
-  const productsList = products!
-    .slice(0, perPage);
+export const ProductsGrid = ({ category, perPage, className }: Prop) => {
+  const { products } = getProduct(category, true);
+  const productsList = products!.slice(0, perPage);
   if (productsList.length !== 0) {
     return (
       <div className="w-4/5 flex flex-col gap-5">
