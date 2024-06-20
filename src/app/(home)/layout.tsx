@@ -16,18 +16,16 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  // const { getProducts } = useProduct();
 
 
   return (
-    <main className="flex flex-col items-center">
-      {/* <SearchProduct products={getProducts.data!} /> */}
-
-      <main className="py-8 flex justify-center w-full">{children}</main>
+    <div className="flex flex-col items-center w-full">
+{/* className="py-8 flex justify-center w-full" */}
+      {children}
 
       <BottomMenu />
 
       <WhatsappButton />
-    </main>
+    </div>
   );
 }

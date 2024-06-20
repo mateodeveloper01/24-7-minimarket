@@ -17,6 +17,7 @@ import { z } from "zod";
 import { UploadImages } from "./UploadImages";
 import { useState } from "react";
 import { createProduct, updateProduct } from "@/hooks/useProduct";
+import { DevTool } from "@hookform/devtools";
 interface Props {
   product?: Product;
 }
@@ -37,28 +38,19 @@ export const ProductForm = ({ product }: Props) => {
       category: product ? product.category : "",
       description: product ? product.description : "",
       price: product ? product.price.toString() : "",
-      stock: product ? product.stock : true,
+      stock: product && product.stock,
     },
   });
   const onSubmit = (values: ProductSchemaType) => {
-    // const formData = new FormData();
-    // Object.entries(values).forEach(([key, value]) => {
-    //   formData.append(key, value.toString());
-    // });
-    if (image) return;
-
     if (product) {
-      // console.log('editarr');
-      // console.log({...values,id:product.id});
-      update.mutate({ ...values, id: product.id });
+      update.mutate(
+        image
+          ? { ...values, id: product.id, image }
+          : { ...values, id: product.id },
+      );
     } else {
-      // console.log(values);
-      create.mutate(values);
+      create.mutate(image ? { ...values, image } : values);
     }
-    // console.log(formData);
-
-    // const res = await uploadProduct(id, values);
-    // console.log(res);
   };
   return (
     <Form {...form}>
@@ -117,7 +109,7 @@ export const ProductForm = ({ product }: Props) => {
           )}
         />
         <UploadImages onUpload={setImage} />
-        {/* <DevTool control={form.control} /> */}
+        <DevTool control={form.control} />
         <Button type="submit">Guardar</Button>
       </form>
     </Form>

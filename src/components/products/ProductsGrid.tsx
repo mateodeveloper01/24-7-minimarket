@@ -1,29 +1,30 @@
 "use client";
-import { ProductItem } from "./ProductItem";
+import { getProduct } from "@/hooks/useProduct";
+import React from "react";
 import { Title } from "../ui/Title";
 import Link from "next/link";
 import { Button } from "../ui/button";
-import { getProduct } from "@/hooks/useProduct";
+import { ProductItem } from "./ProductItem";
 
 interface Prop {
   category: string;
   perPage?: number;
   className?: string;
 }
-export const ProductsGrid = ({ category, perPage, className }: Prop) => {
-  const { products } = getProduct(category, true);
-  const productsList = products!.slice(0, perPage);
-  if (productsList.length !== 0) {
+export const ProductsGrid = ({ category, className, perPage }: Prop) => {
+  const { products } = getProduct({ category, stock: true, limit: perPage });
+
+  if (products.length !== 0) {
     return (
       <div className="w-4/5 flex flex-col gap-5">
         <div className="border-b-2 border-black pb-2  flex justify-between w-full">
           <Title>Productos {category}</Title>
-          <Link href={`/${category}`}>
-            <Button>Ver todo</Button>
+          <Link href={`/`}>
+            <Button>Volver</Button>
           </Link>
         </div>
         <div className={className}>
-          {productsList.map((product) => (
+          {products.map((product) => (
             <ProductItem {...product} key={product.id} />
           ))}
         </div>
