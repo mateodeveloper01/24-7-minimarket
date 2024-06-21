@@ -10,7 +10,7 @@ export default function CategoryPage({ params }: Prop) {
     <ProductsGrid
       perPage={100}
       category={params.category}
-      className="grid grid-cols-2 md:grid-cols-6  gap-4"
+      className="grid grid-cols-dynamic-150 md:grid-cols-dynamic-200  gap-4"
     />
   );
 }

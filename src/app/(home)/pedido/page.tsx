@@ -5,7 +5,6 @@ import { useCartStore } from "@/stores/useCartStore";
 
 export default function pedido() {
   const totalPrice = useFromStore(useCartStore, (state) => state.totalPrice);
-  console.log(totalPrice);
   return (
     <div className="flex flex-col gap-4 md:w-4/5 max-w-[800px] ">
       {!totalPrice ? (

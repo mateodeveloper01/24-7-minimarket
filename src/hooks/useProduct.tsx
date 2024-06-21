@@ -59,6 +59,15 @@ export const getProduct = ({
   return { products, isLoading, isFetched, isError };
 };
 
+export const searchProduct = async (filter: string) => {
+  try {
+    return (await productsApi.get(`/search?filter=${filter}`)).data;
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return []
+  }
+};
+
 export const createProduct = () => {
   const queryClient = useQueryClient();
 

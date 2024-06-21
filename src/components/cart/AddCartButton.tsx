@@ -4,26 +4,56 @@ import { Product } from "@/types";
 import { Button } from "../ui/button";
 import { cn } from "@/lib/utils";
 import { useToast } from "../ui/use-toast";
+import { useState } from "react";
 
 export const AddCartButton = ({ product }: { product: Product }) => {
+  const [quantity, setQuantity] = useState<number>(1);
   const addToCart = useCartStore((state) => state.addToCart);
   const { toast } = useToast();
 
   const add = () => {
-    addToCart(product);
+    addToCart({...product,quantity});
     toast({
-      title:'Agregado',
-      variant:'aggregate',
-      duration:500
-    })
+      title: "Agregado",
+      variant: "aggregate",
+      duration: 500,
+    });
+  };
+  const incrementQuantity = () => {
+    const newQuantity = quantity + 1;
+    setQuantity(newQuantity);
+  };
+
+  const decrementQuantity = () => {
+    if (quantity > 0) {
+      const newQuantity = quantity - 1;
+      setQuantity(newQuantity);
+    }
   };
   return (
-    <Button
-      size={"sm"}
-      className={cn("my-1 bg-green-400")}
-      onClick={() => add()}
-    >
-      Agregar
-    </Button>
+    <>
+      <div className="flex gap-4 items-center">
+        <Button
+          onClick={decrementQuantity}
+          className="rounded-full bg-gray-400 p-4"
+        >
+          -
+        </Button>
+        {quantity}
+        <Button
+          onClick={incrementQuantity}
+          className="rounded-full bg-gray-400 p-4"
+        >
+          +
+        </Button>
+      </div>
+      <Button
+        size={"sm"}
+        className={cn("my-1 bg-green-500")}
+        onClick={() => add()}
+      >
+        Agregar
+      </Button>
+    </>
   );
 };

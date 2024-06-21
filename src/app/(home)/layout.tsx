@@ -1,9 +1,7 @@
-// 'use client'
 import type { Metadata } from "next";
 
 import {
   BottomMenu,
-  SearchProduct,
   WhatsappButton,
 } from "@/components";
 
@@ -21,6 +19,7 @@ export default async function RootLayout({
   return (
     <div className="flex flex-col items-center w-full">
 {/* className="py-8 flex justify-center w-full" */}
+
       {children}
 
       <BottomMenu />

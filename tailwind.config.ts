@@ -1,5 +1,5 @@
-import type {Config} from "tailwindcss";
-import RootLayout from './src/app/layout';
+import type { Config } from "tailwindcss";
+import RootLayout from "./src/app/layout";
 
 const config = {
   // darkMode: ["class"],
@@ -19,6 +19,11 @@ const config = {
       },
     },
     extend: {
+      gridTemplateColumns: {
+        // Agregar una nueva configuración de columnas de grid
+        "dynamic-150": "repeat(auto-fit, minmax(150px, 1fr))",
+        "dynamic-200": "repeat(auto-fit, minmax(200px, 1fr))"
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -61,12 +66,12 @@ const config = {
       },
       keyframes: {
         "accordion-down": {
-          from: {height: "0"},
-          to: {height: "var(--radix-accordion-content-height)"},
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {height: "var(--radix-accordion-content-height)"},
-          to: {height: "0"},
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
       animation: {

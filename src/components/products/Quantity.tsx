@@ -4,7 +4,11 @@ import { Button } from "../ui/button";
 import { useEffect, useState } from "react";
 import { useCartStore } from "@/stores/useCartStore";
 
-export const Quantity = ({ id }: { id: string }) => {
+interface Props{
+  id:string
+}
+
+export const Quantity = ({ id }:Props) => {
   const [quantity, setQuantity] = useState<number>(0);
   const cart = useFromStore(useCartStore, (state) => state.cart);
   const updateCart = useCartStore( (state) => state.updateCart);
