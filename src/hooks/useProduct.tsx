@@ -2,17 +2,18 @@ import { ProductSchemaType } from "@/app/dashboard/_components";
 import { Product } from "@/types";
 import { Category, products } from "@prisma/client";
 import { toast } from "@/components";
-import {
-  useMutation,
-  useQuery,
-  useQueryClient,
-} from "@tanstack/react-query";
-import axios from "axios";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
+import axios, { AxiosResponse } from "axios";
 
 const productsApi = axios.create({
   baseURL: `${process.env.NEXT_PUBLIC_BACKEND_URL}/products`,
 });
 
+
+
+export const fetchProduct = async (url: string)=> {
+ return await productsApi.get(url);
+};
 const productKey = "products";
 
 interface GetProductsProps {
@@ -61,18 +62,19 @@ export const getProduct = ({
 
 export const searchProduct = async (filter: string) => {
   try {
-    return (await productsApi.get(`/search?filter=${filter}&stock:true`)).data;
+    const res = await fetchProduct(`/search?filter=${filter}&stock:true`);
+    return res.data;
   } catch (error) {
     console.error("Error fetching data:", error);
     return [];
   }
 };
 
-export const createProduct = (pagination?:any) => {
+export const createProduct = (pagination?: any) => {
   const queryClient = useQueryClient();
 
   const create = useMutation({
-    mutationKey: [productKey,pagination],
+    mutationKey: [productKey, pagination],
     mutationFn: async (product: ProductSchemaType) => {
       const { id, ...nwProduct } = product;
       const formData = new FormData();
@@ -94,7 +96,7 @@ export const createProduct = (pagination?:any) => {
         price: +price,
       };
 
-      queryClient.setQueryData<products[]>([productKey,pagination], (old) => {
+      queryClient.setQueryData<products[]>([productKey, pagination], (old) => {
         if (!old) return [optimisticProduct];
         return [...old, optimisticProduct];
       });
@@ -102,7 +104,7 @@ export const createProduct = (pagination?:any) => {
     },
     onSuccess: (product: any, _: any, context: any) => {
       const nwProduct = { ...product, category: product.category as Category };
-      queryClient.setQueryData<products[]>([productKey,pagination], (old) => {
+      queryClient.setQueryData<products[]>([productKey, pagination], (old) => {
         if (!old) return [nwProduct];
 
         return old.map((cacheProduct) =>
@@ -111,17 +113,17 @@ export const createProduct = (pagination?:any) => {
             : cacheProduct,
         );
       });
-    toast({ variant: "success", title: "Cambio realizado" });
-  },
+      toast({ variant: "success", title: "Cambio realizado" });
+    },
   });
   return create;
 };
 
-export const updateProduct = (pagination?:any) => {
+export const updateProduct = (pagination?: any) => {
   const queryClient = useQueryClient();
 
   const update = useMutation({
-    mutationKey: [productKey,pagination],
+    mutationKey: [productKey, pagination],
     mutationFn: async ({ id, ...nwProduct }: ProductSchemaType) => {
       const formData = new FormData();
 
@@ -134,7 +136,6 @@ export const updateProduct = (pagination?:any) => {
           }
         } else {
           formData.append(key, value.toString());
-
         }
       });
       return (await productsApi.patch<Product>(`/${id}`, formData)).data;
@@ -145,7 +146,7 @@ export const updateProduct = (pagination?:any) => {
       price,
       ...restProduct
     }: ProductSchemaType) => {
-      await queryClient.cancelQueries({ queryKey: [productKey,pagination] });
+      await queryClient.cancelQueries({ queryKey: [productKey, pagination] });
 
       const previousProducts = queryClient.getQueryData<products[]>([
         productKey,
@@ -159,7 +160,7 @@ export const updateProduct = (pagination?:any) => {
         price: +price,
       };
 
-      queryClient.setQueryData<products[]>([productKey,pagination], (old) => {
+      queryClient.setQueryData<products[]>([productKey, pagination], (old) => {
         if (!old) return [optimisticProduct];
         return old.map((cacheProduct) =>
           cacheProduct.id === id ? optimisticProduct : cacheProduct,
@@ -176,7 +177,7 @@ export const updateProduct = (pagination?:any) => {
     },
     onSuccess: (product: any, _: any, context: any) => {
       const nwProduct = { ...product, category: product.category as Category };
-      queryClient.setQueryData<products[]>([productKey,pagination], (old) => {
+      queryClient.setQueryData<products[]>([productKey, pagination], (old) => {
         if (!old) return [nwProduct];
         return old.map((cacheProduct) =>
           cacheProduct.id === context?.optimisticProduct.id
@@ -184,8 +185,8 @@ export const updateProduct = (pagination?:any) => {
             : cacheProduct,
         );
       });
-    toast({ variant: "success", title: "Cambio realizado" });
-  },
+      toast({ variant: "success", title: "Cambio realizado" });
+    },
   });
   return update;
 };

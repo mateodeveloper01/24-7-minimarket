@@ -37,6 +37,7 @@ import { Product } from "@/types";
 import { ProductForm } from "../ProductForm";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import { fetchProduct } from "@/hooks/useProduct";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -61,11 +62,9 @@ export function DataTable<TData, TValue>({
   const dataQuery = useQuery({
     queryKey: ["products", pagination],
     queryFn: async () =>
-      (
-        await axios.get(
-          `http://localhost:3001/api/products?page=${pagination.pageIndex}&limit=${pagination.pageSize}`,
-        )
-      ).data,
+      (await fetchProduct(
+        `/?page=${pagination.pageIndex}&limit=${pagination.pageSize}`,
+      )).data,
     placeholderData: keepPreviousData, // don't have 0 rows flash while changing pages/loading next page
   });
   const defaultData = useMemo(() => [], []);
