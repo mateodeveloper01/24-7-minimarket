@@ -1,8 +1,8 @@
 import { ProductSchemaType } from "@/app/dashboard/_components";
 import { Product } from "@/types";
 import { Category, products } from "@prisma/client";
+import { toast } from "@/components";
 import {
-  QueryClient,
   useMutation,
   useQuery,
   useQueryClient,
@@ -61,18 +61,18 @@ export const getProduct = ({
 
 export const searchProduct = async (filter: string) => {
   try {
-    return (await productsApi.get(`/search?filter=${filter}`)).data;
+    return (await productsApi.get(`/search?filter=${filter}&stock:true`)).data;
   } catch (error) {
     console.error("Error fetching data:", error);
-    return []
+    return [];
   }
 };
 
-export const createProduct = () => {
+export const createProduct = (pagination?:any) => {
   const queryClient = useQueryClient();
 
   const create = useMutation({
-    mutationKey: [productKey],
+    mutationKey: [productKey,pagination],
     mutationFn: async (product: ProductSchemaType) => {
       const { id, ...nwProduct } = product;
       const formData = new FormData();
@@ -94,7 +94,7 @@ export const createProduct = () => {
         price: +price,
       };
 
-      queryClient.setQueryData<products[]>([productKey], (old) => {
+      queryClient.setQueryData<products[]>([productKey,pagination], (old) => {
         if (!old) return [optimisticProduct];
         return [...old, optimisticProduct];
       });
@@ -102,7 +102,7 @@ export const createProduct = () => {
     },
     onSuccess: (product: any, _: any, context: any) => {
       const nwProduct = { ...product, category: product.category as Category };
-      queryClient.setQueryData<products[]>([productKey], (old) => {
+      queryClient.setQueryData<products[]>([productKey,pagination], (old) => {
         if (!old) return [nwProduct];
 
         return old.map((cacheProduct) =>
@@ -111,24 +111,30 @@ export const createProduct = () => {
             : cacheProduct,
         );
       });
-    },
+    toast({ variant: "success", title: "Cambio realizado" });
+  },
   });
   return create;
 };
 
-export const updateProduct = () => {
+export const updateProduct = (pagination?:any) => {
   const queryClient = useQueryClient();
 
   const update = useMutation({
-    mutationKey: [productKey],
+    mutationKey: [productKey,pagination],
     mutationFn: async ({ id, ...nwProduct }: ProductSchemaType) => {
       const formData = new FormData();
 
       Object.entries(nwProduct).forEach(([key, value]) => {
         if (key === "image") {
           formData.append(key, value as File);
+        } else if (key === "stock") {
+          if (value === true) {
+            formData.append(key, value.toString());
+          }
         } else {
           formData.append(key, value.toString());
+
         }
       });
       return (await productsApi.patch<Product>(`/${id}`, formData)).data;
@@ -139,7 +145,7 @@ export const updateProduct = () => {
       price,
       ...restProduct
     }: ProductSchemaType) => {
-      await queryClient.cancelQueries({ queryKey: [productKey] });
+      await queryClient.cancelQueries({ queryKey: [productKey,pagination] });
 
       const previousProducts = queryClient.getQueryData<products[]>([
         productKey,
@@ -153,7 +159,7 @@ export const updateProduct = () => {
         price: +price,
       };
 
-      queryClient.setQueryData<products[]>([productKey], (old) => {
+      queryClient.setQueryData<products[]>([productKey,pagination], (old) => {
         if (!old) return [optimisticProduct];
         return old.map((cacheProduct) =>
           cacheProduct.id === id ? optimisticProduct : cacheProduct,
@@ -170,7 +176,7 @@ export const updateProduct = () => {
     },
     onSuccess: (product: any, _: any, context: any) => {
       const nwProduct = { ...product, category: product.category as Category };
-      queryClient.setQueryData<products[]>([productKey], (old) => {
+      queryClient.setQueryData<products[]>([productKey,pagination], (old) => {
         if (!old) return [nwProduct];
         return old.map((cacheProduct) =>
           cacheProduct.id === context?.optimisticProduct.id
@@ -178,7 +184,8 @@ export const updateProduct = () => {
             : cacheProduct,
         );
       });
-    },
+    toast({ variant: "success", title: "Cambio realizado" });
+  },
   });
   return update;
 };

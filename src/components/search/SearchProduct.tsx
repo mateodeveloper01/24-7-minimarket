@@ -1,65 +1,47 @@
 "use client";
-import { Product } from "@/types";
 
-import { InstantSearchNext } from "react-instantsearch-nextjs";
-import { Suspense, useEffect, useState } from "react";
-import { SearchProductItem } from "./SearchProductItem";
-
-import { index, indexObject, searchClient } from "./indexObject";
-import { Input } from "../ui/input";
+import { Input } from "@/components";
+import { searchProduct } from "@/hooks/useProduct";
 import { Search } from "lucide-react";
+import { useState } from "react";
 
-interface Prop {
-  products: Product[];
-  className?: string;
-}
+export const SearchProduct = ({ setProducts, resetSearch }: { setProducts: any, resetSearch: () => void }) => {
+  const [filter, setFilter] = useState("");
 
-export const SearchProduct = ({ products, className }: Prop) => {
-  
-  const [query, setQuery] = useState("");
-  const [result, setResult] = useState<any[]>([]);
+  const handleSearch = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    if (!filter.trim()) {
+      resetSearch();
+      return;
+    }
 
-  useEffect(() => {
-    indexObject(products);
-  }, [products]);
-  const performSearch = async (value: any) => {
-    const { hits } = await index.search(value);
-    setResult([...hits]);
-    return hits;
+    const modifiedFilter = filter.replace(/ /g, "_");
+    const res = await searchProduct(modifiedFilter);
+    setProducts(res);
   };
 
-  const handleChange = (e: any) => {
-    const { value } = e.target;
-    setQuery(value);
-    value == "" ? setResult([]) : performSearch(value);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    event.preventDefault();
+    setFilter(event.target.value);
+    if (!event.target.value.trim()) {
+      resetSearch();
+    }
   };
 
   return (
-    <Suspense>
-      <InstantSearchNext
-        searchClient={searchClient}
-        indexName="products"
-        future={{ preserveSharedStateOnUnmount: true }}
-      >
-        <div className={`flex flex-col w-4/5 pt-10 ${className}`}>
-          <form>
-            <Input
-              type="search"
-              onChange={handleChange}
-              className="py-6 border-black text-md"
-              value={query}
-              placeholder={`Buscar cualquiera de nuestros productos `}//${<Search />}
-            />
-          </form>
-          {result.length !== 0 && (
-            <div className="p-2 ">
-              {result.map((result) => (
-                <SearchProductItem key={result.objectID} product={result} />
-              ))}
-            </div>
-          )}
-        </div>
-      </InstantSearchNext>
-    </Suspense>
+    <form
+      className="flex gap-2 rounded-md border border-input px-2"
+      onSubmit={handleSearch}
+    >
+      <Input
+        className="border-none"
+        placeholder="Buscar"
+        value={filter}
+        onChange={handleChange}
+      />
+      <button type="submit">
+        <Search />
+      </button>
+    </form>
   );
 };

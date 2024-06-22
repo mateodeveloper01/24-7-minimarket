@@ -9,7 +9,7 @@ import { Button, Checkbox } from "@/components";
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
 
-const myCustomFilterFn: FilterFn<Product> = (
+const myCustomFilterFn: FilterFn<Product> =  (
   row: Row<Product>,
   columnId: string,
   filterValue: string,
@@ -19,6 +19,7 @@ const myCustomFilterFn: FilterFn<Product> = (
   filterValue = filterValue.toLowerCase()
   const filterParts = filterValue.split(' ')
   const rowValues = `${tipo} ${brand} ${description} ${category}`
+
   return filterParts.every((part)=>rowValues.includes(part))
 };
 

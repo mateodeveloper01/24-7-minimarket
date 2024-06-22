@@ -8,6 +8,7 @@ import {
   getFilteredRowModel,
   getPaginationRowModel,
   getSortedRowModel,
+  PaginationState,
   SortingState,
   useReactTable,
   VisibilityState,
@@ -28,28 +29,48 @@ import {
   Input,
   Sheet,
   SheetContent,
+  SearchProduct,
 } from "@/components";
-import { useState } from "react";
-import {  SheetProduct } from "./SheetProduct";
+import { useMemo, useState } from "react";
+import { SheetProduct } from "./SheetProduct";
 import { Product } from "@/types";
 import { ProductForm } from "../ProductForm";
+import { keepPreviousData, useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
-  data: TData[];
 }
 
 export function DataTable<TData, TValue>({
   columns,
-  data,
 }: DataTableProps<TData, TValue>) {
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [rowSelection, setRowSelection] = useState({});
   const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({});
-  
+  const [pagination, setPagination] = useState<PaginationState>({
+    pageIndex: 1,
+    pageSize: 10,
+  });
+  const [searchResults, setSearchResults] = useState<TData[]>([]);
+  const [isSearching, setIsSearching] = useState(false);
+
   const [open, setOpen] = useState(false);
   const [product, setProduct] = useState({});
+  const dataQuery = useQuery({
+    queryKey: ["products", pagination],
+    queryFn: async () =>
+      (
+        await axios.get(
+          `http://localhost:3001/api/products?page=${pagination.pageIndex}&limit=${pagination.pageSize}`,
+        )
+      ).data,
+    placeholderData: keepPreviousData, // don't have 0 rows flash while changing pages/loading next page
+  });
+  const defaultData = useMemo(() => [], []);
+  const data = isSearching ? searchResults : dataQuery.data ?? defaultData;
+
   const table = useReactTable({
     data,
     columns,
@@ -61,8 +82,14 @@ export function DataTable<TData, TValue>({
     getFilteredRowModel: getFilteredRowModel(),
     onColumnVisibilityChange: setColumnVisibility,
     onRowSelectionChange: setRowSelection,
-
+    onPaginationChange: setPagination,
+    manualPagination: true,
+    // pageCount: dataQuery.data?.pageCount ?? -1,
+    pageCount: isSearching
+      ? Math.ceil(searchResults.length / pagination.pageSize)
+      : dataQuery.data?.pageCount ?? -1,
     state: {
+      pagination,
       sorting,
       columnFilters,
       columnVisibility,
@@ -70,51 +97,49 @@ export function DataTable<TData, TValue>({
     },
   });
 
+  const handleSearch = (results: TData[]) => {
+    setSearchResults(results);
+    setIsSearching(true);
+  };
+  const resetSearch = () => {
+    setSearchResults([]);
+    setIsSearching(false);
+  };
   return (
     <div>
-      <div className=" flex gap-4  items-center justify-around">
-        <div className="flex items-center py-4">
-          <Input
-            placeholder="Buscar "
-            value={(table.getColumn("tipo")?.getFilterValue() as string) ?? ""}
-            onChange={(event) =>
-              table.getColumn("tipo")?.setFilterValue(event.target.value)
-            }
-            className="max-w-sm"
-          />
+      <div className="flex py-4">
+        <SheetProduct />
+      </div>
+      <div className=" flex flex-col md:flex-row  gap-4  items-center justify-around ">
+        <div className="flex items-center py-4 justify-around w-full">
+          <SearchProduct setProducts={handleSearch} resetSearch={resetSearch} />
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <Button variant="outline" className="ml-auto">
+                Columns
+              </Button>
+            </DropdownMenuTrigger>
+            <DropdownMenuContent align="end">
+              {table
+                .getAllColumns()
+                .filter((column) => column.getCanHide())
+                .map((column) => {
+                  return (
+                    <DropdownMenuCheckboxItem
+                      key={column.id}
+                      className="capitalize"
+                      checked={column.getIsVisible()}
+                      onCheckedChange={(value) =>
+                        column.toggleVisibility(!!value)
+                      }
+                    >
+                      {column.id}
+                    </DropdownMenuCheckboxItem>
+                  );
+                })}
+            </DropdownMenuContent>
+          </DropdownMenu>
         </div>
-        <DropdownMenu>
-          <DropdownMenuTrigger asChild>
-            <Button variant="outline" className="ml-auto">
-              Columns
-            </Button>
-          </DropdownMenuTrigger>
-          <DropdownMenuContent align="end">
-            {table
-              .getAllColumns()
-              .filter((column) => column.getCanHide())
-              .map((column) => {
-                return (
-                  <DropdownMenuCheckboxItem
-                    key={column.id}
-                    className="capitalize"
-                    checked={column.getIsVisible()}
-                    onCheckedChange={(value) =>
-                      column.toggleVisibility(!!value)
-                    }
-                  >
-                    {column.id}
-                  </DropdownMenuCheckboxItem>
-                );
-              })}
-          </DropdownMenuContent>
-        </DropdownMenu>
-        <div className="text-sm text-muted-foreground">
-          {table.getFilteredSelectedRowModel().rows.length} of{" "}
-          {table.getFilteredRowModel().rows.length} row(s) selected.
-        </div>
-        <SheetProduct/>
-        {/* <CreateProductButton/> */}
       </div>
       <div className="rounded-md border">
         <Table>
@@ -140,11 +165,11 @@ export function DataTable<TData, TValue>({
             {table.getRowModel().rows?.length ? (
               table.getRowModel().rows.map((row) => (
                 <TableRow
-                  onClick={()=>{
-                    setProduct(row.original as Product)
-                    setOpen(true)
+                  onClick={() => {
+                    setProduct(row.original as Product);
+                    setOpen(true);
                     // console.log(().id)}
-                    }}
+                  }}
                   key={row.id}
                   data-state={row.getIsSelected() && "selected"}
                 >
@@ -172,33 +197,32 @@ export function DataTable<TData, TValue>({
         </Table>
       </div>
       <div className="flex items-center justify-end space-x-2 py-4">
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.previousPage()}
-          disabled={!table.getCanPreviousPage()}
-        >
-          Anterior
-        </Button>
-        <Button
-          variant="outline"
-          size="sm"
-          onClick={() => table.nextPage()}
-          disabled={!table.getCanNextPage()}
-        >
-          Siguiente
-        </Button>
+        <div className="text-sm text-muted-foreground">
+          {table.getFilteredSelectedRowModel().rows.length} of{" "}
+          {table.getFilteredRowModel().rows.length} row(s) selected.
+        </div>
+        <div>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => table.previousPage()}
+            disabled={!table.getCanPreviousPage()}
+          >
+            Anterior
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => table.nextPage()}
+            disabled={!table.getCanNextPage()}
+          >
+            Siguiente
+          </Button>
+        </div>
       </div>
       <Sheet open={open} onOpenChange={() => setOpen(!open)}>
-        {/* <SheetClose
-          onClick={() => setOpen(false)}
-          className=" absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary"
-        >
-          <X className="h-4 w-4" />
-          <span className="sr-only">Close</span>
-        </SheetClose> */}
         <SheetContent>
-          <ProductForm  product={product as Product}/>
+          <ProductForm product={product as Product} pagination={pagination} />
         </SheetContent>
       </Sheet>
     </div>
