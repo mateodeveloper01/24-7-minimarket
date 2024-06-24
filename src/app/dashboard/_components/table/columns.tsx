@@ -4,23 +4,33 @@ import { Product } from "@/types";
 import { ColumnDef, FilterFn, Row } from "@tanstack/react-table";
 import Image from "next/image";
 import { ArrowUpDown, MoreHorizontal } from "lucide-react";
-import { Button, Checkbox } from "@/components";
+import { removeProduct } from "../../../../hooks/useProduct";
+import {
+  Button,
+  Checkbox,
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
 
-const myCustomFilterFn: FilterFn<Product> =  (
+const myCustomFilterFn: FilterFn<Product> = (
   row: Row<Product>,
   columnId: string,
   filterValue: string,
   addMeta: (meta: any) => void,
 ) => {
-  const { tipo,brand,description,category}= row.original
-  filterValue = filterValue.toLowerCase()
-  const filterParts = filterValue.split(' ')
-  const rowValues = `${tipo} ${brand} ${description} ${category}`
+  const { tipo, brand, description, category } = row.original;
+  filterValue = filterValue.toLowerCase();
+  const filterParts = filterValue.split(" ");
+  const rowValues = `${tipo} ${brand} ${description} ${category}`;
 
-  return filterParts.every((part)=>rowValues.includes(part))
+  return filterParts.every((part) => rowValues.includes(part));
 };
 
 export const columns: ColumnDef<Product>[] = [
@@ -50,7 +60,7 @@ export const columns: ColumnDef<Product>[] = [
   },
   {
     accessorKey: "tipo",
-    filterFn:myCustomFilterFn,
+    filterFn: myCustomFilterFn,
     header: ({ column }) => sort(column, "Tipo"),
   },
   {
@@ -90,7 +100,36 @@ export const columns: ColumnDef<Product>[] = [
           alt=""
           width={50}
           height={50}
+          className="max-h-[45px] w-auto"
         />
+      );
+    },
+  },
+  {
+    id: "actions",
+    cell: ({ row }) => {
+      const product = row.original;
+      const remove = removeProduct();
+
+      return (
+        <DropdownMenu>
+          <DropdownMenuTrigger asChild>
+            <Button variant="ghost" className="h-8 w-8 p-0">
+              <MoreHorizontal className="h-4 w-4" />
+            </Button>
+          </DropdownMenuTrigger>
+          <DropdownMenuContent align="end" onClick={(e) => e.stopPropagation()}>
+            <DropdownMenuLabel>Acciones</DropdownMenuLabel>
+            <DropdownMenuItem
+              onClick={(e) => {
+                e.stopPropagation();
+                remove.mutate(product.id);
+              }}
+            >
+              <Button>Eliminar</Button>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
+        </DropdownMenu>
       );
     },
   },

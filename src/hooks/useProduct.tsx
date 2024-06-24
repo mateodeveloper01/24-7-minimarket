@@ -3,17 +3,16 @@ import { Product } from "@/types";
 import { Category, products } from "@prisma/client";
 import { toast } from "@/components";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import axios, { AxiosResponse } from "axios";
+import axios from "axios";
 
 const productsApi = axios.create({
   baseURL: `${process.env.NEXT_PUBLIC_BACKEND_URL}/products`,
 });
 
-
-
-export const fetchProduct = async (url: string)=> {
- return await productsApi.get(url);
+export const fetchProduct = async (url: string) => {
+  return await productsApi.get(url);
 };
+
 const productKey = "products";
 
 interface GetProductsProps {
@@ -189,4 +188,17 @@ export const updateProduct = (pagination?: any) => {
     },
   });
   return update;
+};
+
+export const removeProduct = () => {
+  const queryClient = useQueryClient();
+  const remove = useMutation({
+    mutationKey: [productKey],
+    mutationFn: async (id: string) => (await productsApi.delete(`/${id}`)).data,
+    onSuccess:()=>{
+      toast({ variant: "success", title: "Cambio realizado" });
+      queryClient.invalidateQueries()
+    }
+  });
+  return remove
 };

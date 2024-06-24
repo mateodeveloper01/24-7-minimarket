@@ -79,3 +79,10 @@
 .capitalize-first-letter::second-letter {
   @apply uppercase; /* Usando Tailwind para la capitalización */
 }
+.scrolled {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: rgba(255, 255, 255); /* Puedes ajustar la opacidad o el color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añade una sombra para mejor visibilidad */
+  transition: all 0.3s ease-in-out;
+}

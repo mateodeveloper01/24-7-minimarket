@@ -13,31 +13,16 @@ import {
   useReactTable,
   VisibilityState,
 } from "@tanstack/react-table";
-
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-  TableRow,
-  Button,
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuTrigger,
-  Input,
-  Sheet,
-  SheetContent,
-  SearchProduct,
-} from "@/components";
 import { useMemo, useState } from "react";
-import { SheetProduct } from "./SheetProduct";
-import { Product } from "@/types";
-import { ProductForm } from "../ProductForm";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import { fetchProduct } from "@/hooks/useProduct";
+import { Product } from "@/types";
+// import TableToolbar from "./TableToolbar";
+import TableToolbar from "./TableToolBar";
+import TableComponent from "./TableComponent";
+import PaginationComponent from "./PaginationComponent";
+import ProductSheet from "./ProductSheet";
+import { SheetProduct } from "./SheetProduct";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -56,17 +41,20 @@ export function DataTable<TData, TValue>({
   });
   const [searchResults, setSearchResults] = useState<TData[]>([]);
   const [isSearching, setIsSearching] = useState(false);
-
   const [open, setOpen] = useState(false);
-  const [product, setProduct] = useState({});
+  const [product, setProduct] = useState<Product>({} as Product);
+
   const dataQuery = useQuery({
     queryKey: ["products", pagination],
     queryFn: async () =>
-      (await fetchProduct(
-        `/?page=${pagination.pageIndex}&limit=${pagination.pageSize}`,
-      )).data,
-    placeholderData: keepPreviousData, // don't have 0 rows flash while changing pages/loading next page
+      (
+        await fetchProduct(
+          `/?page=${pagination.pageIndex}&limit=${pagination.pageSize}`,
+        )
+      ).data,
+    placeholderData: keepPreviousData,
   });
+
   const defaultData = useMemo(() => [], []);
   const data = isSearching ? searchResults : dataQuery.data ?? defaultData;
 
@@ -83,7 +71,6 @@ export function DataTable<TData, TValue>({
     onRowSelectionChange: setRowSelection,
     onPaginationChange: setPagination,
     manualPagination: true,
-    // pageCount: dataQuery.data?.pageCount ?? -1,
     pageCount: isSearching
       ? Math.ceil(searchResults.length / pagination.pageSize)
       : dataQuery.data?.pageCount ?? -1,
@@ -100,130 +87,45 @@ export function DataTable<TData, TValue>({
     setSearchResults(results);
     setIsSearching(true);
   };
+
   const resetSearch = () => {
     setSearchResults([]);
     setIsSearching(false);
   };
+
   return (
     <div>
       <div className="flex py-4">
         <SheetProduct />
       </div>
-      <div className=" flex flex-col md:flex-row  gap-4  items-center justify-around ">
-        <div className="flex items-center py-4 justify-around w-full">
-          <SearchProduct setProducts={handleSearch} resetSearch={resetSearch} />
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="outline" className="ml-auto">
-                Columns
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              {table
-                .getAllColumns()
-                .filter((column) => column.getCanHide())
-                .map((column) => {
-                  return (
-                    <DropdownMenuCheckboxItem
-                      key={column.id}
-                      className="capitalize"
-                      checked={column.getIsVisible()}
-                      onCheckedChange={(value) =>
-                        column.toggleVisibility(!!value)
-                      }
-                    >
-                      {column.id}
-                    </DropdownMenuCheckboxItem>
-                  );
-                })}
-            </DropdownMenuContent>
-          </DropdownMenu>
-        </div>
-      </div>
+      <TableToolbar
+        table={table}
+        handleSearch={handleSearch}
+        resetSearch={resetSearch}
+      />
       <div className="rounded-md border">
-        <Table>
-          <TableHeader>
-            {table.getHeaderGroups().map((headerGroup) => (
-              <TableRow key={headerGroup.id}>
-                {headerGroup.headers.map((header) => {
-                  return (
-                    <TableHead key={header.id}>
-                      {header.isPlaceholder
-                        ? null
-                        : flexRender(
-                            header.column.columnDef.header,
-                            header.getContext(),
-                          )}
-                    </TableHead>
-                  );
-                })}
-              </TableRow>
-            ))}
-          </TableHeader>
-          <TableBody>
-            {table.getRowModel().rows?.length ? (
-              table.getRowModel().rows.map((row) => (
-                <TableRow
-                  onClick={() => {
-                    setProduct(row.original as Product);
-                    setOpen(true);
-                    // console.log(().id)}
-                  }}
-                  key={row.id}
-                  data-state={row.getIsSelected() && "selected"}
-                >
-                  {row.getVisibleCells().map((cell) => (
-                    <TableCell key={cell.id}>
-                      {flexRender(
-                        cell.column.columnDef.cell,
-                        cell.getContext(),
-                      )}
-                    </TableCell>
-                  ))}
-                </TableRow>
-              ))
-            ) : (
-              <TableRow>
-                <TableCell
-                  colSpan={columns.length}
-                  className="h-24 text-center"
-                >
-                  No results.
-                </TableCell>
-              </TableRow>
-            )}
-          </TableBody>
-        </Table>
+        <TableComponent
+          table={table}
+          columns={columns}
+          setProduct={setProduct}
+          setOpen={setOpen}
+        />
       </div>
-      <div className="flex items-center justify-end space-x-2 py-4">
+      <div className="flex items-center justify-between space-x-2 p-4 w-full">
         <div className="text-sm text-muted-foreground">
           {table.getFilteredSelectedRowModel().rows.length} of{" "}
           {table.getFilteredRowModel().rows.length} row(s) selected.
         </div>
         <div>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => table.previousPage()}
-            disabled={!table.getCanPreviousPage()}
-          >
-            Anterior
-          </Button>
-          <Button
-            variant="outline"
-            size="sm"
-            onClick={() => table.nextPage()}
-            disabled={!table.getCanNextPage()}
-          >
-            Siguiente
-          </Button>
+          <PaginationComponent table={table} />
         </div>
       </div>
-      <Sheet open={open} onOpenChange={() => setOpen(!open)}>
-        <SheetContent>
-          <ProductForm product={product as Product} pagination={pagination} />
-        </SheetContent>
-      </Sheet>
+      <ProductSheet
+        open={open}
+        setOpen={setOpen}
+        product={product}
+        pagination={pagination}
+      />
     </div>
   );
 }

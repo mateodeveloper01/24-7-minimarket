@@ -48,7 +48,7 @@ export const useCartStore = create(
           set((state) => ({
             cart: updatedCart,
             totalItems: state.totalItems + 1,
-            totalPrice: state.totalPrice +( product.price * product.quantity!),
+            totalPrice: state.totalPrice + product.price * product.quantity!,
           }));
         }
       },
@@ -57,25 +57,12 @@ export const useCartStore = create(
         const cartItem = cart.find((item) => item.id === product.id);
 
         if (cartItem) {
-          if (cartItem.quantity! > 1) {
-            const updatedCart = cart.map((item) =>
-              item.id === product.id
-                ? { ...item, quantity: (item.quantity as number) - 1 }
-                : item,
-            );
-            set((state) => ({
-              cart: updatedCart,
-              totalItems: state.totalItems - 1,
-              totalPrice: state.totalPrice - product.price,
-            }));
-          } else {
-            const updatedCart = cart.filter((item) => item.id !== product.id);
-            set((state) => ({
-              cart: updatedCart,
-              totalItems: state.totalItems - 1,
-              totalPrice: state.totalPrice - product.price,
-            }));
-          }
+          const updatedCart = cart.filter((item) => item.id !== product.id);
+          set((state) => ({
+            cart: updatedCart,
+            totalItems: state.totalItems - 1,
+            totalPrice: state.totalPrice - product.price * product.quantity!,
+          }));
         }
       },
       updateCart: (productId: string, newQuantity: number) => {
