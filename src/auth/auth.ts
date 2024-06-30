@@ -1,6 +1,6 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
-import { signSchema } from "@/schemas/loginSchema";
+import { LoginSchema } from "@/schemas/loginSchema";
 import { getUserFromDb } from "@/utils/db";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
@@ -13,7 +13,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       authorize: async (credentials) => {
         let user = null;
 
-        const { email, password } = await signSchema.parseAsync(credentials);
+        const { email, password } = await LoginSchema.parseAsync(credentials);
 
         user = await getUserFromDb(email);
 
@@ -28,7 +28,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       },
     }),
   ],
-  // pages: {
-  //   signIn: "/login",
-  // },
+  pages: {
+    signIn: "/login",
+  },
 });

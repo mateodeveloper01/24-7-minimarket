@@ -16,8 +16,10 @@ if (process.env.NODE_ENV !== "production") globalThis.prismaGlobal = prisma;
 
 export const getUserFromDb = async (email: string) => {
   try {
-    return await prisma.user.findUnique({ where: { email } });
-  } catch (error) {
-    console.log(error);
+    const user = await prisma.user.findUnique({ where: { email } });
+
+    return user;
+  } catch {
+    return null;
   }
 };
