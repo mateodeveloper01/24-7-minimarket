@@ -5,6 +5,15 @@ import { Title } from "../ui/Title";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { ProductItem } from "./ProductItem";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "../ui/pagination";
 
 interface Prop {
   category: string;
@@ -28,6 +37,22 @@ export const ProductsGrid = ({ category, className, perPage }: Prop) => {
             <ProductItem {...product} key={product.id} />
           ))}
         </div>
+        {/* <Pagination>
+          <PaginationContent>
+            <PaginationItem>
+              <PaginationPrevious href="#" />
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationLink href="#">1</PaginationLink>
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationEllipsis />
+            </PaginationItem>
+            <PaginationItem>
+              <PaginationNext href="#" />
+            </PaginationItem>
+          </PaginationContent>
+        </Pagination> */}
       </div>
     );
   }

@@ -33,7 +33,7 @@ export const getProduct = ({
     isFetched,
     isError,
   } = useQuery({
-    queryKey: category ? [productKey, category] : [productKey],
+    queryKey: category ? [productKey, category, limit] : [productKey],
     queryFn: async () => {
       const queryParams = [];
       if (category) {
@@ -195,10 +195,10 @@ export const removeProduct = () => {
   const remove = useMutation({
     mutationKey: [productKey],
     mutationFn: async (id: string) => (await productsApi.delete(`/${id}`)).data,
-    onSuccess:()=>{
+    onSuccess: () => {
       toast({ variant: "success", title: "Cambio realizado" });
-      queryClient.invalidateQueries()
-    }
+      queryClient.invalidateQueries();
+    },
   });
-  return remove
+  return remove;
 };

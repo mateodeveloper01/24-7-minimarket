@@ -34,6 +34,7 @@ export const ProductsCarrousel = ({ category, perPage }: Prop) => {
             ))}
           </CarouselContent>
         </Carousel>
+        
       </div>
     );
   }
