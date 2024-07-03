@@ -6,7 +6,7 @@ interface ProductSheetProps {
   open: boolean;
   setOpen: (open: boolean) => void;
   product: Product;
-  pagination: any;
+  pagination?: any[];
 }
 
 const ProductSheet = ({

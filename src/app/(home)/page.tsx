@@ -16,7 +16,7 @@ export default async function HomePage() {
       </Link>
 
       {categories.map((category: string) => (
-        <ProductsCarrousel key={category} category={category} perPage={10} />
+        <ProductsCarrousel key={category} category={category} />
       ))}
       <AboutMe />
     </div>

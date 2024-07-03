@@ -20,12 +20,12 @@ import { createProduct, updateProduct } from "@/hooks/useProduct";
 import { DevTool } from "@hookform/devtools";
 interface Props {
   product?: Product;
-  pagination?:any
+  pagination?:any[]
 }
 export type ProductSchemaType = z.infer<typeof ProductSchema>;
 
-export const ProductForm = ({ product ,pagination}: Props) => {
-  const create = createProduct(pagination);
+export const ProductForm = ({ product ,pagination=[]}: Props) => {
+  const create = createProduct();
   const update = updateProduct(pagination);
 
   const [image, setImage] = useState<File | null>(null);

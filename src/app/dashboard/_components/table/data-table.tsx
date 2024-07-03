@@ -15,14 +15,13 @@ import {
 } from "@tanstack/react-table";
 import { useMemo, useState } from "react";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
-import { fetchProduct } from "@/hooks/useProduct";
+import { fetchProduct, getProduct } from "@/hooks/useProduct";
 import { Product } from "@/types";
-// import TableToolbar from "./TableToolbar";
 import TableToolbar from "./TableToolBar";
 import TableComponent from "./TableComponent";
-import PaginationComponent from "./PaginationComponent";
 import ProductSheet from "./ProductSheet";
 import { SheetProduct } from "./SheetProduct";
+import { PaginationComponent } from "@/components";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -31,6 +30,7 @@ interface DataTableProps<TData, TValue> {
 export function DataTable<TData, TValue>({
   columns,
 }: DataTableProps<TData, TValue>) {
+  const [page, setPage] = useState(1);
   const [sorting, setSorting] = useState<SortingState>([]);
   const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([]);
   const [rowSelection, setRowSelection] = useState({});
@@ -44,19 +44,16 @@ export function DataTable<TData, TValue>({
   const [open, setOpen] = useState(false);
   const [product, setProduct] = useState<Product>({} as Product);
 
-  const dataQuery = useQuery({
-    queryKey: ["products", pagination],
-    queryFn: async () =>
-      (
-        await fetchProduct(
-          `/?page=${pagination.pageIndex}&limit=${pagination.pageSize}`,
-        )
-      ).data,
-    placeholderData: keepPreviousData,
+  const { isLoading, data: res } = useQuery({
+    queryKey: ["products", 20, page],
+    queryFn: () => getProduct({ limit: 10, page }),
+    staleTime: 60 * 60 * 1000, // 1 hs
   });
 
   const defaultData = useMemo(() => [], []);
-  const data = isSearching ? searchResults : dataQuery.data ?? defaultData;
+  const data = isSearching
+    ? searchResults
+    : (res?.data as TData[]) ?? defaultData;
 
   const table = useReactTable({
     data,
@@ -69,11 +66,11 @@ export function DataTable<TData, TValue>({
     getFilteredRowModel: getFilteredRowModel(),
     onColumnVisibilityChange: setColumnVisibility,
     onRowSelectionChange: setRowSelection,
-    onPaginationChange: setPagination,
+    // onPaginationChange: setPagination,
     manualPagination: true,
-    pageCount: isSearching
-      ? Math.ceil(searchResults.length / pagination.pageSize)
-      : dataQuery.data?.pageCount ?? -1,
+    // pageCount: isSearching
+    //   ? Math.ceil(searchResults.length / pagination.pageSize)
+    //   : dataQuery.data?.pageCount ?? -1,
     state: {
       pagination,
       sorting,
@@ -92,6 +89,8 @@ export function DataTable<TData, TValue>({
     setSearchResults([]);
     setIsSearching(false);
   };
+
+  if (isLoading) return <div>Loading...</div>;
 
   return (
     <div>
@@ -117,14 +116,18 @@ export function DataTable<TData, TValue>({
           {table.getFilteredRowModel().rows.length} row(s) selected.
         </div>
         <div>
-          <PaginationComponent table={table} />
+          <PaginationComponent
+            meta={res?.meta!}
+            page={page}
+            setPage={setPage}
+          />
         </div>
       </div>
       <ProductSheet
         open={open}
         setOpen={setOpen}
         product={product}
-        pagination={pagination}
+        pagination={[20, page]}
       />
     </div>
   );

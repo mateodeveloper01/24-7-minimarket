@@ -4,8 +4,16 @@ import { Category, products } from "@prisma/client";
 import { toast } from "@/components";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
+export type ResProduct = {
+  data: products[];
+  meta: {
+    total: number;
+    page: number;
+    totalPage: number;
+  };
+};
 
-const productsApi = axios.create({
+export const productsApi = axios.create({
   baseURL: `${process.env.NEXT_PUBLIC_BACKEND_URL}/products`,
 });
 
@@ -19,44 +27,35 @@ interface GetProductsProps {
   category?: string;
   stock?: boolean;
   limit?: number;
-  offset?: number;
+  page?: number;
 }
-export const getProduct = ({
+
+export const getFetchProduct = async ({ category }: GetProductsProps) => {
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/products?category=${category}&limit=10`,
+    { next: { revalidate: 3600 } },
+  );
+
+  if (!res.ok) {
+    throw new Error("Failed to fetch data");
+  }
+  return res.json() as Promise<ResProduct>;
+};
+
+export const getProduct = async ({
   category,
   stock,
   limit,
-  offset,
+  page,
 }: GetProductsProps) => {
-  const {
-    data: products = [],
-    isLoading,
-    isFetched,
-    isError,
-  } = useQuery({
-    queryKey: category ? [productKey, category, limit] : [productKey],
-    queryFn: async () => {
-      const queryParams = [];
-      if (category) {
-        queryParams.push(`category=${category}`);
-      }
-      if (stock) {
-        queryParams.push(`stock=true`);
-      }
-      if (limit) {
-        queryParams.push(`limit=${limit}`);
-      }
-
-      if (offset) {
-        queryParams.push(`offset=${offset}`);
-      }
-      const queryString = queryParams.length ? `?${queryParams.join("&")}` : "";
-
-      return (await productsApi.get<Product[]>(`/${queryString} `)).data;
-    },
-    staleTime: 1000 * 60 * 60,
-  });
-
-  return { products, isLoading, isFetched, isError };
+  const queryParams = [];
+  if (category) queryParams.push(`category=${category}`);
+  if (stock) queryParams.push(`stock=true`);
+  if (limit) queryParams.push(`limit=${limit}`);
+  if (page) queryParams.push(`page=${page}`);
+  const queryString = queryParams.length ? `?${queryParams.join("&")}` : "";
+  const res = await productsApi.get<ResProduct>(`/${queryString}`);
+  return res.data;
 };
 
 export const searchProduct = async (filter: string) => {
@@ -69,11 +68,10 @@ export const searchProduct = async (filter: string) => {
   }
 };
 
-export const createProduct = (pagination?: any) => {
+export const createProduct = () => {
   const queryClient = useQueryClient();
-
   const create = useMutation({
-    mutationKey: [productKey, pagination],
+    mutationKey: [productKey],
     mutationFn: async (product: ProductSchemaType) => {
       const { id, ...nwProduct } = product;
       const formData = new FormData();
@@ -94,23 +92,52 @@ export const createProduct = (pagination?: any) => {
         category: category as Category,
         price: +price,
       };
+      const previousProducts = queryClient.getQueryData<ResProduct>([
+        productKey,
+      ]);
 
-      queryClient.setQueryData<products[]>([productKey, pagination], (old) => {
-        if (!old) return [optimisticProduct];
-        return [...old, optimisticProduct];
+      // Optimistic update
+      queryClient.setQueryData<ResProduct>([productKey], (old) => {
+        if (!old) {
+          return {
+            data: [optimisticProduct],
+            meta: { total: 1, page: 1, totalPage: 1 },
+          };
+        }
+        return {
+          data: [...old.data, optimisticProduct],
+          meta: {
+            ...old.meta,
+            total: old.meta.total + 1,
+          },
+        };
       });
-      return { optimisticProduct };
+      return { previousProducts, optimisticProduct };
+    },
+    onError: (_, __, context: any) => {
+      // Restaurar el estado anterior en caso de error
+      queryClient.setQueryData<ResProduct>(
+        [productKey],
+        context.previousProducts,
+      );
     },
     onSuccess: (product: any, _: any, context: any) => {
       const nwProduct = { ...product, category: product.category as Category };
-      queryClient.setQueryData<products[]>([productKey, pagination], (old) => {
-        if (!old) return [nwProduct];
-
-        return old.map((cacheProduct) =>
-          cacheProduct.id === context?.optimisticProduct.id
-            ? nwProduct
-            : cacheProduct,
-        );
+      queryClient.setQueryData<ResProduct>([productKey], (old) => {
+        if (!old) {
+          return {
+            data: [nwProduct],
+            meta: { total: 1, page: 1, totalPage: 1 },
+          };
+        }
+        return {
+          data: old.data.map((cacheProduct) =>
+            cacheProduct.id === context?.optimisticProduct.id
+              ? nwProduct
+              : cacheProduct,
+          ),
+          meta: old.meta,
+        };
       });
       toast({ variant: "success", title: "Cambio realizado" });
     },
@@ -118,11 +145,11 @@ export const createProduct = (pagination?: any) => {
   return create;
 };
 
-export const updateProduct = (pagination?: any) => {
+export const updateProduct = (pagination?: any[]) => {
   const queryClient = useQueryClient();
-
+  const updateKey = [productKey, ...pagination!];
   const update = useMutation({
-    mutationKey: [productKey, pagination],
+    mutationKey: updateKey,
     mutationFn: async ({ id, ...nwProduct }: ProductSchemaType) => {
       const formData = new FormData();
 
@@ -145,9 +172,9 @@ export const updateProduct = (pagination?: any) => {
       price,
       ...restProduct
     }: ProductSchemaType) => {
-      await queryClient.cancelQueries({ queryKey: [productKey, pagination] });
+      await queryClient.cancelQueries({ queryKey: updateKey });
 
-      const previousProducts = queryClient.getQueryData<products[]>([
+      const previousProducts = queryClient.getQueryData<ResProduct>([
         productKey,
       ]);
 
@@ -159,30 +186,43 @@ export const updateProduct = (pagination?: any) => {
         price: +price,
       };
 
-      queryClient.setQueryData<products[]>([productKey, pagination], (old) => {
-        if (!old) return [optimisticProduct];
-        return old.map((cacheProduct) =>
-          cacheProduct.id === id ? optimisticProduct : cacheProduct,
-        );
+      queryClient.setQueryData<ResProduct>(updateKey, (old) => {
+        if (!old)
+          return {
+            data: [optimisticProduct],
+            meta: { total: 0, page: 0, totalPage: 0 },
+          };
+
+        return {
+          data: old.data.map((cacheProduct) =>
+            cacheProduct.id === id ? optimisticProduct : cacheProduct,
+          ),
+          meta: old.meta,
+        };
       });
 
       return { previousProducts, optimisticProduct };
     },
     onError: (__, _, context: any) => {
-      queryClient.setQueryData<products[]>(
-        [productKey],
-        context.previousProducts,
-      );
+      queryClient.setQueryData<products[]>(updateKey, context.previousProducts);
     },
     onSuccess: (product: any, _: any, context: any) => {
       const nwProduct = { ...product, category: product.category as Category };
-      queryClient.setQueryData<products[]>([productKey, pagination], (old) => {
-        if (!old) return [nwProduct];
-        return old.map((cacheProduct) =>
-          cacheProduct.id === context?.optimisticProduct.id
-            ? nwProduct
-            : cacheProduct,
-        );
+      queryClient.setQueryData<ResProduct>(updateKey, (old) => {
+        if (!old)
+          return {
+            data: [nwProduct],
+            meta: { total: 0, page: 0, totalPage: 0 },
+          };
+
+        return {
+          data: old.data.map((cacheProduct) =>
+            cacheProduct.id === context?.optimisticProduct.id
+              ? nwProduct
+              : cacheProduct,
+          ),
+          meta: old.meta,
+        };
       });
       toast({ variant: "success", title: "Cambio realizado" });
     },
@@ -202,3 +242,40 @@ export const removeProduct = () => {
   });
   return remove;
 };
+// export const getProduct = ({
+//   category,
+//   stock,
+//   limit,
+//   page,
+// }: GetProductsProps) => {
+//   const {
+//     data: products ,
+//     isLoading,
+//     isFetched,
+//     isError,
+//   } = useQuery({
+//     queryKey: category ? [productKey, category, limit] : [productKey],
+//     queryFn: async () => {
+//       const queryParams = [];
+//       if (category) {
+//         queryParams.push(`category=${category}`);
+//       }
+//       if (stock) {
+//         queryParams.push(`stock=true`);
+//       }
+//       if (limit) {
+//         queryParams.push(`limit=${limit}`);
+//       }
+
+//       if (page) {
+//         queryParams.push(`page=${page}`);
+//       }
+//       const queryString = queryParams.length ? `?${queryParams.join("&")}` : "";
+
+//       const res = await productsApi.get<ResProduct>(`/${queryString} `);
+//       return res.data;
+//     },
+//     staleTime: 1000 * 60 * 60,
+//   });
+//   return { products, isLoading, isFetched, isError };
+// };
