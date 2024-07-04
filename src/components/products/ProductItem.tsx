@@ -37,7 +37,7 @@ export const ProductItem = (item: Product) => {
       <div className="flex justify-end max-md:justify-center">
         <Dialog>
           <DialogTrigger asChild>
-            <Button className="bg-green-500">Agregar</Button>
+            <Button className="bg-secondary">Agregar</Button>
           </DialogTrigger>
           <DialogContent className="flex flex-col items-center">
             <Image

@@ -10,7 +10,6 @@ export * from "./aboutMe/Branchs";
 export * from "./cart/BuyButton";
 export * from "./products/ProductTitle";
 export * from "./products/Quantity";
-export * from "./search/SearchProduct"
 export * from './home/CarouselContainer'
 export * from './order/OrderForm'
 export * from './products/ProductsCarrousel'

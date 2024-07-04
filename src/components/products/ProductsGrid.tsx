@@ -4,15 +4,7 @@ import { Title } from "../ui/Title";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import { ProductItem } from "./ProductItem";
-import {
-  Pagination,
-  PaginationContent,
-  PaginationEllipsis,
-  PaginationItem,
-  PaginationLink,
-  PaginationNext,
-  PaginationPrevious,
-} from "../ui/pagination";
+
 import { getProduct } from "@/hooks/useProduct";
 import { useQuery } from "@tanstack/react-query";
 import { products } from "@prisma/client";
@@ -30,13 +22,6 @@ export const ProductsGrid = ({ category, className }: Prop) => {
     queryFn: () => getProduct({ category, stock: true, limit: 20, page }),
     staleTime: 60 * 60 * 1000, // 1 hs
   });
-  const handlePreviousPage = () => {
-    if (page > 1) setPage(page - 1);
-  };
-
-  const handleNextPage = () => {
-    if (page < products?.meta.totalPage!) setPage(page + 1);
-  };
 
   if (isLoading) return <div>Loading...</div>;
 

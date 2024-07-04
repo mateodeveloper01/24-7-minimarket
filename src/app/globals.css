@@ -13,10 +13,10 @@
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
 
-    --primary: 240 5.9% 10%;
+    --primary: rgb(255, 165, 0);
     --primary-foreground: 0 0% 98%;
 
-    --secondary: 240 4.8% 95.9%;
+    --secondary: #75AADB;
     --secondary-foreground: 240 5.9% 10%;
 
     --muted: 240 4.8% 95.9%;
@@ -72,7 +72,6 @@
   }
 
   body {
-    
     @apply bg-background text-foreground;
   }
 }
@@ -82,7 +81,11 @@
 .scrolled {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background-color: rgba(255, 255, 255); /* Puedes ajustar la opacidad o el color */
+  background-color: rgba(
+    255,
+    255,
+    255
+  ); /* Puedes ajustar la opacidad o el color */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añade una sombra para mejor visibilidad */
   transition: all 0.3s ease-in-out;
 }

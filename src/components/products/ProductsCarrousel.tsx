@@ -12,7 +12,6 @@ interface Prop {
 }
 export const ProductsCarrousel = async ({ category }: Prop) => {
   const products = await getFetchProduct({ category });
-  console.log(products);
   if (products.data.length !== 0) {
     return (
       <div className="w-4/5 flex flex-col gap-5">

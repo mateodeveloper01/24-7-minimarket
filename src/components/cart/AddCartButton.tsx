@@ -12,7 +12,7 @@ export const AddCartButton = ({ product }: { product: Product }) => {
   const { toast } = useToast();
 
   const add = () => {
-    addToCart({...product,quantity});
+    addToCart({ ...product, quantity });
     toast({
       title: "Agregado",
       variant: "aggregate",
@@ -47,11 +47,7 @@ export const AddCartButton = ({ product }: { product: Product }) => {
           +
         </Button>
       </div>
-      <Button
-        size={"sm"}
-        className={cn("my-1 bg-green-500")}
-        onClick={() => add()}
-      >
+      <Button  className={" bg-secondary"} onClick={() => add()}>
         Agregar
       </Button>
     </>
