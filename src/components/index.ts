@@ -14,7 +14,7 @@ export * from './home/CarouselContainer'
 export * from './order/OrderForm'
 export * from './products/ProductsCarrousel'
 export * from './pagination/PaginationComponent'
-
+export * from './search/SearchProduct'
 
 export * from "./ui/button";
 export * from "./ui/menubar";
