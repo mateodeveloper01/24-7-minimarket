@@ -110,7 +110,7 @@ export function DataTable<TData, TValue>({
           setOpen={setOpen}
         />
       </div>
-      <div className="flex items-center justify-between space-x-2 p-4 w-full">
+      <div className="flex flex-col-reverse gap-3 md:flex-row items-center justify-between space-x-2 p-4 w-full">
         <div className="text-sm text-muted-foreground">
           {table.getFilteredSelectedRowModel().rows.length} of{" "}
           {table.getFilteredRowModel().rows.length} row(s) selected.

@@ -26,7 +26,7 @@ export const ProductsCarrousel = async ({ category }: Prop) => {
             {products.data.map((product) => (
               <CarouselItem
                 key={product.id}
-                className="pl-1 basis-4/7 md:basis-1/5"
+                className="pl-1 basis-4/7 "
               >
                 <ProductItem {...product} />
               </CarouselItem>

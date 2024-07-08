@@ -14,6 +14,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "../ui/select";
+import { categories } from "@/schemas";
 
 export const MyFormItem = <
   TFieldValues extends FieldValues = FieldValues,
@@ -25,7 +26,7 @@ export const MyFormItem = <
   setDeliveryMethod,
   type = "text",
 }: {
-  type?: React.HTMLInputTypeAttribute
+  type?: React.HTMLInputTypeAttribute;
   field: ControllerRenderProps<TFieldValues, TName>;
   label?: string;
   placeholder?: string;
@@ -82,7 +83,25 @@ export const MyFormItem = <
       </FormItem>
     );
   }
-
+  if (field.name === "category") {
+    return (
+      <FormItem>
+        <FormLabel>Categoria</FormLabel>
+        <Select onValueChange={field.onChange} defaultValue={field.value}>
+          <SelectTrigger>
+            <SelectValue placeholder="[seleccione]" />
+          </SelectTrigger>
+          <SelectContent>
+            {categories.map((category: string) => (
+              <SelectItem key={category} value={category}>
+               {category}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+      </FormItem>
+    );
+  }
   return (
     <FormItem>
       <FormLabel>{label}</FormLabel>

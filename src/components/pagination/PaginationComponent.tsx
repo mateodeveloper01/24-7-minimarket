@@ -5,6 +5,7 @@ import {
   PaginationPrevious,
   PaginationNext,
   PaginationLink,
+  PaginationEllipsis,
 } from "@/components";
 
 interface Props {
@@ -17,14 +18,55 @@ interface Props {
   setPage: any;
 }
 
-export const PaginationComponent = ({ meta,page,setPage }: Props) => {
+export const PaginationComponent = ({ meta, page, setPage }: Props) => {
   const handlePreviousPage = () => {
     if (page > 1) setPage(page - 1);
   };
 
   const handleNextPage = () => {
-    if (page < meta.totalPage!) setPage(page + 1);
+    if (page < meta.totalPage) setPage(page + 1);
   };
+
+  const renderPaginationItems = () => {
+    const { totalPage } = meta;
+    let startPage = 1;
+    let endPage = 3;
+
+    if (page > 1) {
+      if (page === totalPage) {
+        startPage = totalPage - 2;
+        endPage = totalPage;
+      } else {
+        startPage = page - 1;
+        endPage = page + 1;
+      }
+    }
+
+    return (
+      <>
+        {startPage > 1 && (
+          <PaginationEllipsis onClick={() => setPage(1)} />
+        )}
+        {Array.from({ length: endPage - startPage + 1 }, (_, index: number) => {
+          const currentPage = startPage + index;
+          return (
+            <PaginationItem
+              key={currentPage}
+              className={`cursor-pointer rounded-lg ${page === currentPage ? "bg-slate-500" : ""}`}
+            >
+              <PaginationLink onClick={() => setPage(currentPage)}>
+                {currentPage}
+              </PaginationLink>
+            </PaginationItem>
+          );
+        })}
+        {endPage < totalPage && (
+          <PaginationEllipsis onClick={() => setPage(totalPage)} />
+        )}
+      </>
+    );
+  };
+
   return (
     <Pagination>
       <PaginationContent>
@@ -34,16 +76,8 @@ export const PaginationComponent = ({ meta,page,setPage }: Props) => {
             onClick={handlePreviousPage}
           />
         </PaginationItem>
-        {Array.from({ length: meta.totalPage! }, (_, index: number) => (
-          <PaginationItem
-            key={index}
-            className={`cursor-pointer rounded-lg ${page === index + 1 ? "bg-slate-500" : ""}`}
-          >
-            <PaginationLink onClick={() => setPage(index + 1)}>
-              {index + 1}
-            </PaginationLink>
-          </PaginationItem>
-        ))}
+
+        {renderPaginationItems()}
 
         <PaginationItem>
           <PaginationNext className="cursor-pointer" onClick={handleNextPage} />
