@@ -20,7 +20,7 @@ import { Product } from "@/types";
 import TableToolbar from "./TableToolBar";
 import TableComponent from "./TableComponent";
 import ProductSheet from "./ProductSheet";
-import { SheetProduct } from "./SheetProduct";
+import { AddProductButton } from "./AddProductButton";
 import { PaginationComponent } from "@/components";
 
 interface DataTableProps<TData, TValue> {
@@ -95,7 +95,7 @@ export function DataTable<TData, TValue>({
   return (
     <div>
       <div className="flex py-4">
-        <SheetProduct />
+        <AddProductButton pagination={[20,res?.meta!.totalPage!]} />
       </div>
       <TableToolbar
         table={table}

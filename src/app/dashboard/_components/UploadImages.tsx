@@ -26,12 +26,15 @@ export const UploadImages = ({ onUpload }: Props) => {
     onDrop,
     multiple: false,
   });
+  const handleClick = (event: React.MouseEvent) => {
+    event.preventDefault();
+  };
 
   return (
     <div>
       <div {...getRootProps()}>
-        <input {...getInputProps()} />
-        <Button variant={isDragActive ? "default" : "outline"}>
+        <input {...getInputProps()}  />
+        <Button variant={isDragActive ? "default" : "outline"} onClick={handleClick}>
           {isDragActive
             ? "Suelta la imagen aquí"
             : "Haz clic o arrastra una imagen aquí"}

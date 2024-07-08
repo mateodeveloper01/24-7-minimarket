@@ -8,7 +8,7 @@ import {
 } from "@/components";
 import { ProductForm } from "../ProductForm";
 
-export const SheetProduct = () => {
+export const AddProductButton = ({pagination}:{pagination:any[]}) => {
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -18,7 +18,7 @@ export const SheetProduct = () => {
         <SheetHeader>
           <SheetTitle>Crear/Editar producto</SheetTitle>
         </SheetHeader>
-        <ProductForm />
+        <ProductForm pagination={pagination} />
      </SheetContent>
     </Sheet> 
    );

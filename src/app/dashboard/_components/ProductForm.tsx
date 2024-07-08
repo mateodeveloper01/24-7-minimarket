@@ -25,7 +25,7 @@ interface Props {
 export type ProductSchemaType = z.infer<typeof ProductSchema>;
 
 export const ProductForm = ({ product ,pagination=[]}: Props) => {
-  const create = createProduct();
+  const create = createProduct(pagination);
   const update = updateProduct(pagination);
 
   const [image, setImage] = useState<File | null>(null);

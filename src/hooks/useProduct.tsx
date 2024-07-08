@@ -68,10 +68,12 @@ export const searchProduct = async (filter: string) => {
   }
 };
 
-export const createProduct = () => {
+export const createProduct = (pagination: any[]) => {
+  // console.log(pagination);
+  const createKey = [productKey, ...pagination];
   const queryClient = useQueryClient();
   const create = useMutation({
-    mutationKey: [productKey],
+    mutationKey: createKey,
     mutationFn: async (product: ProductSchemaType) => {
       const { id, ...nwProduct } = product;
       const formData = new FormData();
@@ -92,12 +94,10 @@ export const createProduct = () => {
         category: category as Category,
         price: +price,
       };
-      const previousProducts = queryClient.getQueryData<ResProduct>([
-        productKey,
-      ]);
+      const previousProducts = queryClient.getQueryData<ResProduct>(createKey);
 
       // Optimistic update
-      queryClient.setQueryData<ResProduct>([productKey], (old) => {
+      queryClient.setQueryData<ResProduct>(createKey, (old) => {
         if (!old) {
           return {
             data: [optimisticProduct],
@@ -116,14 +116,11 @@ export const createProduct = () => {
     },
     onError: (_, __, context: any) => {
       // Restaurar el estado anterior en caso de error
-      queryClient.setQueryData<ResProduct>(
-        [productKey],
-        context.previousProducts,
-      );
+      queryClient.setQueryData<ResProduct>(createKey, context.previousProducts);
     },
     onSuccess: (product: any, _: any, context: any) => {
       const nwProduct = { ...product, category: product.category as Category };
-      queryClient.setQueryData<ResProduct>([productKey], (old) => {
+      queryClient.setQueryData<ResProduct>(createKey, (old) => {
         if (!old) {
           return {
             data: [nwProduct],
