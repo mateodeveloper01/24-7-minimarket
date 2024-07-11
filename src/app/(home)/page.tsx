@@ -5,7 +5,7 @@ export default async function HomePage() {
   return (
     <div className="flex flex-col items-center justify-center w-full gap-10">
       {categories.map((category: string) => (
-        <>{category}</>
+        <ProductsCarrousel key={category} category={category} />
       ))}
       <AboutMe />
     </div>
