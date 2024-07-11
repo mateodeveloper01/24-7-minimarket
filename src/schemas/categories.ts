@@ -4,5 +4,6 @@ export const categories = [
     "frescos",
     "limpieza",
     "golosinas",
-    "otros",
+    "galletas",
+    "snacks"
   ];

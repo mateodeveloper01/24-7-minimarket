@@ -12,8 +12,8 @@ enum Category {
   bebidas
   frescos
   limpieza
-  golosinas
-  otros
+  galletas
+  snacks
 }
 
 model products {
