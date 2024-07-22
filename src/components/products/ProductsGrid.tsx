@@ -19,7 +19,7 @@ export const ProductsGrid = ({ category, className }: Prop) => {
   const [page, setPage] = useState(1);
   const { isLoading, data: products } = useQuery({
     queryKey: ["products", category, 20, page],
-    queryFn: () => getProduct({ category, stock: true, limit: 20, page }),
+    queryFn: () => getProduct({ category, stock: true, limit: 21, page }),
     staleTime: 60 * 60 * 1000, // 1 hs
   });
 
