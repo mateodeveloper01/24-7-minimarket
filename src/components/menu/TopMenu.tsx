@@ -94,7 +94,7 @@ export const TopMenu = () => {
                 href={`/${item}`}
                 className="text-2xl pb-4 hover:underline uppercase border-b-2 border-black"
               >
-                {item}
+                {item.replace(/_/g," ")}
               </Link>
             ))}
           </SheetContent>
@@ -105,9 +105,9 @@ export const TopMenu = () => {
           <Link
             key={item}
             href={`/${item}`}
-            className="capitalize text-xl font-semibold hover:bg-primary text-white drop-shadow-lg w-full py-2 text-center"
+            className="capitalize text-xl font-semibold hover:bg-primary text-white drop-shadow-lg w-full py-2 text-center flex justify-center items-center"
           >
-            {item}
+            {item.replace(/_/g," ")}
           </Link>
         ))}
       </ul>
