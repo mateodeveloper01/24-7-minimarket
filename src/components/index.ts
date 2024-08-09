@@ -6,7 +6,6 @@ export * from "./menu/BottomMenu";
 export * from "./menu/WhatsappButton"
 export * from "./cart/AddCartButton";
 export * from "./aboutMe/AboutMe";
-export * from "./aboutMe/Branchs";
 export * from "./cart/BuyButton";
 export * from "./products/ProductTitle";
 export * from "./products/Quantity";

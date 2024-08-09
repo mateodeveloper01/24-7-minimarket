@@ -7,7 +7,7 @@ export const BottomMenu = () => {
   const totalPrice = useCartStore((state) => state.totalPrice);
 
   return (
-    <div className="fixed bottom-0 bg-background w-full h-20 md:hidden ">
+    <div className="fixed bottom-0 bg-background w-full h-20 md:hidden z-50">
       <Link href={'/pedido'} className="flex bg-gray-900 text-white m-4 p-3 rounded-lg justify-around items-center text-xl">
         <ShoppingCart />
         <p className="uppercase">Ver pedido</p>

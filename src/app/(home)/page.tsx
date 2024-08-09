@@ -7,7 +7,6 @@ export default async function HomePage() {
       {categories.map((category: string) => (
         <ProductsCarrousel key={category} category={category} />
       ))}
-      <AboutMe />
     </div>
   );
 }

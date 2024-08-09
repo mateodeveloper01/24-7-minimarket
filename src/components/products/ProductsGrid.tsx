@@ -28,7 +28,7 @@ export const ProductsGrid = ({ category, className }: Prop) => {
   return (
     <div className="w-4/5 flex flex-col gap-5">
       <div className="border-b-2 border-black pb-2  flex justify-between w-full">
-        <Title>Productos {category}</Title>
+        <Title>Productos {category.replace(/_/g," ")}</Title>
         <Link href={`/`}>
           <Button>Volver</Button>
         </Link>

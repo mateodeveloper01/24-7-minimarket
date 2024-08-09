@@ -1,7 +1,7 @@
 "use client";
 // import type { Metadata } from "next";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { Toaster, TopMenu, WhatsappButton } from "@/components";
+import { AboutMe, Toaster, TopMenu, WhatsappButton } from "@/components";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 // export const metadata: Metadata = {
@@ -21,11 +21,13 @@ export default function RootLayout({
       <body className="flex flex-col items-center">
         <TopMenu />
 
-        <main className="py-8 flex justify-center w-full">
+        <main className="py-8 flex justify-center items-center w-full flex-col">
           <QueryClientProvider client={queryClient}>
             {children}
+            <AboutMe />
             <ReactQueryDevtools initialIsOpen={false} />
           </QueryClientProvider>
+
         </main>
 
         <Toaster />
