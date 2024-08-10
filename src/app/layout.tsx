@@ -1,12 +1,8 @@
 "use client";
-// import type { Metadata } from "next";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { AboutMe, Toaster, TopMenu, WhatsappButton } from "@/components";
+import {  Toaster } from "@/components";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
-// export const metadata: Metadata = {
-//   title: "Mini market",
-// };
 import "./globals.css";
 
 export default function RootLayout({
@@ -19,12 +15,10 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className="flex flex-col items-center">
-        <TopMenu />
 
         <main className="py-8 flex justify-center items-center w-full flex-col">
           <QueryClientProvider client={queryClient}>
             {children}
-            <AboutMe />
             <ReactQueryDevtools initialIsOpen={false} />
           </QueryClientProvider>
 

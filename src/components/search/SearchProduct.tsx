@@ -36,7 +36,7 @@ export const SearchProduct = ({
 
   return (
     <form
-      className="flex gap-2 rounded-md border border-input px-2"
+      className="flex gap-2 rounded-md border border-input px-2 mr-4 w-full"
       onSubmit={handleSearch}
     >
       <Input

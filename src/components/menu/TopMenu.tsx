@@ -36,7 +36,6 @@ export const TopMenu = () => {
 
   return (
     <>
-      {" "}
       <header
         className={`sticky top-0 flex justify-center py-2 px-10 bg-background z-50 w-full transition-all duration-300 ${
           isScrolled ? "scrolled" : ""

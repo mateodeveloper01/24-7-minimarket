@@ -14,8 +14,8 @@ import {
   VisibilityState,
 } from "@tanstack/react-table";
 import { useMemo, useState } from "react";
-import { keepPreviousData, useQuery } from "@tanstack/react-query";
-import { fetchProduct, getProduct } from "@/hooks/useProduct";
+import {  useQuery } from "@tanstack/react-query";
+import {  getProduct } from "@/hooks/useProduct";
 import { Product } from "@/types";
 import TableToolbar from "./TableToolBar";
 import TableComponent from "./TableComponent";
