@@ -16,7 +16,7 @@ export default async function RootLayout({
 
   return (
     <div className=" flex justify-center items-center w-full flex-col">
-    <div className="flex justify-between w-full px-10 m-w-[900px] items-center ">
+    <div className="flex justify-between w-full px-10 max-w-[900px] items-center ">
           <Link href={"/"}>
             <Image
               src="/favicon.ico"

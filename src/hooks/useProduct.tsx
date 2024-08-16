@@ -32,7 +32,7 @@ interface GetProductsProps {
 
 export const getFetchProduct = async ({ category }: GetProductsProps) => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_URL}/products?category=${category}&limit=10`,
+    `${process.env.NEXT_PUBLIC_BACKEND_URL}/products?category=${category}&limit=10&stock=true`,
     { next: { revalidate: 3600 } },
   );
 
