@@ -92,7 +92,7 @@ export const TopMenu = () => {
               {categories.map((item: string) => (
                 <SheetClose asChild>
                   <Link
-                    key={item}
+                    key={item + pathname}
                     href={`/${item}`}
                     className={`hover:underline uppercase  border-black font-bold ${pathname.slice(1) === item && "text-white bg-secondary drop-shadow-2xl "} rounded p-2`}
                   >
