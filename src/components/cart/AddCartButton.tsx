@@ -47,7 +47,7 @@ export const AddCartButton = ({ product }: { product: Product }) => {
           +
         </Button>
       </div>
-      <Button  className={" bg-secondary"} onClick={() => add()}>
+      <Button className={"bg-secondary"} onClick={() => add()}>
         Agregar
       </Button>
     </>

@@ -19,10 +19,13 @@ const config = {
       },
     },
     extend: {
+      textShadow: {
+        lg: "2px 2px 4px rgba(0, 0, 0, 0.3)",
+      },
       gridTemplateColumns: {
         // Agregar una nueva configuración de columnas de grid
-        "dynamic-150": "repeat(auto-fit, minmax(150px, 1fr))",
-        "dynamic-200": "repeat(auto-fit, minmax(200px, 1fr))"
+        "dynamic-150": "repeat(auto-fit, minmax(130px, 1fr))",
+        "dynamic-200": "repeat(auto-fit, minmax(200px, 1fr))",
       },
       colors: {
         border: "hsl(var(--border))",
@@ -80,7 +83,16 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [
+    require("tailwindcss-animate"),
+    function ({ addUtilities }: { addUtilities: any }) {
+      addUtilities({
+        ".text-shadow-lg": {
+          textShadow: "2px 2px 4px rgba(0, 0, 0, 0.1)",
+        },
+      });
+    },
+  ],
 } satisfies Config;
 
 export default config;

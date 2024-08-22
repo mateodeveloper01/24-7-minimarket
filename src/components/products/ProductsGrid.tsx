@@ -26,9 +26,9 @@ export const ProductsGrid = ({ category, className }: Prop) => {
   if (isLoading) return <div>Loading...</div>;
 
   return (
-    <div className="w-4/5 flex flex-col gap-5">
-      <div className="border-b-2 border-black pb-2  flex justify-between w-full">
-        <Title>Productos {category.replace(/_/g," ")}</Title>
+    <div className="w-4/5 flex flex-col gap-5 pt-10">
+      <div className="border-t-2 border-black pb-2 pt-4 flex justify-between gap-2 w-full">
+        <Title>Productos {category.replace(/_/g, " ")}</Title>
         <Link href={`/`}>
           <Button>Volver</Button>
         </Link>
@@ -38,7 +38,11 @@ export const ProductsGrid = ({ category, className }: Prop) => {
           <ProductItem {...product} key={product.id} />
         ))}
       </div>
-     <PaginationComponent meta={products?.meta!} page={page} setPage={setPage}/>
+      <PaginationComponent
+        meta={products?.meta!}
+        page={page}
+        setPage={setPage}
+      />
     </div>
   );
 };

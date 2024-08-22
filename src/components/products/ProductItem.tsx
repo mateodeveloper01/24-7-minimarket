@@ -2,18 +2,13 @@ import Image from "next/image";
 import { AddCartButton } from "../cart/AddCartButton";
 import { Product } from "@/types";
 import { ProductTitle } from "./ProductTitle";
-import {
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-} from "../ui/dialog";
+import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
 import { Button } from "../ui/button";
 
 export const ProductItem = (item: Product) => {
-
   const { tipo, price, description, brand, amount, url } = item;
   return (
-    <div className="w-[140px] md:w-[200px] h-[300px] md:h-[320px] border border-black rounded-lg shadow-md p-2 bg-card flex flex-col justify-between">
+    <div className="w-[130px] md:w-[200px] h-[300px] md:h-[320px] border border-black rounded-lg shadow-md p-2 bg-card flex flex-col justify-between">
       <div className="relative w-full  mb-4 flex justify-center items-center">
         <Image
           src={url ? url : "no_image_product.png"}
@@ -37,7 +32,9 @@ export const ProductItem = (item: Product) => {
       <div className="flex justify-end max-md:justify-center">
         <Dialog>
           <DialogTrigger asChild>
-            <Button className="bg-secondary">Ver/Agregar</Button>
+            <Button className="bg-secondary  text-shadow-lg ">
+              Ver/Agregar
+            </Button>
           </DialogTrigger>
           <DialogContent className="flex flex-col items-center">
             <Image

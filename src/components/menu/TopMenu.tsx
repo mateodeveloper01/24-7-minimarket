@@ -6,15 +6,16 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import { categories } from "@/schemas/categories";
 
-import { Sheet, SheetContent, SheetTrigger } from "../ui/sheet";
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from "../ui/sheet";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 export const TopMenu = () => {
   const totalPrice = useCartStore((state) => state.totalPrice);
   const [isScrolled, setIsScrolled] = useState(false); // Estado para el scroll
   const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,22 +34,21 @@ export const TopMenu = () => {
     const searchQuery = event.target.elements.search.value;
     router.push(`/buscador?query=${searchQuery}`);
   };
-
   return (
     <>
       <header
-        className={`sticky top-0 flex justify-center py-2 px-10 bg-background z-50 w-full transition-all duration-300 ${
+        className={`sticky top-0 flex justify-center py-2  px-5 md:px-10 bg-background z-50 w-full transition-all duration-300 ${
           isScrolled ? "scrolled" : ""
         }`}
       >
-        <div className="flex justify-between w-[900px] items-center ">
+        <div className="flex justify-between md:w-[900px] w-max items-center gap-1">
           <Link href={"/"}>
             <Image
               src="/favicon.ico"
               alt="Favicon"
               width={isScrolled ? 50 : 100}
               height={isScrolled ? 50 : 100}
-              className="mr-2 transition-all duration-300"
+              className="mr-2 transition-all duration-300 max-md:w-[60px]"
             />
           </Link>
 
@@ -74,30 +74,35 @@ export const TopMenu = () => {
               <p>${totalPrice}</p>
             </Button>
           </Link>
+          <Sheet>
+            <SheetTrigger className="md:hidden py-0" asChild>
+              <Button className="bg-secondary">
+                <AlignJustify className="text-4xl" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent className="flex flex-col justify-between w-[215px]">
+              <SheetClose asChild>
+                <Link
+                  href={`/`}
+                  className={`hover:underline uppercase  border-black font-bold ${pathname === "/" && "text-white bg-secondary "} rounded p-2`}
+                >
+                  Inicio
+                </Link>
+              </SheetClose>
+              {categories.map((item: string) => (
+                <SheetClose asChild>
+                  <Link
+                    key={item}
+                    href={`/${item}`}
+                    className={`hover:underline uppercase  border-black font-bold ${pathname.slice(1) === item && "text-white bg-secondary drop-shadow-2xl "} rounded p-2`}
+                  >
+                    {item.replace(/_/g, " ")}
+                  </Link>
+                </SheetClose>
+              ))}
+            </SheetContent>
+          </Sheet>
         </div>
-
-        <Sheet>
-          <SheetTrigger className="md:hidden">
-            <AlignJustify />
-          </SheetTrigger>
-          <SheetContent className="flex flex-col">
-            <Link
-              href={`/`}
-              className="text-2xl pb-4 hover:underline uppercase border-b-2 border-black"
-            >
-              Inicio
-            </Link>
-            {categories.map((item: string) => (
-              <Link
-                key={item}
-                href={`/${item}`}
-                className="text-2xl pb-4 hover:underline uppercase border-b-2 border-black"
-              >
-                {item.replace(/_/g," ")}
-              </Link>
-            ))}
-          </SheetContent>
-        </Sheet>
       </header>
       <ul className="hidden gap-2 md:flex bg-secondary w-full justify-around ">
         {categories.map((item: string) => (
@@ -106,7 +111,7 @@ export const TopMenu = () => {
             href={`/${item}`}
             className="capitalize text-xl font-semibold hover:bg-primary text-white drop-shadow-lg w-full py-2 text-center flex justify-center items-center"
           >
-            {item.replace(/_/g," ")}
+            {item.replace(/_/g, " ")}
           </Link>
         ))}
       </ul>
