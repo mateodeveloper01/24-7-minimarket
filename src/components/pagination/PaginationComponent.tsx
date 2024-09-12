@@ -27,10 +27,10 @@ export const PaginationComponent = ({ meta, page, setPage }: Props) => {
     if (page < meta.totalPage) setPage(page + 1);
   };
 
-  const renderPaginationItems = () => {
+  const PaginationItems = () => {
     const { totalPage } = meta;
     let startPage = 1;
-    let endPage = 3;
+    let endPage = meta.totalPage > 3 ? 3 : meta.totalPage;
 
     if (page > 1) {
       if (page === totalPage) {
@@ -44,9 +44,7 @@ export const PaginationComponent = ({ meta, page, setPage }: Props) => {
 
     return (
       <>
-        {startPage > 1 && (
-          <PaginationEllipsis onClick={() => setPage(1)} />
-        )}
+        {startPage > 1 && <PaginationEllipsis onClick={() => setPage(1)} />}
         {Array.from({ length: endPage - startPage + 1 }, (_, index: number) => {
           const currentPage = startPage + index;
           return (
@@ -76,8 +74,9 @@ export const PaginationComponent = ({ meta, page, setPage }: Props) => {
             onClick={handlePreviousPage}
           />
         </PaginationItem>
+        <PaginationItems />
 
-        {renderPaginationItems()}
+        {/* {renderPaginationItems()} */}
 
         <PaginationItem>
           <PaginationNext className="cursor-pointer" onClick={handleNextPage} />
