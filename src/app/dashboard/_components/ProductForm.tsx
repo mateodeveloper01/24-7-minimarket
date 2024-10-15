@@ -16,15 +16,15 @@ import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { UploadImages } from "./UploadImages";
 import { useState } from "react";
-import { createProduct, updateProduct } from "@/hooks/useProduct";
 import { DevTool } from "@hookform/devtools";
+import { createProduct, updateProduct } from "@/actions/usePorduct";
 interface Props {
   product?: Product;
-  pagination?:any[]
+  pagination?: any[];
 }
 export type ProductSchemaType = z.infer<typeof ProductSchema>;
 
-export const ProductForm = ({ product ,pagination=[]}: Props) => {
+export const ProductForm = ({ product, pagination = [] }: Props) => {
   const create = createProduct(pagination);
   const update = updateProduct(pagination);
 

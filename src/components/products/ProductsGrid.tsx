@@ -5,10 +5,11 @@ import Link from "next/link";
 import { Button } from "../ui/button";
 import { ProductItem } from "./ProductItem";
 
-import { getProduct } from "@/hooks/useProduct";
 import { useQuery } from "@tanstack/react-query";
 import { products } from "@prisma/client";
 import { PaginationComponent } from "../pagination/PaginationComponent";
+import { getProduct } from "@/actions/usePorduct";
+import { ProductsFilters } from "./ProductsFilters";
 
 interface Prop {
   category: string;
@@ -16,12 +17,23 @@ interface Prop {
 }
 
 export const ProductsGrid = ({ category, className }: Prop) => {
+  const [brandState, setBrand] = useState<undefined | string>(undefined);
+  const [tipoState, setTipo] = useState<undefined | string>(undefined);
   const [page, setPage] = useState(1);
   const { isLoading, data: products } = useQuery({
-    queryKey: ["products", category, 20, page],
-    queryFn: () => getProduct({ category, stock: true, limit: 21, page }),
+    queryKey: ["products", category, 20, page, brandState, tipoState],
+    queryFn: () =>
+      getProduct({
+        category,
+        stock: true,
+        limit: 21,
+        page,
+        brand: brandState ? brandState : undefined, // Convertir false a undefined
+        tipo: tipoState ? tipoState : undefined, // Convertir false a undefined
+      }),
     staleTime: 60 * 60 * 1000, // 1 hs
   });
+  console.log({ brandState, tipoState });
 
   if (isLoading) return <div>Loading...</div>;
 
@@ -33,10 +45,20 @@ export const ProductsGrid = ({ category, className }: Prop) => {
           <Button>Volver</Button>
         </Link>
       </div>
-      <div className={className}>
-        {products?.data?.map((product: products) => (
-          <ProductItem {...product} key={product.id} />
-        ))}
+
+      <div className="w-full flex  justify-around flex-col gap-5 md:gap-0 md:flex-row  ">
+        <ProductsFilters
+          tipoState={tipoState}
+          brandState={brandState}
+          setBrand={setBrand}
+          setTipo={setTipo}
+          category={category}
+        />
+        <div className={`w-full ${className}`}>
+          {products?.data?.map((product: products) => (
+            <ProductItem {...product} key={product.id} />
+          ))}
+        </div>
       </div>
       <PaginationComponent
         meta={products?.meta!}

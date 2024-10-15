@@ -1,11 +1,5 @@
 import { ControllerRenderProps, FieldPath, FieldValues } from "react-hook-form";
-import {
-  FormControl,
-  FormDescription,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "../ui/form";
+import { FormControl, FormItem, FormLabel, FormMessage } from "../ui/form";
 import { Input } from "../ui/input";
 import {
   Select,
@@ -94,7 +88,7 @@ export const MyFormItem = <
           <SelectContent>
             {categories.map((category: string) => (
               <SelectItem key={category} value={category}>
-               {category}
+                {category}
               </SelectItem>
             ))}
           </SelectContent>

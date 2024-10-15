@@ -12,22 +12,22 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-
-
   return (
     <div className=" flex justify-center items-center w-full flex-col">
-    <div className="flex justify-between w-full px-10 max-w-[900px] items-center ">
-          <Link href={"/"}>
-            <Image
-              src="/favicon.ico"
-              alt="Favicon"
-              width={ 100 }
-              height={ 100 }
-              // className="mr-2 transition-all duration-300"
-            />
-          </Link>
-          <Link href={"/"}><Button  className="bg-gray-500">Volver</Button></Link>
-          </div>
+      <div className="flex justify-between w-full px-10 max-w-[900px] items-center ">
+        <Link href={"/"}>
+          <Image
+            src="/favicon.ico"
+            alt="Favicon"
+            width={100}
+            height={100}
+            // className="mr-2 transition-all duration-300"
+          />
+        </Link>
+        <Link href={"/"}>
+          <Button className="bg-gray-500">Volver</Button>
+        </Link>
+      </div>
       {children}
     </div>
   );

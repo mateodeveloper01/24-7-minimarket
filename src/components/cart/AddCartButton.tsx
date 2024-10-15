@@ -2,7 +2,6 @@
 import { useCartStore } from "@/stores/useCartStore";
 import { Product } from "@/types";
 import { Button } from "../ui/button";
-import { cn } from "@/lib/utils";
 import { useToast } from "../ui/use-toast";
 import { useState } from "react";
 

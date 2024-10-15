@@ -1,7 +1,7 @@
 "use client";
 
+import { searchProduct } from "@/actions/usePorduct";
 import { Input } from "@/components";
-import { searchProduct } from "@/hooks/useProduct";
 import { Search } from "lucide-react";
 import { useState } from "react";
 

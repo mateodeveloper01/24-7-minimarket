@@ -14,14 +14,14 @@ import {
   VisibilityState,
 } from "@tanstack/react-table";
 import { useMemo, useState } from "react";
-import {  useQuery } from "@tanstack/react-query";
-import {  getProduct } from "@/hooks/useProduct";
+import { useQuery } from "@tanstack/react-query";
 import { Product } from "@/types";
 import TableToolbar from "./TableToolBar";
 import TableComponent from "./TableComponent";
 import ProductSheet from "./ProductSheet";
 import { AddProductButton } from "./AddProductButton";
 import { PaginationComponent } from "@/components";
+import { getProduct } from "@/actions/usePorduct";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -95,7 +95,7 @@ export function DataTable<TData, TValue>({
   return (
     <div>
       <div className="flex py-4">
-        <AddProductButton pagination={[20,res?.meta!.totalPage!]} />
+        <AddProductButton pagination={[20, res?.meta!.totalPage!]} />
       </div>
       <TableToolbar
         table={table}

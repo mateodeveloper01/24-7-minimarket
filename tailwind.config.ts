@@ -2,6 +2,7 @@ import type { Config } from "tailwindcss";
 import RootLayout from "./src/app/layout";
 
 const config = {
+  darkMode: ["class"],
   // darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
@@ -23,7 +24,6 @@ const config = {
         lg: "2px 2px 4px rgba(0, 0, 0, 0.3)",
       },
       gridTemplateColumns: {
-        // Agregar una nueva configuración de columnas de grid
         "dynamic-150": "repeat(auto-fit, minmax(130px, 1fr))",
         "dynamic-200": "repeat(auto-fit, minmax(200px, 1fr))",
       },
@@ -69,12 +69,20 @@ const config = {
       },
       keyframes: {
         "accordion-down": {
-          from: { height: "0" },
-          to: { height: "var(--radix-accordion-content-height)" },
+          from: {
+            height: "0",
+          },
+          to: {
+            height: "var(--radix-accordion-content-height)",
+          },
         },
         "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)" },
-          to: { height: "0" },
+          from: {
+            height: "var(--radix-accordion-content-height)",
+          },
+          to: {
+            height: "0",
+          },
         },
       },
       animation: {
