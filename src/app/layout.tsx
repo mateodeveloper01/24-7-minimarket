@@ -18,7 +18,7 @@ export default function RootLayout({
         className="flex flex-col items-center"
         suppressHydrationWarning={true}
       >
-        <main className="py-8 flex justify-center items-center w-full flex-col">
+        <main className="pb-8 flex justify-center items-center w-full flex-col">
           <QueryClientProvider client={queryClient}>
             {children}
             <ReactQueryDevtools initialIsOpen={false} />

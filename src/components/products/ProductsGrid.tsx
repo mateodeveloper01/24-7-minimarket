@@ -33,7 +33,7 @@ export const ProductsGrid = ({ category, className }: Prop) => {
       }),
     staleTime: 60 * 60 * 1000, // 1 hs
   });
-  console.log({ brandState, tipoState });
+  // console.log({ brandState, tipoState });
 
   if (isLoading) return <div>Loading...</div>;
 

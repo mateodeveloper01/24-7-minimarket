@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 
-import {
-  AboutMe,
-  TopMenu,
-} from "@/components";
+import { AboutMe, TopMenu } from "@/components";
 
 export const metadata: Metadata = {
   title: "Mini market",
@@ -14,14 +11,11 @@ export default async function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-
-
   return (
     <>
       <TopMenu />
       {children}
       <AboutMe />
-
     </>
   );
 }
