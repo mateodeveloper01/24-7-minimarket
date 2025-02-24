@@ -9,38 +9,60 @@ interface Props {
 export const UploadImages = ({ onUpload }: Props) => {
   const [imageSrc, setImageSrc] = useState<string | null>(null);
 
-  const onDrop = useCallback((acceptedFiles: File[]) => {
-    if (acceptedFiles.length > 0) {
-      const file = acceptedFiles[0];
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setImageSrc(reader.result as string);
-        onUpload(file);
-      };
-      reader.readAsDataURL(file);
-    }
-    // create.mutate(formData);
-  }, [onUpload]);
+  const onDrop = useCallback(
+    (acceptedFiles: File[]) => {
+      if (acceptedFiles.length > 0) {
+        const file = acceptedFiles[0];
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          try {
+            setImageSrc(reader.result as string);
+            onUpload(file);
+          } catch (error) {
+            console.error("Error al procesar el archivo:", error);
+          }
+        };
+        reader.onerror = () => {
+          console.error("Error al leer el archivo.");
+        };
+        reader.readAsDataURL(file);
+      }
+    },
+    [onUpload],
+  );
 
   const { getRootProps, getInputProps, isDragActive } = useDropzone({
     onDrop,
     multiple: false,
+    accept: { "image/*": [] },
   });
-  const handleClick = (event: React.MouseEvent) => {
-    event.preventDefault();
-  };
 
   return (
     <div>
-      <div {...getRootProps()}>
-        <input {...getInputProps()}  />
-        <Button variant={isDragActive ? "default" : "outline"} onClick={handleClick}>
+      <div
+        {...getRootProps()}
+        className="p-4 border-radius-md text-center cursor-pointer"
+        style={{
+          border: isDragActive ? "2px dashed #4caf50" : "2px dashed #ccc",
+        }}
+      >
+        <input {...getInputProps()} aria-label="Upload image" />
+        <Button
+          variant={isDragActive ? "default" : "outline"}
+          onClick={(e) => e.preventDefault()}
+        >
           {isDragActive
             ? "Suelta la imagen aquí"
             : "Haz clic o arrastra una imagen aquí"}
         </Button>
       </div>
-      {imageSrc && <img src={imageSrc} alt="Uploaded preview" style={{ marginTop: '10px', maxHeight: '100px' }} />}
+      {imageSrc && (
+        <img
+          src={imageSrc}
+          alt="Uploaded preview"
+          style={{ marginTop: "10px", maxHeight: "100px" }}
+        />
+      )}
     </div>
   );
 };

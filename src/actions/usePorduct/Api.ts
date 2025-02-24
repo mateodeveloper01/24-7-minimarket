@@ -1,5 +1,5 @@
 import axios from "axios";
-import { products } from "@prisma/client";
+import { Products } from "@prisma/client";
 
 // Configuración de Axios para la API de productos
 export const productsApi = axios.create({
@@ -8,7 +8,7 @@ export const productsApi = axios.create({
 
 // Tipo de respuesta esperado al obtener productos
 export type ResProduct = {
-  data: products[];
+  data: Products[];
   meta: {
     total: number;
     page: number;

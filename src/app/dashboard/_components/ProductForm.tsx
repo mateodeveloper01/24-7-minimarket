@@ -1,4 +1,5 @@
 "use client";
+//TODO:CREAR UN SCRIPT PARA CAMBIAR DE product A Product
 import {
   Button,
   Form,
@@ -13,7 +14,7 @@ import { ProductSchema } from "@/schemas/products";
 import { Product } from "@/types";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { z } from "zod";
+import { object, z } from "zod";
 import { UploadImages } from "./UploadImages";
 import { useState } from "react";
 import { DevTool } from "@hookform/devtools";
@@ -33,24 +34,29 @@ export const ProductForm = ({ product, pagination = [] }: Props) => {
   const form = useForm<ProductSchemaType>({
     resolver: zodResolver(ProductSchema),
     defaultValues: {
-      tipo: product ? product.tipo : "",
-      amount: product ? product.amount : "",
-      brand: product ? product.brand : "",
-      category: product ? product.category : "",
-      description: product ? product.description : "",
-      price: product ? product.price.toString() : "",
+      tipo: product ? product.tipo : "producto",
+      amount: product ? product.amount : "producto",
+      brand: product ? product.brand : "producto",
+      category: product ? product.category : "almacen",
+      description: product ? product.description : "producto",
+      price: product ? product.price.toString() : "123",
       stock: product && product.stock,
     },
   });
   const onSubmit = (values: ProductSchemaType) => {
-    if (product) {
-      update.mutate(
-        image
-          ? { ...values, id: product.id, image }
-          : { ...values, id: product.id },
-      );
-    } else {
-      create.mutate(image ? { ...values, image } : values);
+    try {
+      if (product) {
+        update.mutate(
+          image
+            ? { ...values, id: product.id, image }
+            : { ...values, id: product.id },
+        );
+      } else {
+        create.mutate(image ? { ...values, image } : { ...values });
+      }
+    } catch (error) {
+      console.error("Error al guardar el producto:", error);
+      alert("Hubo un error al guardar el producto. Inténtalo de nuevo.");
     }
   };
   return (
@@ -111,7 +117,9 @@ export const ProductForm = ({ product, pagination = [] }: Props) => {
         />
         <UploadImages onUpload={setImage} />
         <DevTool control={form.control} />
-        <Button type="submit">Guardar</Button>
+        <Button type="submit" disabled={create.isPending || update.isPending}>
+          {create.isPending || update.isPending ? "Guardando..." : "Guardar"}
+        </Button>
       </form>
     </Form>
   );

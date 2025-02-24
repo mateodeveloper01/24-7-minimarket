@@ -1,7 +1,9 @@
-import { fetchProduct, productsApi, ResProduct } from "./Api";
+"use server";
+import prisma from "@/utils/db";
+import { Category, Prisma } from "@prisma/client";
 
 interface GetProductsProps {
-  category?: string;
+  category?: Category;
   stock?: boolean;
   limit?: number;
   page?: number;
@@ -10,64 +12,101 @@ interface GetProductsProps {
 }
 
 // Obtiene productos según los filtros dados (categoría, stock, etc.)
-export const getFetchProduct = async ({ category }: GetProductsProps) => {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_URL}/products?category=${category}&limit=10&stock=true`,
-    { next: { revalidate: 3600 } },
-  );
-
-  if (!res.ok) {
-    throw new Error("Failed to fetch data");
-  }
-  return res.json() as Promise<ResProduct>;
-};
-
-// Genera la consulta con parámetros opcionales para obtener productos
-export const getProduct = async ({
+export const getFetchProduct = async ({
   category,
   stock,
-  limit,
-  page,
   brand,
+  limit = 10,
+  page = 1,
   tipo,
 }: GetProductsProps) => {
-  const queryParams = [];
-  if (category) queryParams.push(`category=${category}`);
-  if (stock) queryParams.push(`stock=true`);
-  if (limit) queryParams.push(`limit=${limit}`);
-  if (page) queryParams.push(`page=${page}`);
-  if (brand) queryParams.push(`brand=${brand}`);
-  if (tipo) queryParams.push(`tipo=${tipo}`);
+  const offset = (page - 1) * limit;
+  try {
+    const totalProducts = await prisma.products.count({
+      where: { stock, category },
+    });
+    const totalPage = Math.ceil(totalProducts / limit);
+    const data = await prisma.products.findMany({
+      take: limit,
+      skip: offset,
+      where: {
+        AND: [
+          stock !== undefined ? { stock } : {},
+          category !== undefined ? { category } : {},
+          brand !== undefined ? { brand } : {},
+          tipo !== undefined ? { tipo } : {},
+        ],
+      },
+      orderBy: {
+        tipo: "asc",
+      },
+    });
 
-  const queryString = queryParams.length ? `?${queryParams.join("&")}` : "";
-  const res = await productsApi.get<ResProduct>(`/${queryString}`);
-  return res.data;
+    return {
+      data,
+      meta: {
+        total: totalProducts,
+        page,
+        totalPage,
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    return [];
+  }
 };
 
-// Buscar productos mediante un filtro específico
 export const searchProduct = async (filter: string) => {
+  const normalizeString = (str: string) =>
+    str.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+  const filterParts = normalizeString(filter.toLowerCase()).split("_");
+
+  const filterConditions: Prisma.productsWhereInput[] = filterParts.map(
+    (part) => ({
+      OR: [
+        { tipo: { contains: part, mode: "insensitive" } },
+        { description: { contains: part, mode: "insensitive" } },
+        { brand: { contains: part, mode: "insensitive" } },
+        { amount: { contains: part, mode: "insensitive" } },
+        { url: { contains: part, mode: "insensitive" } },
+      ],
+    }),
+  );
   try {
-    const res = await fetchProduct(`/search?filter=${filter}&stock:true`);
-    return res.data;
+    return prisma.products.findMany({
+      where: {
+        AND: filterConditions,
+      },
+    });
   } catch (error) {
     console.error("Error fetching data:", error);
     return [];
   }
 };
 
-export const getBrand = async (category?: string) => {
+export const getBrand = async (category?: Category) => {
+  const whereClause = category ? { category } : {};
+
   try {
-    const res = await fetchProduct(category ? `/brand/${category}` : `/brand`);
-    return res.data;
+    return await prisma.products.findMany({
+      where: whereClause,
+
+      select: { brand: true },
+      distinct: ["brand"],
+    });
   } catch (error) {
     console.error("Error fetching data:", error);
     return [];
   }
 };
-export const getTipos = async (category?: string) => {
+export const getTipos = async (category?: Category) => {
   try {
-    const res = await fetchProduct(category ? `/tipos/${category}` : `/tipos`);
-    return res.data;
+    const whereClause = category ? { category } : {};
+    return await prisma.products.findMany({
+      where: whereClause,
+      select: { tipo: true },
+      distinct: ["tipo"],
+    });
   } catch (error) {
     console.error("Error fetching data:", error);
     return [];

@@ -16,11 +16,9 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
         const { email, password } = await LoginSchema.parseAsync(credentials);
 
         user = await getUserFromDb(email);
-
         if (!user || !user.password) return null;
 
         if (password === user.password) {
-          console.log(user);
           return user;
         }
 

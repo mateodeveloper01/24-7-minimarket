@@ -8,8 +8,8 @@ import { ProductItem } from "./ProductItem";
 import { useQuery } from "@tanstack/react-query";
 import { products } from "@prisma/client";
 import { PaginationComponent } from "../pagination/PaginationComponent";
-import { getProduct } from "@/actions/usePorduct";
 import { ProductsFilters } from "./ProductsFilters";
+import { getFetchProduct } from "@/actions/usePorduct";
 
 interface Prop {
   category: string;
@@ -23,7 +23,7 @@ export const ProductsGrid = ({ category, className }: Prop) => {
   const { isLoading, data: products } = useQuery({
     queryKey: ["products", category, 20, page, brandState, tipoState],
     queryFn: () =>
-      getProduct({
+      getFetchProduct({
         category,
         stock: true,
         limit: 21,

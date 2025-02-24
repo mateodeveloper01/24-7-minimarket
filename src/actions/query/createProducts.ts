@@ -1,28 +1,23 @@
 import { toast } from "@/components";
 import { ProductSchemaType } from "@/app/dashboard/_components";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { productsApi, ResProduct } from "./Api";
 import { Category } from "@prisma/client";
+import { createProductsAction } from "../usePorduct/createProducts.action";
+import { ResProduct } from "../usePorduct";
 
-// Crear un nuevo producto con optimización optimista
 export const createProduct = (pagination: any[]) => {
   const queryClient = useQueryClient();
   const createKey = ["products", ...pagination];
 
   const create = useMutation({
     mutationKey: createKey,
-    mutationFn: async (product: ProductSchemaType) => {
-      const { id, ...nwProduct } = product;
+    mutationFn: (product: ProductSchemaType) => {
       const formData = new FormData();
-
-      Object.entries(nwProduct).forEach(([key, value]) => {
-        if (key === "image" && value instanceof File) {
-          formData.append(key, value);
-        } else {
-          formData.append(key, value.toString());
-        }
+      formData.append("image", product.image as Blob);
+      Object.entries(product).forEach(([key, value]) => {
+        formData.append(key, value);
       });
-      return (await productsApi.post("", formData)).data;
+      return createProductsAction(formData);
     },
     onMutate: ({ category, price, ...product }: ProductSchemaType) => {
       const optimisticProduct = {
@@ -32,9 +27,7 @@ export const createProduct = (pagination: any[]) => {
         category: category as Category,
         price: +price,
       };
-
       const previousProducts = queryClient.getQueryData<ResProduct>(createKey);
-
       queryClient.setQueryData<ResProduct>(createKey, (old) => {
         if (!old) {
           return {
@@ -47,7 +40,6 @@ export const createProduct = (pagination: any[]) => {
           meta: { ...old.meta, total: old.meta.total + 1 },
         };
       });
-
       return { previousProducts, optimisticProduct };
     },
     onError: (_, __, context: any) => {
