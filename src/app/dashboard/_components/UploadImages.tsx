@@ -1,6 +1,7 @@
 import { Button } from "@/components";
 import { useCallback, useState } from "react";
 import { useDropzone } from "react-dropzone";
+import Image from 'next/image';
 
 interface Props {
   onUpload: (file: File | null) => void;
@@ -57,9 +58,11 @@ export const UploadImages = ({ onUpload }: Props) => {
         </Button>
       </div>
       {imageSrc && (
-        <img
+        <Image
           src={imageSrc}
           alt="Uploaded preview"
+          width={100}
+          height={100}
           style={{ marginTop: "10px", maxHeight: "100px" }}
         />
       )}

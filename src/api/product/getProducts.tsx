@@ -1,4 +1,5 @@
 "use server";
+import { Product } from "@/types";
 import prisma from "@/utils/db";
 import { Category, Prisma } from "@prisma/client";
 
@@ -11,15 +12,21 @@ interface GetProductsProps {
   tipo?: string;
 }
 
-// Obtiene productos según los filtros dados (categoría, stock, etc.)
-export const getFetchProduct = async ({
+export const getProducts = async ({
   category,
   stock,
   brand,
   limit = 10,
   page = 1,
   tipo,
-}: GetProductsProps) => {
+}: GetProductsProps): Promise<{
+  data: Product[];
+  meta: {
+    total: number;
+    page: number;
+    totalPage: number;
+  };
+}> => {
   const offset = (page - 1) * limit;
   try {
     const totalProducts = await prisma.products.count({
@@ -40,10 +47,13 @@ export const getFetchProduct = async ({
       orderBy: {
         tipo: "asc",
       },
+      include: {
+        image: true,        
+      },
     });
 
     return {
-      data,
+      data: data as Product[],
       meta: {
         total: totalProducts,
         page,
@@ -52,7 +62,14 @@ export const getFetchProduct = async ({
     };
   } catch (error) {
     console.error("Error fetching data:", error);
-    return [];
+    return {
+      data: [],
+      meta: {
+        total: 0,
+        page: 1,
+        totalPage: 1,
+      },
+    };
   }
 };
 

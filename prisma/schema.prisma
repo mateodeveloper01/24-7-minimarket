@@ -20,7 +20,7 @@ enum Category {
   condimentos
 }
 
-model Products {
+model products {
   id          String  @id @default(auto()) @map("_id") @db.ObjectId
   amount      String
   brand       String
@@ -30,15 +30,12 @@ model Products {
   stock       Boolean
   tipo        String
   url         String?
-  image       Image?
+  image       Image? @map("image")
 }
 
-model Image {
-  id          String  @id @default(auto()) @map("_id") @db.ObjectId
-  url         String
-  public_id   String
-  products   Products   @relation(fields: [productsId], references: [id])
-  productsId String @unique @db.ObjectId
+type Image {
+  url       String
+  public_id String
 }
 
 model User{

@@ -1,10 +1,16 @@
 import { toast } from "@/components";
 import { ProductSchemaType } from "@/app/dashboard/_components";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { Category } from "@prisma/client";
-import { createProductsAction } from "../usePorduct/createProducts.action";
-import { ResProduct } from "../usePorduct";
-
+import { Category, products } from "@prisma/client";
+import { createProductsAction } from "../actions/createProducts.action";
+export type ResProduct = {
+  data: products[];
+  meta: {
+    total: number;
+    page: number;
+    totalPage: number;
+  };
+};
 export const createProduct = (pagination: any[]) => {
   const queryClient = useQueryClient();
   const createKey = ["products", ...pagination];
@@ -13,10 +19,15 @@ export const createProduct = (pagination: any[]) => {
     mutationKey: createKey,
     mutationFn: (product: ProductSchemaType) => {
       const formData = new FormData();
-      formData.append("image", product.image as Blob);
+      
+      if (product.image) {
+        formData.append("image", product.image as Blob);
+      }
+      
       Object.entries(product).forEach(([key, value]) => {
         formData.append(key, value);
       });
+
       return createProductsAction(formData);
     },
     onMutate: ({ category, price, ...product }: ProductSchemaType) => {
@@ -28,7 +39,7 @@ export const createProduct = (pagination: any[]) => {
         price: +price,
       };
       const previousProducts = queryClient.getQueryData<ResProduct>(createKey);
-      queryClient.setQueryData<ResProduct>(createKey, (old) => {
+      queryClient.setQueryData<ResProduct>(createKey, (old: any) => {
         if (!old) {
           return {
             data: [optimisticProduct],

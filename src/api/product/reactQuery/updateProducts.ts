@@ -1,9 +1,17 @@
 import { ProductSchemaType } from "@/app/dashboard/_components";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { productsApi, ResProduct } from "./Api";
 import { Category, products } from "@prisma/client";
 import { toast } from "@/components";
+import { updateProductsAction } from "../actions/updateProducts.action";
 
+type ResProduct = {
+  data: products[];
+  meta: {
+    total: number;
+    page: number;
+    totalPage: number;
+  };
+};
 // Actualizar un producto con optimización optimista
 export const updateProduct = (pagination?: any[]) => {
   const queryClient = useQueryClient();
@@ -12,15 +20,19 @@ export const updateProduct = (pagination?: any[]) => {
   const update = useMutation({
     mutationKey: updateKey,
     mutationFn: async ({ id, ...nwProduct }: ProductSchemaType) => {
+
       const formData = new FormData();
+      
+      if (nwProduct.image) {
+        formData.append("image", nwProduct.image as Blob);
+      }
+      
       Object.entries(nwProduct).forEach(([key, value]) => {
-        if (key === "image") {
-          formData.append(key, value as File);
-        } else {
-          formData.append(key, value.toString());
-        }
+        formData.append(key, value as string);
       });
-      return (await productsApi.patch(`/${id}`, formData)).data;
+      
+      return updateProductsAction(formData,id);
+      // return (await productsApi.patch(`/${id}`, formData)).data;
     },
     onMutate: async ({
       id,
@@ -30,7 +42,7 @@ export const updateProduct = (pagination?: any[]) => {
     }: ProductSchemaType) => {
       await queryClient.cancelQueries({ queryKey: updateKey });
 
-      const previousProducts = queryClient.getQueryData<ResProduct>([
+      const previousProducts = queryClient.getQueryData<products[]>([
         "products",
       ]);
 
@@ -41,7 +53,7 @@ export const updateProduct = (pagination?: any[]) => {
         price: +price,
       };
 
-      queryClient.setQueryData<ResProduct>(updateKey, (old: any) => {
+      queryClient.setQueryData<ResProduct>(updateKey, (old) => {
         if (!old) {
           return {
             data: [optimisticProduct],
@@ -60,7 +72,7 @@ export const updateProduct = (pagination?: any[]) => {
       return { previousProducts, optimisticProduct };
     },
     onError: (__, _, context: any) => {
-      queryClient.setQueryData<products[]>(updateKey, context.previousProducts);
+      queryClient.setQueryData<ResProduct>(updateKey, context.previousProducts);
     },
     onSuccess: (product: any, _: any, context: any) => {
       const nwProduct = { ...product, category: product.category as Category };
@@ -73,7 +85,7 @@ export const updateProduct = (pagination?: any[]) => {
           };
         }
         return {
-          data: old.data.map((cacheProduct) =>
+          data: old.data.map((cacheProduct: any) =>
             cacheProduct.id === context?.optimisticProduct.id
               ? nwProduct
               : cacheProduct,

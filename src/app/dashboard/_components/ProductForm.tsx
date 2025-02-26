@@ -18,7 +18,7 @@ import { object, z } from "zod";
 import { UploadImages } from "./UploadImages";
 import { useState } from "react";
 import { DevTool } from "@hookform/devtools";
-import { createProduct, updateProduct } from "@/actions/usePorduct";
+import { createProduct, updateProduct } from "@/api";
 interface Props {
   product?: Product;
   pagination?: any[];
@@ -117,9 +117,15 @@ export const ProductForm = ({ product, pagination = [] }: Props) => {
         />
         <UploadImages onUpload={setImage} />
         <DevTool control={form.control} />
-        <Button type="submit" disabled={create.isPending || update.isPending}>
-          {create.isPending || update.isPending ? "Guardando..." : "Guardar"}
-        </Button>
+        <div className="flex justify-end">
+          <Button
+            type="submit"
+            className="w-1/3"
+            disabled={create.isPending || update.isPending}
+          >
+            {create.isPending || update.isPending ? "Guardando..." : "Guardar"}
+          </Button>
+        </div>
       </form>
     </Form>
   );

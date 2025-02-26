@@ -1,5 +1,5 @@
 "use client";
-import { login } from "@/actions/login";
+import { login } from "@/api/login";
 import {
   Button,
   Form,

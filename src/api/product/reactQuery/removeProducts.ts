@@ -1,17 +1,15 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { productsApi } from "./Api";
 import { toast } from "@/components";
+import { removeProductAction } from "../actions/removeProducts.action";
 
-// Eliminar un producto
 export const removeProduct = () => {
-  const queryClient = useQueryClient();
-
+  const queryClient = useQueryClient()
   const remove = useMutation({
     mutationKey: ["products"],
-    mutationFn: async (id: string) => (await productsApi.delete(`/${id}`)).data,
+    mutationFn: async (id: string) => await removeProductAction(id),
     onSuccess: () => {
       toast({ variant: "success", title: "Cambio realizado" });
-      queryClient.invalidateQueries();
+      queryClient.invalidateQueries({ queryKey: ["products"] });
     },
   });
 

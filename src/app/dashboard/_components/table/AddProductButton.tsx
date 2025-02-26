@@ -14,11 +14,11 @@ export const AddProductButton = ({pagination}:{pagination:any[]}) => {
       <SheetTrigger asChild>
         <Button>Crear Producto</Button>
       </SheetTrigger>
-      <SheetContent>
-        <SheetHeader>
+      <SheetContent className="overflow-y-auto ">
+        <SheetHeader className="pb-4">
           <SheetTitle>Crear/Editar producto</SheetTitle>
         </SheetHeader>
-        <ProductForm pagination={pagination} />
+        <ProductForm pagination={pagination}  />
      </SheetContent>
     </Sheet> 
    );

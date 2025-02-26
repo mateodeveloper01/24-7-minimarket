@@ -14,7 +14,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components";
-import { removeProduct } from "@/actions/usePorduct";
+import { removeProduct } from "@/api";
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
@@ -31,6 +31,18 @@ const myCustomFilterFn: FilterFn<Product> = (
   const rowValues = `${tipo} ${brand} ${description} ${category}`;
 
   return filterParts.every((part) => rowValues.includes(part));
+};
+
+const getImage = (row: Row<Product>) => {
+  let result = "no_image_product.png";
+  const { image, url } = row.original;
+  if (image) {
+    result = image.url;
+  }
+  if (url) {
+    result = url;
+  }
+  return result;
 };
 
 export const columns: ColumnDef<Product>[] = [
@@ -92,11 +104,12 @@ export const columns: ColumnDef<Product>[] = [
   {
     accessorKey: "url",
     header: "Image",
+    filterFn: myCustomFilterFn,
     cell: ({ row }) => {
-      const url: string = row.getValue("url");
+      const url = getImage(row);
       return (
         <Image
-          src={url ? url : "no_image_product.png"}
+          src={url}
           alt=""
           width={50}
           height={50}

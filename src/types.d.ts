@@ -7,6 +7,10 @@ export interface Product {
 	stock: boolean
 	brand: string
 	category: string
-	url: string
+	url?: string | null
 	quantity?: number
+	image?: {
+		url: string
+		public_id: string
+	} | null
 }

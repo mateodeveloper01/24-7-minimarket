@@ -21,7 +21,7 @@ import TableComponent from "./TableComponent";
 import ProductSheet from "./ProductSheet";
 import { AddProductButton } from "./AddProductButton";
 import { PaginationComponent } from "@/components";
-import { getFetchProduct } from "@/actions/usePorduct";
+import { getProducts } from "@/api";
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -46,7 +46,7 @@ export function DataTable<TData, TValue>({
 
   const { isLoading, data: res } = useQuery({
     queryKey: ["products", 20, page],
-    queryFn: () => getFetchProduct({ limit: 10, page }),
+    queryFn: () => getProducts({ limit: 10, page }),
     staleTime: 60 * 60 * 1000, // 1 hs
   });
 

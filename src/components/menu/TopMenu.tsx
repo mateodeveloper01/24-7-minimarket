@@ -16,7 +16,6 @@ export const TopMenu = () => {
   const [isScrolled, setIsScrolled] = useState(false); // Estado para el scroll
   const router = useRouter();
   const pathname = usePathname();
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -29,9 +28,9 @@ export const TopMenu = () => {
     };
   }, []);
 
-  const handleSearch = async (event: any) => {
+  const handleSearch = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    const searchQuery = event.target.elements.search.value;
+    const searchQuery = (event.target as HTMLFormElement).search.value;
     router.push(`/buscador?query=${searchQuery}`);
   };
   return (
@@ -89,11 +88,11 @@ export const TopMenu = () => {
                   Inicio
                 </Link>
               </SheetClose>
-              {categories.map((item: string) => (
+              {categories.map((item) => (
                 <SheetClose asChild key={item}>
                   <Link
                     href={`/${item}`}
-                    className={`hover:underline uppercase  border-black font-bold ${pathname.slice(1) === item && "text-white bg-secondary drop-shadow-2xl "} rounded p-2`}
+                    className={`hover:underline uppercase   border-black font-bold ${pathname.slice(1) === item && "text-white bg-secondary drop-shadow-2xl "} rounded p-2`}
                   >
                     {item.replace(/_/g, " ")}
                   </Link>
@@ -104,11 +103,11 @@ export const TopMenu = () => {
         </div>
       </header>
       <ul className="hidden gap-2 md:flex bg-secondary w-full justify-around ">
-        {categories.map((item: string) => (
+        {categories.map((item) => (
           <Link
             key={item}
             href={`/${item}`}
-            className="capitalize text-xl font-semibold hover:bg-primary text-white drop-shadow-lg w-full py-2 text-center flex justify-center items-center"
+            className={`capitalize text-xl font-semibold hover:bg-primary text-white drop-shadow-lg w-full py-2 text-center flex justify-center items-center ${pathname.slice(1) === item ? "text-white bg-primary drop-shadow-2xl " : ""}`}
           >
             {item.replace(/_/g, " ")}
           </Link>

@@ -20,8 +20,9 @@ import {
 } from "../ui/accordion";
 import { Label } from "../ui/label";
 import { Checkbox } from "../ui/checkbox";
-import { getBrand, getTipos } from "@/actions/usePorduct";
+import { getBrand, getTipos } from "@/api";
 import { useQuery } from "@tanstack/react-query";
+import { Category } from "@prisma/client";
 
 interface Props {
   category: string;
@@ -42,12 +43,12 @@ export const ProductsFilters = ({
 
   const { data: brands } = useQuery({
     queryKey: ["products", "category", "brand"],
-    queryFn: async () => await getBrand(category),
+    queryFn: async () => await getBrand(category as Category),
     gcTime: 100000,
   });
   const { data: tipos } = useQuery({
     queryKey: ["products", "category", "tipos"],
-    queryFn: async () => await getTipos(category),
+    queryFn: async () => await getTipos(category as Category),
     gcTime: 24 * 60 * 60 * 1000,
   });
   return (

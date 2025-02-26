@@ -6,10 +6,10 @@ import { Button } from "../ui/button";
 import { ProductItem } from "./ProductItem";
 
 import { useQuery } from "@tanstack/react-query";
-import { products } from "@prisma/client";
+import { Category } from "@prisma/client";
 import { PaginationComponent } from "../pagination/PaginationComponent";
 import { ProductsFilters } from "./ProductsFilters";
-import { getFetchProduct } from "@/actions/usePorduct";
+import { getProducts } from "@/api";
 
 interface Prop {
   category: string;
@@ -23,8 +23,8 @@ export const ProductsGrid = ({ category, className }: Prop) => {
   const { isLoading, data: products } = useQuery({
     queryKey: ["products", category, 20, page, brandState, tipoState],
     queryFn: () =>
-      getFetchProduct({
-        category,
+      getProducts({
+        category: category as Category,
         stock: true,
         limit: 21,
         page,
@@ -55,9 +55,9 @@ export const ProductsGrid = ({ category, className }: Prop) => {
           category={category}
         />
         <div className={`w-full ${className}`}>
-          {products?.data?.map((product: products) => (
+          {products?.data?.map((product) => (
             <ProductItem {...product} key={product.id} />
-          ))}
+          ))} 
         </div>
       </div>
       <PaginationComponent

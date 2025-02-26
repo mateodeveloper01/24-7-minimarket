@@ -1,15 +1,10 @@
 "use server";
-import { ProductSchemaType } from "@/app/dashboard/_components";
 import prisma from "@/utils/db";
 import { Category } from "@prisma/client";
 import sharp from "sharp";
-import { v2 as cloudinary } from "cloudinary";
 import fs from "fs";
-cloudinary.config({
-  cloud_name: process.env.NEXT_PUBLIC_CLOUDINARY_NAME,
-  api_key: process.env.NEXT_PUBLIC_CLOUDINARY_API_KEY,
-  api_secret: process.env.NEXT_PUBLIC_CLOUDINARY_API_SECRET,
-});
+import cloudinary from "@/utils/cloudinary";
+
 
 interface ProductFormData {
   id: string;
@@ -18,7 +13,7 @@ interface ProductFormData {
   brand: string;
   description: string;
   tipo: string;
-  image: File;
+  image?: File;
   category: Category;
   price: number;
 }
@@ -50,7 +45,7 @@ export const createProductsAction = async (formData: any) => {
         category: category as Category,
       },
     });
-  }
+  }else{
 
   if (formData.getAll("image")) {
     const imagedata = formData.getAll("image") as File[];
@@ -61,10 +56,11 @@ export const createProductsAction = async (formData: any) => {
   const result = await cloudinary.uploader.upload(`temp.webp`, {
     folder: "products-diego",
   });
-  console.log(result, "result");
   fs.unlinkSync(`temp.webp`);
 
-  return await prisma.products.create({
+  
+
+  const product = await prisma.products.create({
     data: {
       id,
       stock: stock === "true" ? true : false,
@@ -72,15 +68,16 @@ export const createProductsAction = async (formData: any) => {
       description: description.toLowerCase(),
       brand: brand.toLocaleLowerCase(),
       amount: amount.toLocaleLowerCase(),
-      image: {
-        create: {
-          url: result.secure_url,
-          public_id: result.public_id,
-        },
-      },
-
       category: category as Category,
       price: +price,
+      image: {
+        url: result.secure_url,
+        public_id: result.public_id,
+      },
     },
   });
+  
+  console.log(product);
+  return product;
+}
 };
