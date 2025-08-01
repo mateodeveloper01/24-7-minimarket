@@ -1,12 +1,7 @@
-export const categories = [
-  "almacen",
-  "bebidas_con_alcohol",
-  "bebidas_sin_alcohol",
-  "frescos",
-  "limpieza",
-  "golosinas",
-  "galletas",
-  "snacks",
-  "cafe",
-  "condimentos",
-];
+import { z } from "zod";
+
+export const categoriesSchema = z.object({
+  name: z.string().min(1),
+});
+
+export type Category = z.infer<typeof categoriesSchema>;

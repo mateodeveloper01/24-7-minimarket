@@ -1,8 +1,7 @@
-import { AboutMe, ProductsCarrousel } from '@/components'
-import { categories } from '@/schemas'
-import { Category } from '@prisma/client'
+// import { getCategories } from '@/resources/category/api'
 
 export default async function HomePage() {
+	// const categories = await getCategories()
 	return (
 		<div className="flex flex-col items-center justify-center w-full gap-10 pt-10">
 			<div className="flex flex-col items-center justify-center w-full gap-10 pt-10 h-[60vh]">

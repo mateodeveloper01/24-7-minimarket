@@ -4,14 +4,15 @@ import { AlignJustify, Search, ShoppingCart } from "lucide-react";
 import { useCartStore } from "@/stores/useCartStore";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { categories } from "@/schemas/categories";
 
 import { Sheet, SheetClose, SheetContent, SheetTrigger } from "../ui/sheet";
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { usePathname, useRouter } from "next/navigation";
+import { getCategories } from "@/resources/category/api";
 
-export const TopMenu = () => {
+export const TopMenu = async () => {
+  const categories = await getCategories()
   const totalPrice = useCartStore((state) => state.totalPrice);
   const [isScrolled, setIsScrolled] = useState(false); // Estado para el scroll
   const router = useRouter();

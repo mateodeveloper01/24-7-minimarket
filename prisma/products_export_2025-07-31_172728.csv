@@ -1,0 +1,651 @@
+_id,amount,brand,category,description,price,stock,tipo,url
+"""6663175c6bfd9ac847334696""",arroz,no se pasa,dos hermanos,500g,1400,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1718477674/u9p4mk5razx9dyoy7cip.webp,true
+"""6663175c6bfd9ac847334698""",gaseosa,sin azucar retornable vidrio,coca cola,1lt,1700,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717787119/zwszbmzza28g7qxupzjv.webp,true
+"""6663175c6bfd9ac847334697""",arroz,largo fino,dos hermanos,1kg,2100,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717787063/wagyyg7tmr8kyynk7cjx.webp,true
+"""6663175c6bfd9ac847334699""",pan de mesa,lacteado,don yeyo,350g,1700,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717864889/hr3yi3onkvcjn7rtdu2w.webp,true
+"""6663175c6bfd9ac84733469a""",pan de mesa,salvado,don yeyo,350g,1700,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717787210/c5jsyboe6osv7xbtlcvp.webp,true
+"""6663175c6bfd9ac84733469e""",ravioles,espinaca y ricota,don yeyo,500g,2300,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717787279/isvhdqbzafe8ov0oahmw.webp,true
+"""6663175c6bfd9ac84733469b""",ravioles,cuatro queso,don yeyo,500g,2300,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717787227/ozqjlwm97wnhiwhkvmru.webp,true
+"""6663175c6bfd9ac84733469c""",ravioles,espinaca y carne,don yeyo,500g,2300,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717787254/ib3tm15ymsvtas2vuf5j.webp,true
+"""6663175c6bfd9ac84733469d""",ravioles,espinaca y pollo,don yeyo,500g,2300,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717787265/u36jjuk0z5w1cutecpk3.webp,true
+"""6663175c6bfd9ac84733469f""",sorrentinos,jamon y queso,don yeyo,400g,1990,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717787295/homeywzf82nwyltcjvru.webp,false
+"""6663175c6bfd9ac8473346a0""",ñoquis,con papa,don yeyo,500g,1600,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717787346/nokgkbogs3i5bxh0olt0.webp,true
+"""6663175c6bfd9ac8473346a1""",capelletis,carne y jamon,don yeyo,400g,2200,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717787321/aphzbov8x1uxdmvcazc2.webp,false
+"""6663175c6bfd9ac8473346a2""",capelletis,jamon y queso,don yeyo,400g,2350,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717787360/pgcsyr9h6bkvbfa9thet.webp,true
+"""6663175c6bfd9ac8473346a3""",pan,hamburguesas,don yeyo,210g,1200,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717787374/wgenveyxnf07xwqz0o09.webp,true
+"""6663175c6bfd9ac8473346a5""",pan,100% granos enteros,don yeyo,400g,2200,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717787400/wibnhlxqy1o737rjqvv1.webp,true
+"""6663175c6bfd9ac8473346a4""",pan,panchos,don yeyo,210g,1200,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717787387/zubyffgdd3szenodrgla.webp,true
+"""6663175c6bfd9ac8473346a8""",pan,lacteado,don yeyo,600g,2600,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717787456/a1lf0b4dvf409xpze5wp.webp,true
+"""6663175c6bfd9ac8473346a6""",pan,doble salvado,don yeyo,500g,2600,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717787426/w8yux6lflpdtmcoxzxve.webp,true
+"""6663175c6bfd9ac8473346a7""",tapa para empanada,tipo criolla,don yeyo,12u,1100,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723769080/b9rvigtjvgmk8acpzw6t.webp,true
+"""6663175c6bfd9ac8473346a9""",tapa para empanada,para horno hojaldradas,don yeyo,12u,1100,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717787475/ktre0iiufvlcymbkoicz.webp,true
+"""6663175c6bfd9ac8473346aa""",pascualina,tipo criolla,don yeyo,380g,1500,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717786768/lpd7qfw5pdgha5b0xmwg.webp,true
+"""6663175c6bfd9ac8473346ac""",tapa para empanada roticera,tipo criolla,don yeyo,12u,1550,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717786740/qmuy4407ufie6dknzuue.webp,true
+"""6663175c6bfd9ac8473346ab""",tapa para empanada roticera,para horno hojaldradas,don yeyo,12u,1550,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717786720/aogc5voljl0te9zmlpz2.webp,true
+"""6663175c6bfd9ac8473346ad""",caballa,al natural,cumana,425g,2900,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717786805/xndnoscyw0vbwjjtbeh5.webp,true
+"""6663175c6bfd9ac8473346ae""",pascualina,hojaldre,don yeyo,400g,1500,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717786830/uxzdfkh0ycfz4qqttrpr.webp,true
+"""6663175c6bfd9ac8473346b0""",capelettini,carne,giacomo,500g,3750,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717786927/ucusjwn4vqgpgo8k35mx.webp,true
+"""6663175c6bfd9ac8473346b1""",capelettini,queso y jamon,giacomo,500g,3750,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717786984/dyzs0fukvvld1o2kyvhf.webp,true
+"""6663175c6bfd9ac8473346b3""",capelettini,verdura,giacomo,500g,3750,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717787038/fq7zwmdvdjnlkdisaxkn.webp,true
+"""6663175c6bfd9ac8473346b2""",capelettini,tridicci,giacomo,500g,3750,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717787001/bjtnhtqmflc9hv32oddr.webp,true
+"""6663175c6bfd9ac8473346af""",caballa,en aceite,cumana,425g,2900,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717787016/zl0e7snfbkxnzpq8b8vu.webp,true
+"""666471c6ea14002e09e74bd9""",lata,lentejas,inalpa,300g,1200,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717858998/ez84dhtlc36nvjuhc50g.webp,true
+"""666471c6ea14002e09e74bd8""",lata,arveja,inalpa,300g,600,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717858978/mqymihklyetfcueuwd98.webp,true
+"""666471c7ea14002e09e74bdb""",lata,choclo amarillo en grano,inalpa,300g,1700,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717859033/w1uoe684ygaz2huu7zqz.webp,true
+"""666471c7ea14002e09e74bdd""",caldo,de gallina,knorr,12u,1890,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717859053/rw9dscfp2vb5mpdqhrkf.webp,true
+"""666471c7ea14002e09e74bde""",caldo,de carne,knorr,2 cubos,350,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717859106/gw6lkxq7uhtfdrhelpvd.webp,true
+"""666471c7ea14002e09e74be0""",caldo,de carne,knorr,12u,1890,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717859149/ethinuhsqalyiivvhmdz.webp,true
+"""666471c7ea14002e09e74be2""",lata,porotos,inalpa,300g,1250,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717859222/z7m4ggzvfncimbvooaxx.webp,true
+"""666471c7ea14002e09e74be3""",lata,jardinera,inalpa,300g,1750,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717859237/ajyopucjlhsjdeuvjwgr.webp,true
+"""666471c7ea14002e09e74be4""",sopa quick,de tomate,knorr,63g,1950,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717859313/s9jri4dtjq0wnxh8qy3i.webp,false
+"""666471c7ea14002e09e74be6""",lata,tomates peritas,arcor,400g,940,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717859343/d4k6pioc7dvttfjivlxl.webp,false
+"""666471c7ea14002e09e74be5""",arroz,largo fino,dos hermanos,500g,1150,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717859330/smkiz9yfe4hzvemqpinm.webp,true
+"""666471c7ea14002e09e74be7""",galleta de arroz,saladas,dos hermanos,100g,950,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717859375/dpxrmojenegw6kszyhis.webp,true
+"""666471c7ea14002e09e74be8""",lata,soja,inalpa,300g,890,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717859397/u58nim1t07vzxfgmx9mu.webp,true
+"""666471c7ea14002e09e74be9""",queso rallado,tradicional,la paulina,40g,1070,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717859414/xvqoanqyutldymm2lkwh.webp,true
+"""666471c7ea14002e09e74bea""",galleta de arroz,dulces,dos hermanos,100g,950,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717859426/e3ecotcqpepj5ouz77gr.webp,true
+"""666471c7ea14002e09e74bf1""",sopa crema,arvejas,knorr,63g,980,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717859565/tserdqsor5vgmkvtr5h6.webp,false
+"""666471c7ea14002e09e74beb""",galleta arroz,sin sal,dos hermanos,100g,950,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717859444/l1ylk0071vsonxsgkfam.webp,true
+"""666471c7ea14002e09e74bee""",sopa quick,de zapallo,knorr,63g,1950,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717859508/qpeyd6hvoxgvtk3antyc.webp,false
+"""666471c7ea14002e09e74bec""",sopa quick,de vegetales,knorr,63g,1950,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717859478/kyxpbdh1xnoirajcf7hp.webp,false
+"""666471c7ea14002e09e74bed""",sopa quick,de zanahoria,knorr,63g,1950,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717859495/uza65cqqo9dwqszfgfcy.webp,false
+"""666471c7ea14002e09e74bf2""",sopa crema,vegetales,knorr,64g,980,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717859613/arefzuavzmznujelbk5z.webp,false
+"""666471c7ea14002e09e74bf0""",sopa quick,de zapallo,knorr,63g,1950,almacen,,false
+"""666471c7ea14002e09e74bef""",sopa quick,de vegetales,knorr,63g,1950,almacen,,false
+"""666471c7ea14002e09e74bda""",arroz,no se pasa,dos hermanos,1kg,2500,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717859018/ikfvbnn2drydvz6gyjpp.webp,true
+"""666471c7ea14002e09e74bf3""",sopa,de vegetales con caracolitos,knorr,64g,1000,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717859652/ahfd6n7hmsfz9uhyz17c.webp,false
+"""666471c7ea14002e09e74bf4""",caldo,de gallina,knorr,2 cubos,350,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717859674/hrmeskzv6uq9vj5ciyec.webp,true
+"""666471c7ea14002e09e74bdc""",lata,choclo blanco cremoso,inalpa,300g,830,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717859070/ojubufljq4xsvfh2llnx.webp,true
+"""666471c7ea14002e09e74bf5""",sopa quick,de choclo,knorr,63g,1950,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717859706/o24mhls4umpje9jrfrqx.webp,false
+"""666471c7ea14002e09e74bdf""",caldo,de verduras,knorr,12u,1890,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717859092/s3vuifnoykd0d89npfam.webp,true
+"""666471d5ea14002e09e74bf6""",sopa,de pollo con cabello de angel,knorr,105g,1000,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862071/xtle2err0upxpiv32mz3.webp,false
+"""666471d5ea14002e09e74bf9""",sopa crema,de cebolla,knorr,105g,980,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862141/t1ti0cj5y8fcjmrh6h5j.webp,false
+"""666471d5ea14002e09e74bf8""",sopa,de vegetales con caracolitos verdes,knorr,105g,1000,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862123/jalz7fo4ynts8xoi6zds.webp,false
+"""666471d5ea14002e09e74bf7""",sopa,de pollo con dedalitos integrales,knorr,105g,1000,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862096/jcivwpwy8gtcdlsiliev.webp,false
+"""666471d5ea14002e09e74bfa""",sopa crema,de zapallo,knorr,105g,980,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862160/hnic7eddojlzknlbjx4n.webp,false
+"""666471d5ea14002e09e74bfc""",sopa crema,sopa de letras,knorr,105g,980,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862319/cgs18ghwddrmmiedpb3f.webp,false
+"""666471d5ea14002e09e74bfb""",sopa crema,sopa de vegetales con municiones,knorr,105g,1000,almacen,,false
+"""666471d6ea14002e09e74bff""",salsa,portuguesa,noel,340g,1000,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862377/up4hvbxo3szyxpwlsmcv.webp,true
+"""666471d6ea14002e09e74bfd""",salsa,pizza,noel,340g,1000,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862333/d7ysmoi5ssdztadmyj0t.webp,true
+"""666471d6ea14002e09e74bfe""",salsa,filetto,noel,340g,1000,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862350/fjyn3xitg8epzolirffz.webp,true
+"""666471d6ea14002e09e74c00""",fideos,bucattini,luchetti,500g,1200,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862398/nthldzzssydaqxx2noom.webp,false
+"""666471d6ea14002e09e74c01""",salsa,pomarola,noel,340g,1000,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862424/j1u5pqrq1qjj2x41pisa.webp,true
+"""666471d6ea14002e09e74c03""",fideos,moños,luchetti,500g,2100,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862471/frsi1c5c3ckch4gw37me.webp,true
+"""666471d6ea14002e09e74c02""",fideos,codito,luchetti,500g,1200,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862454/qxhpqkdhdvrjwcz3lbmj.webp,true
+"""666471d6ea14002e09e74c04""",fideos,mostachol,luchetti,500g,1200,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862489/ifxkeviylwfy548jfrel.webp,true
+"""666471d6ea14002e09e74c07""",fideos,tirabuzon,luchetti,500g,1200,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862541/uswruu1imlyrpcb94sht.webp,true
+"""666471d6ea14002e09e74c05""",fideos,spaghetti,luchetti,500g,1200,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862509/zyon51i9kxln3ezbf9vk.webp,true
+"""666471d6ea14002e09e74c09""",fideos,lasagna,matarazo,250g,2250,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862577/v1wifh0qwwy5hbf4dlb2.webp,true
+"""666471d6ea14002e09e74c08""",fideos,tirabuzon,matarazo,500g,1450,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862563/zsvpzkmbfbulfretydad.webp,true
+"""666471d6ea14002e09e74c06""",fideos,tallarin,luchetti,500g,1200,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862524/cxzekxvgt4ukqscf2yu7.webp,true
+"""666471d6ea14002e09e74c0b""",pure de tomate,,de la huerta,210g,490,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862598/qnez21tiltyohao8jlu1.webp,true
+"""666471d6ea14002e09e74c0a""",pure de tomate,,marolio,520g,1280,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862609/qkroqu3pzqh2eurrvvhx.webp,false
+"""666471d6ea14002e09e74c0e""",queso rallado,reggianito,sancor,520g,1200,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717864814/u6nncso0paoctpybhjnz.webp,true
+"""666471d6ea14002e09e74c0f""",arroz,doble carolina,mocovi,500g,1960,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862678/yqfjubru1ues0ax7eauf.webp,true
+"""666471d6ea14002e09e74c10""",gaseosa,clasica,coca cola,500ml,1100,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862707/p2kjtlmfelqhdfcvjnec.webp,true
+"""666471d6ea14002e09e74c13""",gaseosa,clasica,coca cola,2.25lt,3400,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862785/xceyzl3usglxt6tyfbqk.webp,true
+"""666471d6ea14002e09e74c11""",gaseosa,clasica,coca cola,1lt,1800,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862729/msfrc5ljblsusz6loxg4.webp,true
+"""666471d6ea14002e09e74c12""",gaseosa,clasica,coca cola,1.5lt,2400,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862755/yvixg7zt7wb3fxenmkvg.webp,true
+"""666471e0ea14002e09e74c1a""",gaseosa,sin azucar retornable vidrio,coca cola,1.25ml,1700,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862968/cbirfmvnrpev7qjkp10l.webp,true
+"""666471e0ea14002e09e74c14""",gaseosa,clasica retornable vidrio,coca cola,1.25lt,1700,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862810/lehlzu6bfzocwxerlvtr.webp,true
+"""666471e0ea14002e09e74c17""",gaseosa,sin azucar,coca cola,1lt,1800,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862891/vt1lsddixmrrgzkwfave.webp,true
+"""666471e0ea14002e09e74c16""",gaseosa,sin azucar,coca cola,500ml,1100,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862859/nehx41vlsgpvuaxny2jl.webp,true
+"""666471e0ea14002e09e74c1c""",gaseosa,clasica,sprite,500ml,1100,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717863011/iesau19ysdjyv2ki0fi0.webp,true
+"""666471e0ea14002e09e74c15""",gaseosa,clasica retornable,coca cola,2lt,2200,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862823/cn5m8hdntkl2e5to2jge.webp,true
+"""666471e0ea14002e09e74c18""",gaseosa,sin azucar,coca cola,1.5lt,2400,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862913/x5hbypn31kk43nyxeehx.webp,true
+"""666471e0ea14002e09e74c19""",gaseosa,sin azucar,coca cola,2.25lt,3400,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862927/n6jlzwukxd7zevxxkgea.webp,true
+"""666471e0ea14002e09e74c1b""",gaseosa,sin azucar retornable,coca cola,2lt,2200,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717862991/rlp5y2ttojmx5kzdcbts.webp,true
+"""666471e0ea14002e09e74c1d""",gaseosa,clasica,sprite,1lt,1800,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717863033/rofabs6ih7iygtruhmud.webp,true
+"""666471e0ea14002e09e74c20""",gaseosa,clasica retornable,sprite,2lt,2200,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717863124/auuoalbefrlcs7pir3al.webp,true
+"""666471e0ea14002e09e74c1e""",gaseosa,clasica,sprite,1.5lt,2400,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717863066/wrhi8rvvcr7osovbbcnp.webp,true
+"""666471e0ea14002e09e74c1f""",gaseosa,clasica,sprite,2.25lt,3400,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717863096/yisnj5aa63reoiwdnz9g.webp,true
+"""666471e0ea14002e09e74c26""",gaseosa,clasica retornable,fanta,2lt,2200,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717863283/vmkxwlxiiyhxjtboohrf.webp,true
+"""666471e0ea14002e09e74c24""",gaseosa,clasica,fanta,500ml,1100,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717863454/ffsitdt5jrd4kzacbdpa.webp,true
+"""666471e0ea14002e09e74c25""",gaseosa,sin azucar,fanta,1.5lt,2300,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717863171/twhrkithvywu7uvkjgsx.webp,false
+"""666471e0ea14002e09e74c21""",gaseosa,clasica retornable,sprite,1.25lt,1700,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717863140/otysxmfgpdasjde2yl6g.webp,true
+"""666471e0ea14002e09e74c27""",gaseosa,clasica retornable vidrio,fanta,1.25 lt,1000,bebidas_sin_alcohol,,false
+"""666471e0ea14002e09e74c23""",gaseosa,sin azucar,sprite,500ml,1100,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717863189/jjlgj8hqsho73rfoxdrl.webp,true
+"""666471e0ea14002e09e74c22""",gaseosa,sin azucar,sprite,1.5lt,2400,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1717863154/azknyes7euzdhjhbfxbg.webp,true
+"""668be06f5fceccd51a1cc22d""",jugo,naranja y durazno,citric,1lt,2850,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1720442991/dzvcfsakvjbivfe3gr5e.webp,true
+"""668be62497a0cf4d393d3f9f""",jugo,pomelo,citric,1lt,2850,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1720444452/ji5v448cbqdwikfdhsb3.webp,true
+"""668be66097a0cf4d393d3fa1""",jugo,naranja,citric,1lt,2850,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1720444511/ybbuzeq6purrkkpqchcv.webp,true
+"""668be67597a0cf4d393d3fa4""",jugo,naranja,citric,500ml,1780,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1720444533/znyjdfqbo2hdhhzrnvsm.webp,true
+"""668be6a697a0cf4d393d3fa7""",jugo,naranja y mango,citric,1lt,2850,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1720444582/iy5miekryejz0wwxrtnf.webp,true
+"""668be91777fc1f7bf1e7b881""",jugo,naranja y durazno,citric,1lt,2850,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1720445207/gr1dhp0deom1kronfvfb.webp,true
+"""668ef71197a0cf4d393d3fa9""",galleta,coco,pamela,500g,800,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1720645392/iqybrpvwyimqlkujelad.webp,true
+"""668ef73297a0cf4d393d3faa""",galleta,scones,pamela,500g,800,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1720645425/ly2edp4n0ivfm5acsu4e.webp,true
+"""668ef74097a0cf4d393d3fab""",galleta,chips,pamela,500g,900,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1720645440/c4m3jgpcyu0wlcle2qie.webp,true
+"""668ef75097a0cf4d393d3fac""",galleta,chocolate,pamela,500g,800,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1720645455/n7oeg8btkupzkp8vmjc1.webp,true
+"""668ef75f97a0cf4d393d3fad""",galleta,limon,pamela,500g,800,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1720645471/aok2meq3twgzlsmrrie1.webp,true
+"""668ef76a97a0cf4d393d3fae""",galleta,manteca,pamela,500g,800,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1720645481/iqegu67o8tzpydqwxagr.webp,true
+"""668ef81f97a0cf4d393d3faf""",gaseosa,cola suave,cunnington,1.5lt,1100,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1720645663/xcrkn1trthagop4oskpr.webp,true
+"""668ef83297a0cf4d393d3fb0""",gaseosa,cola suave,cunnington,3lt,1800,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1720645682/uys2z69rg1eoklgjsq7g.webp,true
+"""668ef85197a0cf4d393d3fb1""",gaseosa,pomelo suave,cunnington,1.5lt,1100,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1720645713/fd6kytvflpnnrfxk7vmt.webp,true
+"""668ef85d97a0cf4d393d3fb2""",gaseosa,pomelo suave,cunnington,3lt,1800,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1720645725/wq2quo43efsxtnesdxpj.webp,true
+"""668ef88b97a0cf4d393d3fb3""",gaseosa,cola classic,cunnington,3lt,1800,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1720645770/dtwrizrabxuuysjz24tr.webp,true
+"""668ef89297a0cf4d393d3fb4""",gaseosa,cola classic,cunnington,1.5lt,1100,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1720645778/gnbcl0usfmuria9wg2ct.webp,true
+"""668ef8ef97a0cf4d393d3fb5""",gaseosa,"lima limón ",cunnington,1.5lt,1100,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1720645871/cjyttlxcdpp2ljbhjnxx.webp,true
+"""668ef8fe97a0cf4d393d3fb6""",gaseosa,"lima limón ",cunnington,3lt,1800,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1720645886/xa8pqehjtclfufwxzdst.webp,true
+"""668ef91e97a0cf4d393d3fb7""",gaseosa,naranja,cunnington,1.5lt,1100,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1720645918/jied1zodtdwohsksgatd.webp,true
+"""668ef93197a0cf4d393d3fb8""",gaseosa,naranja,cunnington,3lt,1800,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1720645936/knetfkgr7oqdlmdyf3za.webp,true
+"""668ef94697a0cf4d393d3fb9""",gaseosa,pomelo,cunnington,1.5lt,1100,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1720645958/mufulz3ahfbfgmlqacuc.webp,true
+"""668ef95397a0cf4d393d3fba""",gaseosa,pomelo,cunnington,3lt,1800,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1720645971/mozddb7moruseabwsdby.webp,true
+"""668ef97697a0cf4d393d3fbb""",gaseosa,indian tonic,cunnington,3lt,1800,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1720646005/wat7dzu02aey9egjjqk0.webp,true
+"""668ef97f97a0cf4d393d3fbc""",gaseosa,indian tonic,cunnington,1.5lt,1100,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1720646014/bfvltjtfkkmgwsow5t0j.webp,true
+"""669e67e2c0806accd663bdb4""",chocolate,rocklets,cofler,55 gr,2900,golosinas,,false
+"""669e67f8c0806accd663bdb5""",Chocolate,almendras,cofler,100g,1700,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721657335/vys7hmygeti1yoqz50s4.webp,false
+"""669e6805c0806accd663bdb6""",chocolate,tres placeres,cofler,100g,2900,golosinas,,false
+"""669e682ec0806accd663bdb7""",Chocolate,bon o bon,cofler,67g,1700,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721657390/hida5jjpkrpsmbewufhc.webp,false
+"""669e684cc0806accd663bdb8""",chocolate,yogur frutilla,cofler,64g,1700,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721657420/cbpzyxpw2t8d5h6rrwve.webp,false
+"""669e6876c0806accd663bdb9""",chocolate,con leche,cofler,140g,1700,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721657462/utqrol7bvohyky7khesn.webp,false
+"""669e688fc0806accd663bdba""",chocolate,50% cacao,cofler,55g,1700,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721657486/sgcacxcna8rpu3eatemz.webp,false
+"""669e68a4c0806accd663bdbb""",chocolate,con leche,cofler,18g,480,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721657508/xoos6mw6rnr1icq6szfx.webp,false
+"""669e6907c0806accd663bdbc""",galleta,opera,Bagley,55g,470,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721657607/fpqqdlgaokrozvnsr5mq.webp,false
+"""669e6976c0806accd663bdbd""",galleta,sonrisas,Bagley,108g,1050,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721657717/yapacweqq2npwld0pt3h.webp,true
+"""669e6986c0806accd663bdbe""",galleta,merengadas,Bagley,108g,750,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721657733/jnml6z1hjlxon30rjnzg.webp,false
+"""669e69d6c0806accd663bdbf""",stack,hecha con queso,kesitas,125g,1200,snacks,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721657814/cp0zv7oywbgt3jqgwk1y.webp,false
+"""669e69efc0806accd663bdc0""",stack,sabor original,rex traviata,125g,1200,snacks,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721657839/kfgka8l0nn69fdgwjyt6.webp,true
+"""669e6a16c0806accd663bdc1""",galleta,criollitas,Bagley,300g,1200,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721657877/clg0uzauxjoxyzaumw9w.webp,false
+"""669e6a3cc0806accd663bdc2""",chocolate,semiamargo,aguila,100g,3600,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721657916/mjfh6yrn9lyz2o1hajis.webp,true
+"""669e6a5ac0806accd663bdc3""",chocolate,amargo 60% cacao,aguila,150g,5400,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721657946/hvuchaszutnjwgnld8xo.webp,true
+"""669e6a69c0806accd663bdc4""",chocolate,amargo 70% cacao,aguila,150g,6150,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721657961/stbf0g0djvyemcehjskf.webp,true
+"""669e6acec0806accd663bdc5""",alfajor,minitorta coco,aguila,70g,1200,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721658062/ndksxww7nhpew21jdghj.webp,true
+"""669e6aeec0806accd663bdc6""",alfajor,minitorta brawnie,aguila,70g,1200,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721658093/csxz0bufa4hb24w2nizz.webp,true
+"""669e6b11c0806accd663bdc7""",alfajor,minitorta clásica,aguila,70g,1200,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721658129/l7hyxvhvztas6ubowbdt.webp,true
+"""669e6b21c0806accd663bdc8""",alfajor,minitorta blanco,aguila,70g,1200,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721658144/k0wsd2kkvru5ks99jytz.webp,true
+"""669e6b3dc0806accd663bdc9""",alfajor,block,cofler,60g,1200,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721658173/ph40ievmmcwfgutenfq7.webp,true
+"""669e6b60c0806accd663bdca""",alfajor,bon o bon triple,arcor,60g,1200,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721658208/wsiexzypbevbpan7attk.webp,true
+"""669e6b8ac0806accd663bdcb""",alfajor,negro triple,tatin,60g,470,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721658250/miwgdaqf0nz91vppbbm2.webp,false
+"""669e6b9ac0806accd663bdcc""",alfajor,blanco triple,tatin,60g,900,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721658266/gxdjy4fjqhb0qxerq68a.webp,false
+"""669e6bafc0806accd663bdcd""",alfajor,blanco simple,tatin,33g,350,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721658338/n9ibkqij22ocqyqnugee.webp,true
+"""669e6bc4c0806accd663bdce""",alfajor,negro simple,tatin,33g,350,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721658307/vqoglnzpow9ijsbxwn36.webp,true
+"""669e6c8bc0806accd663bdcf""",chocolate,amargo 80% cacao,aguila,150g,6300,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721658506/gb88jt2xu7veodhmzuzu.webp,true
+"""669e6ca3c0806accd663bdd0""",chocolate,amargo 60% cacao con naranja,aguila,100g,4300,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721658531/jqcit4d8wsoyf3alzppt.webp,true
+"""669e7638c0806accd663bdd1""",snack,nacho picante,quento,80g,1500,snacks,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721660983/ffbfcb42hjhsmcwir44a.webp,true
+"""669e7654c0806accd663bdd2""",snack,nacho sabor queso,quento,90g,1500,snacks,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721661011/txbs7nq7kldfavniji8i.webp,true
+"""669e7666c0806accd663bdd3""",snack,nacho con sal,quento,90g,1500,snacks,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721661030/dvqxqelqn6r3vimvc6qa.webp,true
+"""669e767ac0806accd663bdd4""",snack,nacho sabor choclo con manteca,quento,90g,1500,snacks,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721661050/dyf1vdatdpudnawmkir8.webp,true
+"""669e7691c0806accd663bdd5""",snack,papas pay,quento,110g,1500,snacks,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721661073/g64fnqnorhy2ougpcoyf.webp,true
+"""669e76acc0806accd663bdd6""",snack,papas clásicas,quento,100g,1500,snacks,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721661099/nktqmuqmhmqcpen1r7mn.webp,true
+"""669e76bfc0806accd663bdd7""",snack,papas onduladas,quento,100g,1500,snacks,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721661119/pnyafrrola23i2yibnuz.webp,true
+"""669e76cfc0806accd663bdd8""",snack,papas ketchup,quento,100g,1500,snacks,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721661134/pfk8dk9c0uguii7az7em.webp,true
+"""669e76e3c0806accd663bdd9""",snack,papas jamón serrano,quento,90g,1500,snacks,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721661154/eyyt9c8fmlz8fge1r1ww.webp,true
+"""669e76f5c0806accd663bdda""",snack,papas salame,quento,90g,1500,snacks,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721661172/jzjzfovugrefj8zq2cwa.webp,true
+"""669e7700c0806accd663bddb""",snack,papas limon,quento,90g,1500,snacks,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721661183/ucmuivhzriojaylze2fl.webp,true
+"""669e7713c0806accd663bddc""",snack,papas mostaza,quento,90g,1500,snacks,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721661202/g11km3fj7crom5smjrzj.webp,true
+"""669e772dc0806accd663bddd""",snack,papas queso crema y ciboulette,quento,90g,1500,snacks,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721661228/aarfjtvz0gnxs8jljati.webp,true
+"""669e774ac0806accd663bdde""",snack,papas barbacoa,quento,90g,1500,snacks,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721661257/yhrkq581rqxdmogv9qau.webp,true
+"""669e7757c0806accd663bddf""",snack,papas asado criollo,quento,90g,1500,snacks,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721661271/pu4asaoisu5xwehmzf99.webp,true
+"""669e7765c0806accd663bde0""",snack,papas queso cheddar,quento,90g,1500,snacks,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721661285/wh42ma9ewbmjlbzvygv6.webp,true
+"""669e7773c0806accd663bde1""",snack,papas batatas,quento,90g,1500,snacks,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721661298/d6jybshx5dsbgv885usp.webp,true
+"""669e7795c0806accd663bde2""",snack,tostaditas de arroz cuatro queso,quento,90g,1400,snacks,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721661332/c2fetauj8h9wy3h3iyf5.webp,false
+"""669e77a7c0806accd663bde3""",snack,"tostaditas de arroz jamón ibérico ",quento,90g,1500,snacks,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721661351/nhjawn8hvifayvpmakwx.webp,true
+"""669fc253c0806accd663bde4""",té,negro,la virginia,25 saquitos,850,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721746002/dkbmmspnecbch4c67cae.webp,true
+"""669fc26cc0806accd663bde5""",té,limon,la virginia,20 saquitos,1450,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721746027/mprgtibirnlbju1h8hwt.webp,true
+"""669fc288c0806accd663bde6""",té,manzana con canela,la virginia,20 saquitos,1650,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721746056/hbbfm7y1ownfdtyslbiz.webp,true
+"""669fc29ac0806accd663bde7""",té,canela,la virginia,20 saquitos,1430,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721746073/toizsdoqy6jidjulvhtg.webp,true
+"""669fc2bec0806accd663bde8""",té,rosa mosqueta y manzanilla,la virginia,20 saquitos,2100,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721746109/zuhzqgb3wnr7sczdczzl.webp,true
+"""669fc2d4c0806accd663bde9""",té,maracuyá,la virginia,20 saquitos,1650,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721746131/jzilyyyerilomlnl3hke.webp,true
+"""669fc2f7c0806accd663bdea""",té,chai,la virginia,20 saquitos,1400,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721746166/wpszqrjq6oha67ssph7a.webp,true
+"""669fc310c0806accd663bdeb""",té,verde jazmín,la virginia,20 saquitos,1350,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721746191/uzdowgecbedqrjfmtbrw.webp,true
+"""669fc32fc0806accd663bdec""",té,rojo,la virginia,20 saquitos,1350,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721746223/aysla0m4akpt49izlzgi.webp,true
+"""669fc34ac0806accd663bded""",té,boldo,la virginia,25 saquitos,1580,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721746250/xffknuyw24kob6ysoitp.webp,true
+"""669fc365c0806accd663bdee""",té,tilo,la virginia,25 saquitos,2200,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721746276/hm2iqd7tklpyxrhsgsds.webp,true
+"""669fc388c0806accd663bdef""",té,tilo manzanilla y cedrón,la virginia,25 saquitos,1550,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721746312/zbybvfdkqxsivoubc0l4.webp,true
+"""669fc3adc0806accd663bdf0""",té,manzanilla,la virginia,25 saquitos,1300,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721746348/drz4fpxglmr4pfg3vlw1.webp,true
+"""669fc3cbc0806accd663bdf1""",té,manzanilla con anis,la virginia,25 saquitos,1570,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721746378/anjgrwdftaaj1xrkip7m.webp,true
+"""669fc3efc0806accd663bdf2""",té,menta peperina,la virginia,25 saquitos,1300,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721746415/n3earmmfy9rulctcai5u.webp,true
+"""669fc410c0806accd663bdf3""",té,cedrón,la virginia,25 saquitos,1450,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721746447/uodubbrjbxhrmgfwotlt.webp,true
+"""669fc420c0806accd663bdf4""",té,verde,la virginia,20 saquitos,1050,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721746463/p05r0npynaknp1wo4r5t.webp,true
+"""669fc439c0806accd663bdf5""",té,verde citrus,la virginia,20 saquitos,1350,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721746489/d2exuc8hznj4ywnp4zwg.webp,true
+"""669fc45dc0806accd663bdf6""",té,mezcla de hierbas naturales,la virginia,25 saquitos,1400,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721746524/zcfnj4rjtbyn82c9bb0n.webp,true
+"""669fc473c0806accd663bdf7""",té,durazno,la virginia,20 saquitos,1400,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721746546/mojaoztlltezttpiplhw.webp,true
+"""669fc48ac0806accd663bdf8""",té,frutilla,la virginia,20 saquitos,1470,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721746570/sateomlhmemptbwg2ujr.webp,true
+"""669fc56608a8bb66f9f4b4fc""",té,"mandarina, naranja y pomelo",la virginia,20 saquitos,1650,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721746789/ye9mpdxea6afws6uxt3q.webp,true
+"""669fc57708a8bb66f9f4b4fd""",té,frutas tropicales,la virginia,20 saquitos,1650,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721746806/gqio8tstvmx1rnzthuxb.webp,true
+"""669fc5f708a8bb66f9f4b4fe""",té,detox,la virginia,25 saquitos,1800,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721746934/qs4ilo6sl1e4mfau5uno.webp,true
+"""669fc61508a8bb66f9f4b4ff""",té,fluir,la virginia,25 saquitos,1800,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721747000/v5pljqykmjrhqa2vjgob.webp,true
+"""669fc62508a8bb66f9f4b500""",té,inspirar,la virginia,25 saquitos,1800,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721746981/njzsqsq3jwb5exxnk3r9.webp,true
+"""66a1010e08a8bb66f9f4b501""",cacao,en polvo,chocolino,800g,6400,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721827598/ggcchbyeqhbst8tqkijp.webp,true
+"""66a112f84f72b759c7984326""",sabor en polvo,verdura,alicante,25g,260,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832183/dztsnz8esz5ntehl7kzo.webp,true
+"""66a1130a4f72b759c7984327""",sabor en polvo,gallina,alicante,25g,260,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832201/z7wx7gtnzv5r6wk3psvo.webp,true
+"""66a113194f72b759c7984328""",sabor en polvo,panceta y hierbas,alicante,25g,260,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832217/tomgluema55uvy3ema9n.webp,true
+"""66a113294f72b759c7984329""",sabor en polvo,crema y verdeo,alicante,25g,260,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832233/psmmt4vvrpgoafwxgovp.webp,true
+"""66a1133f4f72b759c798432a""",sabor en polvo,finas hierbas,alicante,25g,260,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832254/vetb19ivws6uuiftqasf.webp,true
+"""66a1135d4f72b759c798432b""",sabor en polvo,champignones y hongos,alicante,25g,260,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832285/mpg7w31q7nq7dgglgjd8.webp,true
+"""66a1136b4f72b759c798432c""",sabor en polvo,carne,alicante,25g,260,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832298/ybohvtnrcuko38t908bp.webp,true
+"""66a113794f72b759c798432d""",sabor en polvo,4 quesos,alicante,25g,260,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832312/siwmfjeludoyg9mutago.webp,true
+"""66a1138c4f72b759c798432e""",sabor en polvo,albahaca y ajo,alicante,25g,260,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832331/kn5czg5yauerhvtvsonb.webp,true
+"""66a113e54f72b759c798432f""",especia,ají triturado,alicante,50g,1250,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832421/id4rdjf8rysfcsq0efng.webp,true
+"""66a114094f72b759c7984330""",especia,surtidas molidas,alicante,25g,1080,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832457/xxnrajzjzeszjhjqm3zr.webp,true
+"""66a114404f72b759c7984331""",especias,nuez moscada entera,alicante,20g,1800,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832512/gll6vydtkgywgoryccfd.webp,true
+"""66a114764f72b759c7984332""",especias,pimenton dulce,alicante,25g,600,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832566/et97jcwtsse5wffgbwta.webp,true
+"""66a1148a4f72b759c7984333""",especias,pimienta blanca molida,alicante,25g,1200,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832585/rd1kifhdirwet2e35co2.webp,true
+"""66a114a44f72b759c7984334""",especias,cebolla deshidratada,alicante,50g,1800,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832611/xdl2tq4ewrksyy74eddr.webp,true
+"""66a114b94f72b759c7984335""",especias,laurel en hojas,alicante,25g,1100,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832632/wsx73hoscjrfuausqavo.webp,true
+"""66a114cc4f72b759c7984336""",especias,orégano,alicante,25g,900,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832652/paehnmuifllakc7qw5ir.webp,true
+"""66a114e54f72b759c7984337""",especias,perejil deshidratado,alicante,25g,1100,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832677/smvq7oxyithzdefopbnx.webp,true
+"""66a114fd4f72b759c7984338""",especias,provenzal,alicante,25g,800,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832700/nfzjqstufgssa48obc2a.webp,true
+"""66a115174f72b759c7984339""",especias,romero,alicante,15g,500,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832726/h8vll5wky1bv36puo8co.webp,true
+"""66a115224f72b759c798433a""",especias,tomillo,alicante,15g,600,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832738/cr8mu1dkt3mwrkqj5wje.webp,true
+"""66a1153c4f72b759c798433b""",condimento para,empanadas,alicante,25g,980,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832764/s4umxqm7d39izhf9junr.webp,true
+"""66a115484f72b759c798433c""",condimento para,milanesa,alicante,25g,800,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832776/r3ocy7pfwcvnkuzd7itx.webp,true
+"""66a115524f72b759c798433d""",condimento para,pizza,alicante,25g,700,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832785/swbbyuqpncs8o4dmwvyl.webp,true
+"""66a115654f72b759c798433e""",condimento para,chimichurri,alicante,25g,800,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832805/jho1zpz6i9tmxms7k6nv.webp,true
+"""66a1157e4f72b759c798433f""",condimento para,tucos y guisos,alicante,25g,680,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832830/cl1add66a1jq1zh6woeh.webp,true
+"""66a1158d4f72b759c7984340""",condimento para,vegetales cocidos,alicante,25g,790,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832845/uw8wudwqid9sqs5z0pbq.webp,true
+"""66a115ad4f72b759c7984341""",bircarbonate,de sodio,alicante,50g,750,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832877/ifcf0vgd7d5yr7gh9lw8.webp,true
+"""66a115bf4f72b759c7984342""",canela,en rama,alicante,20g,1950,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832895/j65smi32sq7eqieo1rnm.webp,true
+"""66a115d24f72b759c7984343""",canela,molida,alicante,20g,1150,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832914/ywrq22yudwtwvgymgcm8.webp,true
+"""66a115e64f72b759c7984344""",coco,rallado,alicante,50g,950,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832933/ixmg6sekcbqx65lgsgu6.webp,true
+"""66a116104f72b759c7984345""","condimento para ",carnes,alicante,25g,1000,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721832976/tbebgv63kteepzopzuuy.webp,true
+"""66a116294f72b759c7984346""",ajo,triturado deshidratado,alicante,50g,1170,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721833000/z8dzoxg4ejmtkk2heea9.webp,true
+"""66a251d24f72b759c7984347""",galleta,coquitas,bagley,250g,890,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721913809/hjua2bxva8webv0saimc.webp,false
+"""66a251eb4f72b759c7984348""",galleta,rumba,bagley,110g,1050,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721913835/jlmadwnemughnr5cnz5j.webp,true
+"""66a252104f72b759c7984349""",galleta,traviata x 3,bagley,324g,1250,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721913871/vatnctouxvqakdutdhef.webp,true
+"""66a252314f72b759c798434a""",galleta,"porteñitas ",bagley,139g,710,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721913904/mxnovwmk2uerpkzjyzbh.webp,false
+"""66a2524a4f72b759c798434b""",galleta,amor,bagley,110g,1050,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721913929/n7day15dddzsv1qi3xs1.webp,true
+"""66a2525d4f72b759c798434c""",galleta,mellizas,bagley,110g,1050,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721913949/sx92egkrlx4swphbsoeb.webp,true
+"""66a252974f72b759c798434d""",galleta,traviata pack x 5,bagley,541g,1600,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721914006/npa5kzvvfjapdrmal9jv.webp,false
+"""66a252be4f72b759c798434e""",galleta,surtido,bagley,400g,2050,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721914046/nwuzn1udnfuapctrgrtt.webp,true
+"""66a258594f72b759c798434f""","salsa de ",champignones,alicante,35g,2500,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721915481/fyukimtxg4ndyoffqqc2.webp,true
+"""66a258694f72b759c7984350""","salsa de ",4 quesos,alicante,35g,1510,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721915497/xtbbft3lr125dcwppzdd.webp,true
+"""66a258894f72b759c7984351""",cocina en bolsa,finas hierbas,alicante,30g,1700,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721915529/uzl8sgby4lezlknp1kp3.webp,false
+"""66a258984f72b759c7984352""",cocina en bolsa,pimenton,alicante,30g,1700,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721915543/sppgfxqfud9g6ufgqshv.webp,false
+"""66a258ac4f72b759c7984353""",cocina en bolsa,albahaca y ajo,alicante,30g,1700,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721915564/lobfmms1uljgvsyioi8x.webp,false
+"""66a258c74f72b759c7984354""",cocina en bolsa,barbacoa,alicante,30g,1700,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721915590/b32ulavkxaofwlgjjmf1.webp,false
+"""66a258dd4f72b759c7984355""",cocina en bolsa,mostaza y miel,alicante,30g,1700,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721915613/bfqmhwhj2u7gbnzta7yv.webp,false
+"""66a258ea4f72b759c7984356""",cocina en bolsa,criolla,alicante,30g,1700,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721915626/pmynqwzdu76ejsawh7ej.webp,false
+"""66a259c34f72b759c7984358""",filtros de papel,para cafe,la virginia,40 unidades,3600,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721915843/feuzvqrxdxvlzz0q0dha.webp,true
+"""66a25a024f72b759c7984359""",yerba,boldo y poleo,don arregui,500g,1700,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721915905/dmxa1iaybyvfrmgdtk9g.webp,true
+"""66a25a0d4f72b759c798435a""",yerba,burrito,don arregui,500g,1700,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721915917/qmfxvvp8mrorcocexdhq.webp,true
+"""66a25a1e4f72b759c798435b""",yerba,cedron,don arregui,500g,1700,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721915934/xvzz6hb79rhjaz41gj1s.webp,true
+"""66a25a304f72b759c798435c""",yerba,menta,don arregui,500g,1700,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721915951/lhohitsyen5wauibvkbz.webp,true
+"""66a25a454f72b759c798435d""",yerba,peperina,don arregui,500g,1700,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721915973/jnrukogbhiqgfa36m5ye.webp,true
+"""66a25a5c4f72b759c798435e""",yerba,compuesta,don arregui,500g,1700,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721915996/wbzmic28lx5dwjwmbvad.webp,true
+"""66a25ab34f72b759c798435f""",salsa,blanca,alicante,40g,1170,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721916082/swud0o9htd7p8jpn5srx.webp,true
+"""66a25ad84f72b759c7984360""",pimienta negra,en grano,alicante,25g,1100,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721916120/luvo6thawqhmqnbvchqh.webp,true
+"""66a25ae94f72b759c7984361""",pimienta negra,molida,alicante,25g,1200,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721916136/rotnabm5y7shiwzednkp.webp,true
+"""66a25b514f72b759c7984362""",nuez moscada,molida,alicante,25g,1900,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721916240/yeteuxw2p2ajl5ht9lli.webp,true
+"""66a25b6e4f72b759c7984363""",especia,albahaca,alicante,25g,800,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721916269/hgsxss9ab9ygjxmdkqqm.webp,true
+"""66a25b994f72b759c7984364""",condimento para,arroz,alicante,25g,850,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721916313/m2rd8ax6m2vwl7nieoir.webp,true
+"""66a25c174f72b759c7984365""","té ",relajar,la virginia,25 saquitos,1800,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1721916438/dgr3bcieqsu9x4wcua9k.webp,true
+"""66a7b4154f72b759c7984366""",rollo de cocina,clasico,sussex,"3 rollos ",1700,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722266645/yiycwcmidvvak4rehvyo.webp,true
+"""66a7b4604f72b759c7984367""",té,mate cocido,litoral,25 saquitos,1450,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722266720/pckqpipwv6asvqmktkvw.webp,true
+"""66a7b9474f72b759c7984368""",veggie snacks,barbacoa,granix,45g,750,snacks,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722267975/w72woe0vo0dov7wwlaql.webp,true
+"""66a7b9554f72b759c7984369""",veggie snacks,finas hierbas,granix,45g,750,snacks,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722267989/wvihrafp3xkuwphrdava.webp,true
+"""66a7b9634f72b759c798436a""",veggie snacks,pizza,granix,45g,750,snacks,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722268003/husyaepmvumoc4vdqfe6.webp,true
+"""66a7b9724f72b759c798436b""",veggie snacks,cebolla,granix,45g,750,snacks,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722268017/qqrhdvqlqdbqtzmaeqpx.webp,true
+"""66a7b9af4f72b759c798436c""",galleta,vainilla,granovita granix,143g,830,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722268078/qip3dwnwuoblht5vnu9o.webp,true
+"""66a7b9ba4f72b759c798436d""",galleta,limon,granovita granix,143g,830,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722268090/kuljoouaznbwiieejhbr.webp,true
+"""66a7b9c64f72b759c798436e""",galleta,coco,granovita granix,143g,850,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722268101/lhciesnswqehkc2yjn5z.webp,true
+"""66a7b9da4f72b759c798436f""",galleta,algarroba,granovita granix,143g,830,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722268122/tvkx2rhrunsthhcxg84u.webp,true
+"""66a7ba084f72b759c7984370""",galleta,"avena, chía y lino",frutigran granix,260g,1280,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722268168/iyu4dulajxacpehxvbrd.webp,true
+"""66a7ba614f72b759c7984371""",galleta,"sesamo, amaranto y girasol",frutigran granix,260g,1280,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722268256/wizgnw01upxtt2xn9md7.webp,true
+"""66a7baa94f72b759c7984372""",galleta,trigo y avena con frutas tropicales,frutigran granix,260g,1850,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722268329/s6ck6dv9s5iyyvvzzpwa.webp,true
+"""66a7bada4f72b759c7984373""",galleta,trigo y avena con frutos rojos,frutigran granix,260g,1950,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722268378/drucagir8qov8y6adru3.webp,true
+"""66a7bb104f72b759c7984374""",galleta,surtidas,fiesta granix,350g,1100,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722268431/hf5zjnfiwlsodldkjkhc.webp,true
+"""66a7bc2e4f72b759c7984375""",sabor en polvo,verdura bajo en sodio,alicante,6g,260,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722268718/iuwssr9wo0psrsixp9co.webp,true
+"""66a7bd1c4f72b759c7984376""",avena,extrafina,granx,400g,2180,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722268955/w1b8wlywl08vxocngoaq.webp,true
+"""66a7bd464f72b759c7984377""",avena,instantánea,granix,400g,2180,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722268998/iu8kbgqokt1ap2i8muir.webp,true
+"""66a7bd5c4f72b759c7984378""",avena,tradicional,granix,400g,2050,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722269020/ybo2cs25exaryzqmxj0r.webp,true
+"""66a7be1a4f72b759c7984379""",detergente,platinum+,magistral,500g,3700,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722269209/wvtgpadxwys0egzqywxi.webp,false
+"""66a7be5a4f72b759c798437a""",detergente,ultra limón,magistral,500g,3500,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722269273/nyxjfagpwxx6vkmoupfz.webp,true
+"""66a7be7f4f72b759c798437b""",detergente,ultra naranja,zorro,500g,1530,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722269311/imvkjphg8abnr5gcsisp.webp,false
+"""66a7be8d4f72b759c798437c""",detergente,ultra limon,zorro,500g,1530,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722269324/b2t7lgoamqoieqy3zca8.webp,false
+"""66a7beba4f72b759c798437d""",detergente,bioactive limón,cif,300g,1500,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722269370/nld8uyyilkforcfwmtia.webp,true
+"""66aa37ec4f72b759c798437e""","galleta ",sin sal,granix,555g (3 paq),2150,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722431467/q0ccqsx0hos2t5yvgkhw.webp,true
+"""66aa38214f72b759c798437f""","galleta ","sándwich ",granix,600g (3 paq),2350,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722431520/dfer4qh0wuw3llobtzh2.webp,true
+"""66aa38494f72b759c7984380""","galleta ","salvado sin sal ",granix,555g (3 paq),2740,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722431561/gjudpoupjnpdgp9bbtsq.webp,true
+"""66aa386b4f72b759c7984381""","galleta ","salvado ",granix,720g (3 paq),2740,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722431595/dxasofpktniy5mz9usqv.webp,true
+"""66aa38a44f72b759c7984382""","galleta ",sin sal,granix,140g,720,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722431652/fwkjjmyvzibexnwhrntx.webp,true
+"""66aa38bc4f72b759c7984383""","galleta ","sándwich ",granix,200g,850,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722431675/nqgrhs7ofss8bkjgsj9k.webp,true
+"""66aa38cf4f72b759c7984384""","galleta ",salvado sin sal,granix,140g,910,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722431695/m5njqeydbo1mi2a1wigs.webp,true
+"""66aa38dc4f72b759c7984385""","galleta ",salvado,granix,240g,950,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722431707/ge1sb22c9armasympmdr.webp,true
+"""66aa39954f72b759c7984386""",fragancia,lavanda,poett,900ml,1490,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722431893/h1rtonrfjjkxw3w3ee8d.webp,true
+"""66aa39bd4f72b759c7984387""",fragancia,flores de primavera,poett,900ml,1490,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722431932/lhhlpaazv14jj0gsbtby.webp,true
+"""66aa39dc4f72b759c7984388""",fragancia,"espíritu play ",poett,900ml,1490,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722431964/vns3enlmjkweym5wg7z1.webp,true
+"""66aa3a164f72b759c7984389""",fragancia,suavidad de algodon,poett,900ml,1490,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722432021/ozush9tzla2q5qedaws3.webp,true
+"""66aa3ac04f72b759c798438a""","desodorante ",72h nutritive,rexona,150ml,2870,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722432191/pybb773e30pjq0cdpsq5.webp,true
+"""66aa3adc4f72b759c798438b""","desodorante ",72h active motion,rexona,150ml,2870,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722432219/uiexopymstcqfvz1lbw0.webp,true
+"""66aa447c4f72b759c798438c""","desodorante ",72h cotton dry,rexona,150ml,2870,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722434683/gdlejckdmpwie6lcfopb.webp,true
+"""66aa45164f72b759c798438d""",espirales,,raid,12 u,1860,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722434837/mcce2k7zk2h3id82iezu.webp,false
+"""66aa45814f72b759c798438e""",insecticida,max,raid,360cm,4800,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722434945/w47ghvhi3eub9rgaqvye.webp,false
+"""66aa45954f72b759c798438f""",insecticida,sin olor,raid,360cm,5200,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722434965/azwzvaytmobyqwtbm8ij.webp,true
+"""66aa45c04f72b759c7984390""",insecticida,"casa y jardín ",raid,360cm,3260,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722435008/kl6zrdpvlua7z5gxcfzc.webp,false
+"""66aa45f64f72b759c7984391""",insecticida,clacico,raid,360cm3,5200,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722435062/i3hpch1bmzbmappkwjwk.webp,true
+"""66aa46f64f72b759c7984392""",jugo,multifruta,bc,1 lt,1250,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722435317/cgqsh8mawg9wi1j6cjsb.webp,false
+"""66aa47054f72b759c7984393""",jugo,naranja,bc,1 lt,1250,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722435333/uws5uu9qaknigk9foobo.webp,false
+"""66aa47134f72b759c7984394""",jugo,manzana,bc,1 lt,1250,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722435347/vghhkmdfciweryxhxz7j.webp,false
+"""66aa47244f72b759c7984395""",jugo,manzana,bc,200ml,350,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722435363/clxv9llo3h0x5curwxdh.webp,false
+"""66aa472f4f72b759c7984396""",jugo,naranja,bc,200ml,350,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722435374/wkxmmjw6zv2jcsvvflku.webp,false
+"""66aa473b4f72b759c7984397""",jugo,manzana,bc,200ml,350,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722435386/y4tlvaiw4gyzfrtzhvrg.webp,false
+"""66aa477a4f72b759c7984398""",cafe,original,dolca,50g,3000,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722435450/zmswopzew9vg6mjifmps.webp,true
+"""66aa47844f72b759c7984399""",cafe,original,dolca,100g,4540,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722435460/sm9wfszp2cpgvftbizjd.webp,true
+"""66aa478c4f72b759c798439a""",cafe,original,dolca,170g,6480,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722435468/vrcx8f69kdonglwmw7rl.webp,true
+"""66aa47a74f72b759c798439b""",cafe,original pack ahorro,dolca,170g,5700,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722435495/vuq4rhv5nkpzkj2jmxxd.webp,true
+"""66aa47c44f72b759c798439c""",cafe,suave pack ahorro,dolca,170g,5700,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722435523/iqcpaujz2bdbboihp5cu.webp,true
+"""66aa47d64f72b759c798439d""",cafe,suave,dolca,50g,3000,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722435541/pxztpxvihubivlaswga4.webp,true
+"""66aa47e54f72b759c798439e""",cafe,suave,dolca,100g,4540,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722435556/ztuzgdd6jslxnkw0liqn.webp,true
+"""66aa47fe4f72b759c798439f""",cafe,suave,dolca,170g,6480,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722435581/avh2qbszz1s4wwymqwwd.webp,true
+"""66aa4d8876200a3b770e40de""",cafe,alta rica,nescafe gold,100g,17300,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722437000/ouja2ytyinbnjekquati.webp,false
+"""66aa4db676200a3b770e40df""",cafe,cap colombia,nescafe gold,100g,17300,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722437046/zwf8fqgs2zuzomzl31of.webp,false
+"""66aa4def76200a3b770e40e0""",cafe,100% puro,"nescafe ",150g,8800,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722437103/weao280mwjjqpci4b5bm.webp,true
+"""66aa4e0b76200a3b770e40e1""",cafe,black roast,"nescafe ",110g,5050,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722437131/ywfawtvxxjz099gcwtgo.webp,false
+"""66aa4e2a76200a3b770e40e2""",cafe,descafeinado,"nescafe ",100g,10400,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722437162/kzhaujgayhhabsttwvek.webp,true
+"""66aba15f76200a3b770e40e3""",cerveza,lager,schneider,473cm,1500,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722523999/b6nuasxasgrt5dcjnpcr.webp,true
+"""66aba17776200a3b770e40e4""",cerveza,rubia,salta cautiva,473cm,2000,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722524022/umvvpzz16wfgyfxaoeyd.webp,true
+"""66aba19c76200a3b770e40e5""",pan dulce,con frutas,matero firenze,350g,2700,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722524060/sftpy1f6bmmqlwnrtzur.webp,true
+"""66aba1af76200a3b770e40e6""",pan dulce,con gotas de chocolate,matero firenze,350g,2700,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722524078/vijfg77awfvqtt4f2cgt.webp,true
+"""66aba1d176200a3b770e40e7""",galleta,"sesamo sin sal ",granix,185g,850,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722524113/cywnkgnteukagjser6yh.webp,true
+"""66aba1e076200a3b770e40e8""",galleta,"sésamo ",granix,185g,850,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722524127/engsvblaazvdofimlyqm.webp,true
+"""66aba1ec76200a3b770e40e9""",galleta,lino,granix,185g,800,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722524139/l7rol92lt1dnp7wwf5tw.webp,true
+"""66aba1f976200a3b770e40ea""",galleta,cereal,granix,185g,800,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722524152/g67nuz20va65nlzhek52.webp,true
+"""66aba69d76200a3b770e40eb""",cerveza,lager,schneider,710cm,2400,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722525341/lwkgennh5ssfemxoousr.webp,true
+"""66aba6be76200a3b770e40ec""",cerveza,roja,imperial,473cm,2100,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722525374/vclgsxr5xavkph0mdbkd.webp,true
+"""66aba6e176200a3b770e40ed""",cerveza,golden,imperial,710cm,3000,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722525408/ras0dddahcs7tzix1gh1.webp,true
+"""66aba6ef76200a3b770e40ee""",cerveza,lager,imperial,710cm,3000,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722525423/tbwtwdekawfeuwavcofi.webp,true
+"""66aba71b76200a3b770e40ef""",chocolate,block,cofler,110 gr,4600,golosinas,,false
+"""66aba79676200a3b770e40f0""",cerveza,pilsner,grolsch,473cm,1900,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722525590/vlewfd1sgsay8dabikev.webp,false
+"""66aba7cc76200a3b770e40f1""",cerveza,apa,imperial,473cm,2100,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722525643/f4qe7uyuguwxmbdgyffi.webp,true
+"""66aba7d876200a3b770e40f2""",cerveza,cream stout,imperial,473cm,2100,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722525655/dblfdnz2ztgeo55kme2o.webp,true
+"""66aba7e976200a3b770e40f3""",cerveza,golden,imperial,473cm,1900,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722525673/ykr34ks5stopjjndhehc.webp,true
+"""66aba7f876200a3b770e40f4""",cerveza,ipa,imperial,473cm,2100,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722525688/p9tvobktq8fcho2dimch.webp,true
+"""66aba85576200a3b770e40f5""",cerveza,lager,imperial,473cm,1900,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722525780/kfciawlxxqh7ohee7now.webp,true
+"""66aba86a76200a3b770e40f6""",cerveza,malta,heniken,473cm,2600,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722525802/oyy6q5wquosarsbworel.webp,true
+"""66aba8b176200a3b770e40f7""",cerveza,rubia,miller,310cm,2150,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722525872/jpoggt588zqm6raqqmrx.webp,true
+"""66acede576200a3b770e40f8""","café ","tostado 100% arábica ",la virginia,500g,9200,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722609125/fpfi3cswupa1znhg360j.webp,false
+"""66acee3376200a3b770e40f9""",café,torrado,la virginia,20 saquitos,3600,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722609202/ck7qv8ouysgx9nqh4uj4.webp,true
+"""66acee7f76200a3b770e40fa""",café,instantáneo pack ahorro,la virginia,170g,4590,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722609279/zvnyh12ipqjviawxjsdz.webp,true
+"""66aceed376200a3b770e40fb""",café,instantáneo,la virginia,170g,5200,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722609362/bbbo4lbo1y9dmspn1mwv.webp,true
+"""66aceee276200a3b770e40fc""",café,instantáneo,la virginia,50g,1820,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722609377/nzlsal4buoqtbybvopzi.webp,true
+"""66acef0976200a3b770e40fd""",café,instantáneo,la virginia,100g,3350,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722609417/mdu2tmazf8rmolccqe17.webp,true
+"""66acef3176200a3b770e40fe""",café,instantáneo suave pack ahorro,la virginia,170g,4590,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722609456/hihlwkg7uxtxqdm1zaip.webp,true
+"""66acef4576200a3b770e40ff""",café,instantáneo suave,la virginia,170g,5200,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722609476/eywszrpggmgydzqdq4fc.webp,true
+"""66acef5676200a3b770e4100""",café,instantáneo suave,la virginia,50g,1820,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722609494/mmisilcwacjrbtgxjwgx.webp,true
+"""66acef6876200a3b770e4101""",café,instantáneo suave,la virginia,100g,3350,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722609511/qiz7lxb8xw9rqss4iboc.webp,true
+"""66acef8776200a3b770e4102""",café,kalma descafeinado,la virginia,100g,4600,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722609543/s96knscwftt5klmdqsyz.webp,true
+"""66acf00976200a3b770e4103""","café ",torrado,la virginia,500g,7500,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722609672/dit5mjorknwr8iw3ormq.webp,true
+"""66acf01776200a3b770e4104""","café ",torrado,la virginia,250g,3750,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722609686/jxarzsedg1i5lpy2pnjf.webp,true
+"""66acf02c76200a3b770e4105""","café ",torrado,la virginia,125g,2100,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722609707/tmy8vxs5uxwkxh2uht0n.webp,true
+"""66acf07c76200a3b770e4106""",papel higenico,fresh,higienol,4 rollo | 30 m,1700,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722609788/ogmzmanh0vuydrgevrxy.webp,true
+"""66acf09976200a3b770e4107""",papel higenico,max,higienol,4 rollo | 80 m,3800,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722609817/cky4mrwkuy1f5d61oow0.webp,true
+"""66acf0f376200a3b770e4108""",papel higenico,plus doble hoja,higienol,4 rollo | 30 m,2900,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722609907/tsv7hrfyy2iqro753twl.webp,true
+"""66acf19176200a3b770e4109""",tostadas de arroz,"clásicas ","carilo ",150g,1560,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722610064/czlemtv2mpy644y3ypil.webp,true
+"""66acf1a476200a3b770e410a""",tostadas de arroz,dulces,"carilo ",150g,1560,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722610084/x6chugcegfrbdc3xjoge.webp,true
+"""66acf1bf76200a3b770e410b""",tostadas de arroz,integral,"carilo ",150g,1560,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722610111/o9n6ugzbsiqjywdnwiwg.webp,true
+"""66acf20476200a3b770e410c""",tostadas de arroz,sin sal,"carilo ",150g,1560,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722610179/bodhliiqzjkquxis7r8g.webp,true
+"""66b120bc76200a3b770e410d""",protector diario,normal,nosotras,20 unidades,1150,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722884283/n2jgxwps8cg12dfx38lr.webp,true
+"""66b120da76200a3b770e410e""",protector diario,largos,nosotras,15 unidades,1000,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722884313/il7kmilw2teceuxy4q4r.webp,true
+"""66b1212676200a3b770e410f""",toallitas,"clásicas ",nosotras,8 unidades,1500,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722884389/vm6t616hmhzvzhvbdu1y.webp,true
+"""66b1213876200a3b770e4110""",toallitas,nocturna suave,nosotras,8 unidades,1500,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722884408/ye4xtwx4li1ryur38qam.webp,true
+"""66b121fd76200a3b770e4111""",toallitas,"super anatómica ",calipso,8 unidades,1,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722884605/vtqjphrrwwkitu2jgetn.webp,false
+"""66b1224076200a3b770e4112""",toallitas,nocturnas,calipso,8 unidades,1300,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722884672/g2k0pfryfq0xcknrjq5k.webp,true
+"""66b1224e76200a3b770e4113""",toallitas,normal,calipso,8 unidades,650,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722884685/zisewafynajlxusb4qnb.webp,true
+"""66b1226f76200a3b770e4114""",toallitas,normal con gel,calipso,16 unidades,1150,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722884718/qbbxbosnak5dugswdl6n.webp,true
+"""66b122d276200a3b770e4115""",tampones,super,nosotras,8 unidades,2500,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722884817/w6xcked6y7cubb60b7n0.webp,true
+"""66b1235076200a3b770e4116""",cerveza,session ipa,salta cautiva,473 cm³,2000,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722884944/j6xeww573bwfl1ppirpc.webp,true
+"""66b1243576200a3b770e4117""","desodorante ",odorono,rexona,60g,1400,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722885172/zs9psdihydkaluejwz4i.webp,true
+"""66b1264976200a3b770e4118""",baloncitos,chocolatados,granix,150g,1100,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722885704/qf7kupokowxkcemjhqa9.webp,true
+"""66b1268c76200a3b770e4119""",cereales,frutos rojos,naturitos granix,90g,1050,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722885772/d6xu0z0atyetmffkenp9.webp,true
+"""66b1269b76200a3b770e411a""",cereales,dulce de leche,naturitos granix,90g,1050,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722885786/p883h5go1tx4awkzb2wo.webp,true
+"""66b1274c76200a3b770e411b""",mermelada,durazno,la campagnola,454g,2650,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722885963/uv3svpnntlpq0f1ohbvk.webp,true
+"""66b1275a76200a3b770e411c""",mermelada,frutilla,la campagnola,454g,3200,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722885978/eekz5jfxpt270xzyihcy.webp,true
+"""66b1276976200a3b770e411d""",mermelada,ciruela,la campagnola,454g,2650,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722885992/jyasmoqvgfgnguy7qqwt.webp,true
+"""66b1277a76200a3b770e411e""",mermelada,naranja,la campagnola,454g,2650,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722886010/m9vx9a9ur882i6wfrfou.webp,true
+"""66b1279b76200a3b770e4120""",mermelada,"arándano ",la campagnola,454g,3200,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722886043/isyqvlrqogfh38fgykgi.webp,true
+"""66b127a976200a3b770e4121""",mermelada,frutos rojos,la campagnola,454g,3200,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722886057/fi9ps1qurqlxybo2milt.webp,true
+"""66b127cb76200a3b770e4122""",mermelada,damasco,BC la campagnola,390g,2750,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722886090/anp3ny2adgkdku2qqmpi.webp,true
+"""66b127db76200a3b770e4123""",mermelada,frutilla,BC la campagnola,390g,3350,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722886107/tkeqzkwkpiyocyidr9pa.webp,true
+"""66b127e976200a3b770e4124""",mermelada,ciruela,BC la campagnola,390g,2750,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722886121/uisk1hsdhjtaql0bh2d6.webp,true
+"""66b127fa76200a3b770e4125""",mermelada,naranja,BC la campagnola,390g,2750,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722886138/puacn9joi9bww7cxav2z.webp,true
+"""66b1280776200a3b770e4126""",mermelada,"arándano ",BC la campagnola,390g,3350,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722886151/mqdiodrq8q34bq3neo4o.webp,true
+"""66b1289c76200a3b770e4127""",mermelada,frutos rojo,BC la campagnola,390g,3350,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722886299/bwmmnr6ljrsv9jyw71pu.webp,true
+"""66b1291076200a3b770e4128""",vino,cabernet suavignon,"eugenio bustos ",750cm³,4200,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722886416/kj8wshtrnwvt7fox7zr0.webp,true
+"""66b1295b76200a3b770e4129""",vino,malbec,eugenio bustos,750cm³,4200,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722886491/hf48sd8hsnsvvi1dhmc5.webp,true
+"""66b1298076200a3b770e412a""",vino,suavignon blanc,colon selecto,750cm³,4100,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722886527/ujd5qaacpzk0icqinzcq.webp,false
+"""66b1298d76200a3b770e412b""",vino,chardonnay,colon selecto,750cm³,4100,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722886541/gyzoykoyevs0q6gyqflt.webp,true
+"""66b129a176200a3b770e412c""",vino,"tinto dulce ",colon selecto,750cm³,4100,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722886560/nkrkm8vuf6ncdstxtimp.webp,true
+"""66b129b976200a3b770e412d""",vino,dulce fresco rose,colon selecto,750cm³,4100,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722886585/u6fxzgvxufsphzpzdu4i.webp,false
+"""66b12a8b76200a3b770e412f""",cappuccino,tradicional,dolca nescafe,125g,2790,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722886794/pspwop2k3k0rmznccsww.webp,true
+"""66b12ab676200a3b770e4130""",cappuccino,tradicional,la virginia,125g,3500,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1722886837/vje3nhpe4y6zkud4k5qx.webp,true
+"""66bea619ece037bcdf37b1c9""",leche,0 lactosa sachet,la serenisima,1lt,1650,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723770392/xatys45r739pilhyk5lv.webp,true
+"""66bea63fece037bcdf37b1ca""",leche,liviana sachet,la serenisima,1lt,1650,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723770430/w2bgtqyho34afvtmmnqk.webp,true
+"""66bea652ece037bcdf37b1cb""",leche,entera sachet,la serenisima,1lt,1650,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723770449/mamnjgvffeeperkqrcoi.webp,true
+"""66bea672ece037bcdf37b1cc""",leche,entera larga vida,la serenisima,1lt,2000,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723770482/srtrxwe7hfo6ul7icupb.webp,true
+"""66bea684ece037bcdf37b1cd""",leche,liviana larga vida,la serenisima,1lt,2000,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723770499/dpagmqahlnra1s0npe3m.webp,true
+"""66bea6dfece037bcdf37b1ce""",leche,entera botella,la serenisima,1lt,2100,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723770591/phpfkeivyqqfcvbq6kwo.webp,true
+"""66bea6eeece037bcdf37b1cf""",leche,liviana botella,la serenisima,1lt,2100,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723770605/e8kufyrzuiye8wpmplok.webp,true
+"""66bea711ece037bcdf37b1d0""",leche,0 lactosa botella,la serenisima,1lt,2200,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723770641/rapnyz6yly8zeiycozqm.webp,true
+"""66bea817ece037bcdf37b1d1""",energizante,"clásica ",monster,473ml,2000,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723770903/aayzrottw42lo5qfuhhr.webp,true
+"""66bea82dece037bcdf37b1d2""",energizante,mango loco,monster,473ml,2000,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723770924/hddywp1pyzqkwwve7rcr.webp,true
+"""66bea84aece037bcdf37b1d3""",energizante,the doctor,monster,473ml,2000,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723770953/slrfk7rgi2r0kr3m0hv4.webp,true
+"""66bea878ece037bcdf37b1d4""",energizante,watermelon,monster,473ml,2000,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723771000/y47y0xcxgkxwvidenfmr.webp,true
+"""66bea896ece037bcdf37b1d5""",energizante,white pineapple,monster,473ml,2000,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723771029/jjbstgrddz7enjfwunqv.webp,true
+"""66bea8baece037bcdf37b1d6""",energizante,paradise,monster,473ml,2000,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723771065/v27rlahjilfmh0wlopt5.webp,true
+"""66bea8cbece037bcdf37b1d7""",energizante,sunrise,monster,473ml,2000,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723771082/fb4d6y4r7tm8nvw8tn0j.webp,true
+"""66bea8e2ece037bcdf37b1d8""",energizante,sin azucar,monster,473ml,2000,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723771106/hpsc5gfp4flyj171slwh.webp,true
+"""66bea907ece037bcdf37b1d9""",energizante,zero,monster,473ml,2000,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723771142/ivl6gq6kpp14hqofenzp.webp,true
+"""66bf5db2ece037bcdf37b1da""",yogur,firme clásico con cereales,la serenisima,159g,1450,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723817394/dfroxhf36yf7cogxwiqj.webp,true
+"""66bf5de2ece037bcdf37b1db""",yogur,firme clásico vainilla,la serenisima,190g,890,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723817832/yjhxniwxrxhovzcxdstd.webp,true
+"""66bf5e3dece037bcdf37b1dc""",yogur,firme clasico frutilla,la serenisima,190g,890,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723817533/wcznm43islaeatl86od2.webp,true
+"""66bf6004ece037bcdf37b1de""",yogur,firme vainilla,la serenisima,120g,730,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723817988/r0hic3ilryiqbnwmf94c.webp,false,"{""url"":""https://res.cloudinary.com/dp7xhhcec/image/upload/v1740609752/products-diego/etbjjksmlaxinynoxkcp.webp"",""public_id"":""products-diego/etbjjksmlaxinynoxkcp""}"
+"""66bf6068ece037bcdf37b1df""",yogur,firme descremado vainilla,la serenisima,190g,890,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723818087/a6dofium7bk1kwb4pd8v.webp,true
+"""66bf60a4ece037bcdf37b1e0""",yogur,firme descremado frutilla,la serenisima,190g,890,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723818148/pmuzcbvh9gpmf4zezpt5.webp,true
+"""66bf6124ece037bcdf37b1e1""",yogur,sachet vainilla,la serenisima,900g,1800,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723818276/fm5qijwazwl7mv7g3qve.webp,true
+"""66bf6136ece037bcdf37b1e2""",yogur,sachet frutilla,la serenisima,900g,1800,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723818293/sfy44ynwt02a2ekiocq2.webp,true
+"""66bf614dece037bcdf37b1e3""",yogur,descremado sachet frutilla,la serenisima,900g,1800,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723818356/mmlz24l1arq4iwg4s2r3.webp,true
+"""66bf615fece037bcdf37b1e4""",yogur,descremado sachet vainilla,la serenisima,900g,1800,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723818335/rpgegqjdjbl17xmputff.webp,true
+"""66bf61e9ece037bcdf37b1e5""",queso rallado,reggianito,la serenisima,35g,1100,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723818472/d1hrsbmhrbypt6xhisim.webp,true
+"""66bf6221ece037bcdf37b1e6""",dulce de leche,"clásico ",la serenisima,400g,3020,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723818528/q2advjkkc4bxf2pkyufs.webp,true
+"""66bf6243ece037bcdf37b1e7""",dulce de leche,"clásico ",la serenisima,250g,2200,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723818562/xvq5jbdotwlx2b6kqys2.webp,true
+"""66bf62b8ece037bcdf37b1e8""",queso crema,"clásico ",la serenisima,290g,2100,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723818680/guejcce0qijneuvskemr.webp,true
+"""66bf62ddece037bcdf37b1e9""",queso crema,light,la serenisima,290g,2100,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723818715/tponjsghcpmp35dgaocp.webp,true
+"""66bf635dece037bcdf37b1ea""",chocolatada,"clásico ",la serenisima,1lt,3700,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723818845/umu1d62i07xzry0bncy8.webp,true
+"""66bf6385ece037bcdf37b1eb""",manteca,"clásico ",la serenisima,200g,3400,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723818884/wekl7i3ychbv8yhiw0wd.webp,true
+"""66bf639aece037bcdf37b1ec""",manteca,"clásico ",la serenisima,100g,1850,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723818906/mwnwf6zokyvceo4uovsn.webp,true
+"""66bf63e8ece037bcdf37b1ed""",manteca,"clásico ",tonadita,100g,1530,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723818983/kjhowi6gxeb4yza4fggj.webp,true
+"""66bf63faece037bcdf37b1ee""",manteca,"clásico ",tonadita,200g,2800,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723819002/bqvcppilseocdyx8fcuf.webp,true
+"""66bf6434ece037bcdf37b1ef""",crema de leche,clásica,tonadita,200g,1890,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723819060/ygaqwu6slgmec1apaksm.webp,true
+"""66bf6446ece037bcdf37b1f0""",crema de leche,clásica,tonadita,350g,3500,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723819078/i5aiv9sgats3vq4sduud.webp,true
+"""66bf64beece037bcdf37b1f1""",queso crema,original,patagonia tonadita,300g,2700,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723819197/xfpgxsdhggbuxud7rhdy.webp,true
+"""66bf64d5ece037bcdf37b1f2""",queso crema,reducido,patagonia tonadita,300g,2700,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723819221/jvh8gy4tgqibmk175sbt.webp,true
+"""66bf6512ece037bcdf37b1f3""",queso ultable,"jamón ",tonadita,180g,1600,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723819282/zv2tgwtthfrtukg7isqc.webp,true
+"""66bf6521ece037bcdf37b1f4""",queso ultable,gruyere,tonadita,180g,1600,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723819296/roaxpo8p7kdo9e4sw6nv.webp,true
+"""66bf652cece037bcdf37b1f5""",queso ultable,reducido,tonadita,180g,1600,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723819307/hs21xustdvnqxv1nkppf.webp,true
+"""66bf653aece037bcdf37b1f6""",queso ultable,clasico,tonadita,180g,1600,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723819322/qnpvdlhx6gnamll8we8t.webp,true
+"""66bf6549ece037bcdf37b1f7""",queso ultable,queso azul,tonadita,180g,1600,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1723819337/tbbg5qkzxf5srtn5iits.webp,true
+"""66c4979dec410e622a68d2d2""",queso ultable,cheddar,tonadita,180g,1600,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724159901/u0nqvivbi1obnxfvkae5.webp,true
+"""66c49803ec410e622a68d2d3""",queso cheddar,"en fetas ",tonadita,10 fetas,2000,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724160002/z1vgfdovqnglqog3fdr3.webp,true
+"""66c4984fec410e622a68d2d4""","agua saborizada ",limonada,aquarius,1.5lt,2100,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724160079/pglb7ultr1ambhnzlhjn.webp,true
+"""66c49ac3ec410e622a68d2d5""","agua saborizada ",manzana,aquarius,1.5lt,2100,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724160706/tp1ssoyfmcpspwkuxhlv.webp,true
+"""66c49af3ec410e622a68d2d6""","agua saborizada ",manzana,aquarius,1.5lt,2100,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724160754/j4zgpz4yuy12qg33zdr6.webp,true
+"""66c49b00ec410e622a68d2d7""","agua saborizada ",naranja,aquarius,1.5lt,2100,bebidas_sin_alcohol,,true
+"""66c49b0dec410e622a68d2d8""","agua saborizada ",pera,aquarius,1.5lt,2100,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724160781/eg7wmf35pvzcl1yhangk.webp,true
+"""66c49b18ec410e622a68d2d9""","agua saborizada ",pomelo,aquarius,1.5lt,2100,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724160791/egtjax4qayatqij21hgw.webp,true
+"""66c49b88ec410e622a68d2da""","agua saborizada ",manzana,aquarius,"2,25lt",2900,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724160904/jxufjogifftjlunszvnl.webp,true
+"""66c49b9aec410e622a68d2db""","agua saborizada ",pera,aquarius,"2,25lt",2900,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724160921/efywbt7msyo8cdpve3l4.webp,true
+"""66c49ba5ec410e622a68d2dc""","agua saborizada ",pomelo,aquarius,"2,25lt",2900,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724160932/tvlumuhjbc1dfbkeikiy.webp,true
+"""66c49bb1ec410e622a68d2dd""","agua saborizada ",pomelo rosado,aquarius,"2,25lt",2900,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724160944/ckshmvi0t3wlnl26hn9k.webp,true
+"""66c49d4bec410e622a68d2de""",bebida deportiva,mountain blast,powerade,500ml,1400,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724161355/pqnb7ovzgk2xuhdw7xtk.webp,true
+"""66c49d56ec410e622a68d2df""",bebida deportiva,manzana,powerade,500ml,1400,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724161366/ogfgc1qmf6r5if0yjk0l.webp,true
+"""66c49d64ec410e622a68d2e0""",bebida deportiva,frutas tropicales,powerade,500ml,1400,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724161380/jv0hepi5hkwhqqpjzfxq.webp,true
+"""66c49d86ec410e622a68d2e1""",bebida deportiva,uva,powerade,500ml,1400,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724161414/rvi2upkiwawiyfhtjqho.webp,true
+"""66c49dfcec410e622a68d2e2""",jugo,multifruta,cepita,1lt,1800,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724161531/nfjub2rsaehc74pulvum.webp,true
+"""66c49e32ec410e622a68d2e3""",jugo,durazno delicioso,cepita,995ml,1800,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724161586/pdrmxw0rjlg6v7w1njfg.webp,true
+"""66c49e75ec410e622a68d2e4""",jugo,soja + frutas tropicales,ades,1 lt,2000,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724161652/cyio05bcxw6kwhdote9y.webp,true
+"""66c49e87ec410e622a68d2e5""",jugo,soja + naranja,ades,1 lt,2000,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724161671/nqakrkoruke855s1nihi.webp,true
+"""66c49e92ec410e622a68d2e6""",jugo,soja + manzana,ades,1 lt,2000,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724161682/q8kk3gkgfjvyth6jd4he.webp,true
+"""66c49ea9ec410e622a68d2e7""",jugo,soja + manzana,ades,200ml,750,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724161705/vnrreo9jusp8m1b4l8wq.webp,true
+"""66c49eb6ec410e622a68d2e8""",jugo,soja + naranja,ades,200ml,750,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724161718/h1fae3lrgejbdqzwdtmu.webp,true
+"""66c49ec5ec410e622a68d2e9""",jugo,soja + frutas tropicales,ades,200ml,750,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724161732/roihe8a4bwrwa6zsusuo.webp,true
+"""66c49ee9ec410e622a68d2ea""",galleta,surtido,terrabusi,390g,1800,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724161769/nbn3aeyr5muynncfdjc6.webp,true
+"""66c49f28ec410e622a68d2eb""",jugo,manzana,cepita,1lt,1800,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724161831/mjrqgbv1t5ka20pc5zl8.webp,true
+"""66c49f32ec410e622a68d2ec""",jugo,naranja,cepita,1lt,1800,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724161842/geuyedlkemf0yc0sa6gb.webp,true
+"""66c49f49ec410e622a68d2ed""",jugo,naranja tentacion,cepita,995ml,1800,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724161865/yqb6bqgsnl3ojvmynsdl.webp,true
+"""66c49f65ec410e622a68d2ee""",jugo,ananá mandarina,cepita mix,995ml,1800,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724161893/rfmow3fsadbd4a0yejov.webp,true
+"""66c49f8cec410e622a68d2ef""",jugo,frutilla mango,cepita mix,995ml,1800,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724161932/nqjgfqgljl7uhveu1gzh.webp,true
+"""66c49fb1ec410e622a68d2f0""",bebida deportiva,powerade,gold rush,500ml,1400,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724161969/at3qqancfhs64zhts8i2.webp,true
+"""66c880f3ec410e622a68d2f1""",aceite,de girasol,cañuelas,1.5lt,3100,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724416243/ywjstiq3x7nydaqxs8mv.webp,true
+"""66c88146ec410e622a68d2f2""",aceite,de girasol,cañuelas,900ml,2100,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724416325/lloqyztgiwfny8qpuh7i.webp,true
+"""66c881fdec410e622a68d2f3""",galleta,clásica,oreo,118g,1500,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724416509/gtjft2vb9crkbxoefn33.webp,true
+"""66c8825aec410e622a68d2f4""",galleta,sin gluten,oreo,95g,2000,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724416601/wftqeyhliz1iusnlabsr.webp,true
+"""66c882dbec410e622a68d2f6""",galleta,mini,oreo,50g,750,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724416730/cy6kmgcsmqvyofvspyv5.webp,true
+"""66c887deec410e622a68d2f7""",energizante,,redbull,335ml,2300,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724418013/qotli3w8sfl4oqg2qxdu.webp,true
+"""66c88866ec410e622a68d2f8""","aderezo ",ketchup,hellmanns,250g,1860,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724418149/m4opt02npfdbuh5zmbyt.webp,true
+"""66c889a7ec410e622a68d2f9""",aderezo,mayonesa clásica,hellmanns,1kg,4100,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724418471/s6a6njjdvzksmxabtj3d.webp,true
+"""66c889e4ec410e622a68d2fa""",aderezo,mayonesa clásica,hellmanns,475g,1910,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1724418532/oywjgfvqgzkof1g0wvvt.webp,true
+"""66d33714ec410e622a68d2fb""",fernet,,branca,450ml,7100,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725118228/sdjo3zgnqlay9lc6la0d.webp,true
+"""66d3372aec410e622a68d2fc""",fernet,,branca,750ml,10200,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725118249/bixzyq9czmbu7q41gxrq.webp,true
+"""66d339a4ec410e622a68d2fd""",legumbres,trigo pelado,egran,500g,1950,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725118883/cuovmb5dnbvxuh0efsji.webp,true
+"""66d339b0ec410e622a68d2fe""",legumbres,trigo burgol,egran,500g,3170,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725118896/fqnieghyzum8k8necdav.webp,true
+"""66d339bdec410e622a68d2ff""",legumbres,soja,egran,500g,1,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725118909/ic4dxyeoztdfjw1p656o.webp,false
+"""66d339d9ec410e622a68d300""",legumbres,semola,egran,500g,2060,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725118936/aweocyq2abt767xajklc.webp,true
+"""66d339f9ec410e622a68d301""",legumbres,porotos colorados,egran,500g,1,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725118968/wfdoddj6tzdwob3mqae4.webp,false
+"""66d33a06ec410e622a68d302""",legumbres,porotos arubia,egran,500g,3600,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725118982/oqfgvyffkpfggis2uggy.webp,false
+"""66d33a26ec410e622a68d303""",maiz,pisingallo,egran,500g,900,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725119014/ft05gjvjxh2v1z19ysef.webp,true
+"""66d33a37ec410e622a68d304""",maiz,pelado blanco,egran,500g,1900,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725119030/e1b30p0dzpjof3ng36ku.webp,false
+"""66d33a47ec410e622a68d305""",maiz,pelado colorado,egran,500g,1,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725119047/maw6r40hzl7vjo0m7obe.webp,false
+"""66d33a6cec410e622a68d306""",lentejones,sin remojo previo,egran,400g,3250,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725119084/vbtfzwnvpl4weipi9pqj.webp,true
+"""66d33a83ec410e622a68d307""",lentejas,premium,granix,400g,1,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725119107/utmvmrlt2tjbbygpkba8.webp,false
+"""66d33aa0ec410e622a68d308""",lentejas,super rapidas,egran,400g,2450,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725119136/u0c0kd1h0wjxt8lkaktf.webp,true
+"""66d33acaec410e622a68d309""",jardinera,de cereales y legumbres,egran,400g,1750,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725119177/ku1lxqqonfvt8yfneniv.webp,true
+"""66d33aecec410e622a68d30a""",garbanzos,,egran,500g,1650,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725119212/zg5srsrhv368p18qrxxc.webp,true
+"""66d33bd0ec410e622a68d30b""",avena,tradicional,egran,400g,2000,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725119439/wuzqussigyzap5zoxurk.webp,true
+"""66d33be6ec410e622a68d30c""",avena,instantaneo,egran,350g,1860,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725119461/rgawijvy10k1yrtgs3gy.webp,true
+"""66d33c02ec410e622a68d30d""",arvejas,verdes partidas,egran,500g,1200,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725119490/izknquvrdj9qkyjsscsq.webp,true
+"""66d33c1cec410e622a68d30e""",almidon de maiz,,egran,200g,840,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725119516/ga56h6spagzpap6pnoxw.webp,false
+"""66d33cb9ec410e622a68d30f""",bizcochuelo,sabor chocolate,exquisita,540g,2200,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725119673/ufuncz5o94zufusacgyj.webp,true
+"""66d33cc6ec410e622a68d310""",bizcochuelo,sabor coco,exquisita,540g,2200,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725119686/t1mrsj9ly1vczx3eq3ku.webp,true
+"""66d33cd3ec410e622a68d311""",bizcochuelo,sabor limon,exquisita,540g,2200,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725119698/ctg5pe7kqpmqyulwtw1p.webp,true
+"""66d33ce6ec410e622a68d312""",bizcochuelo,sabor naranja,exquisita,540g,2200,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725119718/cchjsu7vfrlmnsjsee7c.webp,true
+"""66d33d02ec410e622a68d313""",bizcochuelo,sabor vainilla,exquisita,540g,2200,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725119745/jjgkzr8powav2ghylqvr.webp,true
+"""66d33d45ec410e622a68d314""",gaseosa,limon,pritty,2.25ml,2000,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725119812/lpj2mpckxzrn4atwqszb.webp,true
+"""66d33d4eec410e622a68d315""",gaseosa,limon,pritty,3l,2400,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725119822/eo79hfg2rciswtfcgjs6.webp,true
+"""66d33d60ec410e622a68d316""",gaseosa,,doble cola,3l,1,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725119839/iek9bqoemwtliqmpcv1n.webp,true
+"""66d33d81ec410e622a68d317""",gaseosa,cero,pritty,3l,2400,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725119872/eiserge4g10rhfih3f8b.webp,true
+"""66d33db3ec410e622a68d318""",azucar,"comun ",generica,1kg,750,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725119923/lddcgslteh0rtiz4j6iz.webp,true
+"""66d33df6ec410e622a68d319""",azucar,clasica,ledesma,1kg,1250,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725119989/nsfnypb8utzv2wshao9c.webp,true
+"""66db4688ec410e622a68d31a""",cafe,gold,nescafe,100g,17300,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725646627/pljapw53pxri7i1jactf.webp,true
+"""66db46bfec410e622a68d31b""",cafe,caramel,dolca nescafe,125g,2790,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725646527/uw4qu9uu5svxyjikhtuv.webp,true
+"""66db4705ec410e622a68d31c""",cafe,cookies & cream,dolca nescafe,125g,2790,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1725646742/mh3zq4sh3cf7sqryajal.webp,true
+"""66e330b5ec410e622a68d31d""",agua,bidon,villa del sur,6.2lt,2600,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1726165172/s8wv7qz1zqo5zcvwga9i.webp,true
+"""66e33104ec410e622a68d31e""",soda,sifon,saldan,2lt,1200,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1726165252/xjsuowlotcm84ur1t3xu.webp,true
+"""66e3318eec410e622a68d31f""",energizante,clasico,speed,269ml,1300,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1726165389/ctwflvbx9uaz1fq9sqj7.webp,true
+"""66e331aaec410e622a68d320""",energizante,clasico,speed,473ml,1900,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1726165417/nb3dq8qm4bylf0j8qok5.webp,true
+"""66e3322dec410e622a68d321""",energizante,zero,speed,473cm,1900,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1726165548/lpjmm0pwkpqovzddhovj.webp,true
+"""66e580f2e56a56a914e3a8eb""",vermouth,blanco,carpano,950ml,5900,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1726316786/tdpxnmcxvngftaudrlpd.webp,true
+"""66e58100e56a56a914e3a8ec""",vermouth,rosso,carpano,950ml,5900,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1726316800/rhygkh9em3itmjeyquym.webp,true
+"""66e5816be56a56a914e3a8ed""",galleta,chips de chocolate,frutigran,255g,1450,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1726316907/l92ylrqnifvj2clmug0g.webp,true
+"""66e5818ae56a56a914e3a8ee""",galleta,salvado,frutigran,255g,1100,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1726316937/y1cbm3dq8juycdhlrapo.webp,true
+"""66e5828ee56a56a914e3a8ef""",aderezo,salsa golf,danica,220ml,1050,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1726317198/xtxdh7gudiznqselkkgo.webp,true
+"""66e5832ae56a56a914e3a8f0""",margarina,soft light,danica,200gr,1950,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1726317353/nplktcauft6duw5okj0n.webp,true
+"""66e58371e56a56a914e3a8f1""",margarina,dorada cremosa,danica,200gr,1950,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1726317425/zm2ibpq2izntfftd5bay.webp,true
+"""66e583c0e56a56a914e3a8f2""",dulce de leche,familiar,remolac,200gr,1070,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1726317530/ifqkyucltvhgtgqol4b5.webp,true
+"""66e584dbe56a56a914e3a8f3""",dulce de leche,familiar,remolac,400g,2130,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1726317787/wrv8cvm2czdqzvh72yh0.webp,true
+"""66e584f6e56a56a914e3a8f4""",dulce de leche,repostero,remolac,400g,2100,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1726317814/sblqtsnosksld73kdknd.webp,true
+"""66e5853fe56a56a914e3a8f5""",galletas,semoladas,granix,420g,2050,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1726317886/jauupzianjyonlf8ilvf.webp,true
+"""66e58578e56a56a914e3a8f6""","aderezo ",mostaza,danica,220g,760,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1726317943/npwwcsukk9qtc85h1wzs.webp,true
+"""66e58655e56a56a914e3a8f8""",cafe,choco mocha,dolca nescafe,125g,2790,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1726318165/rt43hxbeiu7g8uihajny.webp,true
+"""66e587c9e56a56a914e3a8f9""",cafe,cortado,dolca nescafe,125g,2790,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1726318537/ihhppftjh0a4lgshbufa.webp,true
+"""66e58822e56a56a914e3a8fa""",cafe,latte,dolca nescafe,125g,2790,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1726318625/z0e1ngt7brrkjvs4pu32.webp,true
+"""66f59ab8e56a56a914e3a8fb""",agua,bidon,sierra del norte,6l,1550,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727371960/luexnqz6qz8hmfvgffy1.webp,true
+"""66f59aeae56a56a914e3a8fc""",sidra,,del valle,720ml,2850,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727372009/tbonvskuq0qy1j8jbr1k.webp,true
+"""66f59b0ce56a56a914e3a8fe""",alfajor,negro,rasta,70g,1250,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727372044/i3twsjy6lauywqv33fmc.webp,true
+"""66f59b31e56a56a914e3a8ff""",alfajor,blanco,rasta,70g,1250,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727372081/sm70hm6ylqwdwroprmrm.webp,true
+"""66f59b9de56a56a914e3a900""",aderezo,"mayonesa clásica ",hellmanns,250cm,1150,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727372188/qsgrzfwakde0cm38ijrc.webp,true
+"""66f59c67e56a56a914e3a901""",pasta de dientes,,kolinos,90g,2100,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727372390/pliy0cmbz88lvfvcaoem.webp,true
+"""66f59c88e56a56a914e3a902""",aderezo,ketchup,danica,220g,1100,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727372423/f0zk78k8olx1ag4psrqd.webp,true
+"""66f80c8ee56a56a914e3a903""",bolsa para horno,sabor limón y orégano,knorr,21g,1700,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727532314/nhox2eogkemf9l7g94e6.webp,true
+"""66f80cabe56a56a914e3a904""",bolsa para horno,sabor romero y tomillo,knorr,21g,1700,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727532203/iwihhcvhxbvrmx48aa82.webp,true
+"""66f80cc6e56a56a914e3a905""",bolsa para horno,hierbas y especias,knorr,21g,1700,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727532229/v0bo2zgcvarlju3lnhd7.webp,true
+"""66f80cdfe56a56a914e3a906""",bolsa para horno,ajo y cebolla,knorr,21g,1700,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727532254/ait4h7h0nycaqeh90pje.webp,true
+"""66f80cede56a56a914e3a907""",bolsa para horno,tipo criolla,knorr,21g,1700,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727532268/aalvdkj0pis3t91eajq4.webp,true
+"""66f80cffe56a56a914e3a908""",bolsa para horno,barbacoa,knorr,21g,1700,condimentos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727532286/mkhmqqmvseub2zxfzj0r.webp,true
+"""66f8105ae56a56a914e3a909""",vino,malbec,santa julia,750cc,4450,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727533146/ige7kxh1j8tm64bkxjou.webp,true
+"""66f8107ee56a56a914e3a90a""",vino,malbec,aqui,750cc,5500,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727533181/jihfpnwzegv4mc86d79s.webp,true
+"""66f810a7e56a56a914e3a90b""",vino,cabernet suavigton,aqui,750cc,5500,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727533222/phsrxqhuqmw9ao8brpjj.webp,true
+"""66f810e4e56a56a914e3a90c""",vino,cabernet suavignon,portillo,750cc,4200,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727533284/qihz8vb76qx8yllya39l.webp,true
+"""66f810f1e56a56a914e3a90d""",vino,malbec,portillo,750cc,4200,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727533296/pvrkwxh8qibr7lluwphu.webp,true
+"""66f8110ce56a56a914e3a90e""",vino,malbec,cordero con piel de lobo,750cc,4400,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727533324/zr9jedhkz9lzzu8b8bci.webp,true
+"""66f81118e56a56a914e3a90f""",vino,malbec,otro loco mas,750cc,4450,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727533336/q2l1r4su0u4uudxmjeps.webp,true
+"""66fae439e56a56a914e3a910""",alfajor,triple,tri shot,60g,1000,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727718456/hle1pwtrjs6fadmbreid.webp,true
+"""66fae462e56a56a914e3a911""",alfajor,triple con dulce de leche,terrabusi,70g,1000,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727718497/yewjod1jjz7elxxkh6nz.webp,true
+"""66fae46ee56a56a914e3a912""",alfajor,triple torta,terrabusi,70g,1000,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727718509/ce87qfd2jwnphgnftg3p.webp,true
+"""66fae482e56a56a914e3a913""",alfajor,triple,pepito,57g,1000,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727718529/ovez2hvycv7kvy77f3ed.webp,true
+"""66fae48fe56a56a914e3a914""",alfajor,triple,oreo,57g,1000,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727718543/wnlfb2p2nbukzpkcabzn.webp,true
+"""66fae4a6e56a56a914e3a915""",alfajor,triple mousse,milka,55g,1000,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727718566/zkvgwwtbady7xozj1zeb.webp,true
+"""66fae4bae56a56a914e3a916""",alfajor,triple dulce de leche,milka,55g,1000,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727718585/ss6ovcvpwib8lb6qhms7.webp,true
+"""66fae4e1e56a56a914e3a917""",rodesia,,terrabusi,22g,600,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727718624/uwpmzyijzuaf1esax8rm.webp,true
+"""66fae53fe56a56a914e3a918""",alfajor,triple oreo,milka,61g,1000,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727718719/xvhsydqti111f4itrbkc.webp,true
+"""66fae553e56a56a914e3a919""",alfajor,triple mousse blanco,milka,55g,1000,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727718739/j86jjtftulr0q2fqpbgf.webp,true
+"""66fae565e56a56a914e3a91a""",alfajor,triple mousse,milka,42g,1000,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727718756/p89ndnxsujsy9t894yk5.webp,true
+"""66fae57ce56a56a914e3a91b""",alfajor,glaseado,terrabusi,38g,1000,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727718780/lfxbazlzhsciyxta8cri.webp,true
+"""66fae591e56a56a914e3a91c""",alfajor,clasico,terrabusi,50g,1000,golosinas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1727718800/vwliwmrar3ey8eqfxg0a.webp,true
+"""6707cbade56a56a914e3a91d""",shampoo,ceramidas,sedal,300ml,2350,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728564156/t1tfouc4iq4cxdd1og1t.webp,true
+"""6707cbeee56a56a914e3a91e""",acondicionador,ceramidas,sedal,300ml,2350,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728564206/orizwjq9dpwnkkk4q2nh.webp,true
+"""6707cc3ee56a56a914e3a91f""","vino ",blanco dulce,toro,1lt,2000,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728564286/qwvf6rgfeloetnekqq6w.webp,true
+"""6707cc51e56a56a914e3a920""","vino ","blanco ",toro,1lt,2000,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728564305/j5xhr5hpacqavfkkoayu.webp,true
+"""6707cc91e56a56a914e3a921""","vino ",tinto,toro,1lt,2300,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728564369/jh8tk2nw92c1tdkcisdk.webp,true
+"""6707cd4be56a56a914e3a922""",harina,0000 ultra refinada,pureza,1kg,1460,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728564555/x46lxhykwxrcxmnu7std.webp,true
+"""6707cd91e56a56a914e3a923""",harina,0000 ultra refinada,pureza,1kg,1460,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728564625/mlgpg30zvfzmco7cvlpu.webp,true
+"""6707cdb3e56a56a914e3a924""",harina,integral,pureza,1kg,1460,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728564659/ql1cqqsbfhmgrguespkc.webp,true
+"""6707cdeee56a56a914e3a925""",harina,pizzas caseras,pureza,1kg,1470,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728564718/wwmgavddmslbkudxwybf.webp,true
+"""6707ce44e56a56a914e3a926""",harina,leudante ultra refinada,pureza,1kg,1290,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728564804/ob0alq4rl9fg3tkk7sj3.webp,true
+"""6707cea9e56a56a914e3a927""",harina,pizzas caseras con masa madre,pureza,1kg,1770,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728564904/qtzbwauwvs2t2gvziwnl.webp,true
+"""6707cef3e56a56a914e3a928""",harina,000,cañuelas,1kg,1230,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728564979/br0orfqdk71a4tzs9v6o.webp,true
+"""6707d145e56a56a914e3a929""",cafe mix,cortado,la virginia,125g,2850,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728565572/sndqbywyqgn3blpmvuqd.webp,true
+"""6707d17ce56a56a914e3a92a""",cafe mix,cappuccino dulce de leche,la virginia,155g,3450,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728565628/ibh6u5gpr7lywxekrwzh.webp,true
+"""6707d57e111356440263cbcc""",cafe mix,latte,la virginia,125g,2850,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728566653/whmwqgeiuec0wyhoqzkr.webp,true
+"""6707d5b1111356440263cbcd""",cafe mix,cappuccino mousse,la virginia,155g,3450,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728566705/nweyigkpsoenzctrb8b4.webp,true
+"""6707d5d1111356440263cbce""",cafe mix,cappuccino tradicional,la virginia,125g,2700,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728566737/dklzzeguv1fl4wljlqs5.webp,true
+"""6707d5e8111356440263cbcf""",cafe mix,cappuccino vainilla,la virginia,155g,3450,cafe,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728566759/a1bs3gg7eeegv9kdvf1h.webp,true
+"""670d1ee1111356440263cbd0""",vodka,wild berries,sernova,700ml,6700,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728913121/ut3w73owgqsxsg3tnqcn.webp,true
+"""670d1eff111356440263cbd1""",vodka,apple,sernova,700ml,6700,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728913151/oe5wons2mvc0mwn32d9a.webp,true
+"""670d1fc1111356440263cbd2""",quitamanchas,liquido,vanish,400ml,1000,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728913345/wu9ucizuly1wndzt0bhl.webp,true
+"""670d2028111356440263cbd3""",suavizante,violetas,vivere,900ml,2450,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728913448/xg9reojfyczurkbqlg6c.webp,true
+"""670d20bf111356440263cbd4""",energizante,manzana,gatorade,500cc,1500,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728913598/n82hw86alwpqzoxxnd1h.webp,true
+"""670d20cb111356440263cbd5""",energizante,naranja,gatorade,500cc,1500,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728913610/ik1g3e7uqwytehfwfr2f.webp,true
+"""670d20de111356440263cbd6""",energizante,frutos tropicales,gatorade,500cc,1500,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728913629/xsnggtd5amduj4aayw3z.webp,true
+"""670d20e7111356440263cbd7""",energizante,uva,gatorade,500cc,1500,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728913639/ztwz6cmauzjtjcyhjovj.webp,true
+"""670d2132111356440263cbd8""",energizante,naranja,gatorade,1.25lts,2200,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728913713/hnocuw37vnqvhxooag29.webp,true
+"""670d2141111356440263cbd9""",energizante,frutas tropicales,gatorade,1.25lts,2200,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728913728/pc5960vqhi65oin1rs1o.webp,true
+"""670d215f111356440263cbda""",energizante,manzana,gatorade,1.25lts,2200,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728913758/fsgulx0q3enr31gdzsk6.webp,true
+"""670d2171111356440263cbdb""",energizante,cool blue,gatorade,1.25lts,2200,bebidas_sin_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728913776/wkqmthfums60hhrhij7v.webp,true
+"""670d230f111356440263cbdc""",vino,cabernet suavignon,uno,750cc,9900,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728914191/odr4uyb7kfa8jye4spfh.webp,true
+"""670d2323111356440263cbdd""",vino,chardonnay,uno,750cc,9900,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728914210/hl1ypbskylbl0h67tfdl.webp,true
+"""670d232e111356440263cbde""",vino,malbec,uno,750cc,9900,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728914221/huhqczclhbpxdhdiutho.webp,true
+"""670d233a111356440263cbdf""",vino,red blend,uno,750cc,9900,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728914233/kmghzk9b9yxdaggkmrig.webp,true
+"""670d2348111356440263cbe0""",vino,rose,uno,750cc,9900,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1728914248/lnpgbdctpr4kgzpvpfbz.webp,true
+"""6720f0697af30fcf2670ba3c""",vino,tinto,viñas de balbo,1.25lt,2900,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1730211945/a9u1mwfbjw8byxir98wc.webp,true
+"""6720f0da7af30fcf2670ba3d""",trapo,de piso,,1 unidad,660,limpieza,https://res.cloudinary.com/dp7xhhcec/image/upload/v1730212057/evymimswusdadr4msttu.webp,true
+"""6720f1117af30fcf2670ba3e""",fideos,tirabuzon,la providencia,500gr,1100,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1730212112/vcflksi1qbnp1mk2i3oy.webp,true
+"""6720f1277af30fcf2670ba3f""",fideos,tallarin,la providencia,500gr,1100,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1730212135/gimy1w2uv9doc0uhcdkp.webp,true
+"""6720f1387af30fcf2670ba40""",fideos,spaghetti,la providencia,500gr,1100,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1730212151/myxrn2ysq13sqlmjjhth.webp,true
+"""6720f14e7af30fcf2670ba41""",fideos,rigatti,la providencia,500gr,1100,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1730212174/mmwbxywgaw4ohzza5sg0.webp,true
+"""6720f20d7af30fcf2670ba42""",fideos,nido cabello de angel,la providencia,500gr,1550,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1730212365/xpka8lgxii9l25x2vscw.webp,true
+"""6720f2217af30fcf2670ba43""",fideos,municion,la providencia,500gr,1100,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1730212385/lu3i0higm8v8qsnkq1nt.webp,true
+"""6720f23a7af30fcf2670ba44""",fideos,mostachol,la providencia,500gr,1100,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1730212410/pn6uyymtm2prtcxqtbkw.webp,true
+"""6720f2657af30fcf2670ba45""",fideos,moños,la providencia,500gr,1550,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1730212453/jbrrlihvbj2hhpn65of5.webp,true
+"""6720f4977af30fcf2670ba47""",vermouth,cinzano,rosso,950ml,5600,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1730213014/xqqpest6xscnqfmxylfy.webp,true
+"""6720f4ea7af30fcf2670ba48""",vino,malbec,zorro salvaje,750cc,4200,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1730213098/ahxv3vxsp7oy7h9rkaqi.webp,true
+"""6720f5307af30fcf2670ba49""",vodka,smirnoff,green apple,700ml,7750,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1730213168/frxuph8caxclnoibhawh.webp,true
+"""6720f5707af30fcf2670ba4a""",vodka,clasico,smirnoff,700ml,7750,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1730213232/kcuvilegoct9vspuepke.webp,true
+"""6720f5897af30fcf2670ba4b""",vodka,raspberry,smirnoff,700ml,7750,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1730213256/wbqpu11lxszjlp4d9bck.webp,true
+"""6720f5da7af30fcf2670ba4c""",vodka,watermelon,smirnoff,700ml,7750,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1730213338/unwap9ybfjs7oarief17.webp,true
+"""6720f62c7af30fcf2670ba4d""",vermouth,blanco,cinzano,950ml,5600,bebidas_con_alcohol,https://res.cloudinary.com/dp7xhhcec/image/upload/v1730213419/uxv1umm8hf5ekgp03in3.webp,true
+"""6720f72a7af30fcf2670ba4e""",hamburguesas,finitas,paty,"2 unidades ",1390,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1730213673/kjua5fmcod34zefshse3.webp,true
+"""6720f7bb7af30fcf2670ba4f""",hamburguesas,clasico,paty,4 unidades,4600,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1730213819/zfejzu2a6otddymxxsab.webp,true
+"""6720f8407af30fcf2670ba50""",hamburguesas,clasico,paty,2 unidades,2050,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1730213951/pxvvuiwloysg1jqroxt6.webp,true
+"""6720f86b7af30fcf2670ba51""",hamburguesas,super,paty,2 unidades,3050,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1730213994/unkpvo3hp889fdckbjhr.webp,true
+"""6720f8a57af30fcf2670ba52""",hamburguesas,express,paty,4 unidades,2900,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1730214052/wbqgl2jz1x0ran9emmiy.webp,true
+"""6720f9237af30fcf2670ba53""",prepiza,,veneziana,2 unidades,1780,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1730214179/uychdy9ypuwnvh6giaa7.webp,true
+"""67238ea57af30fcf2670ba54""","galleta ",con  salvado,"9 de oro ",420g,600,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1730383524/mfrflxgprqwr62fff4hd.webp,true
+"""67238eb97af30fcf2670ba55""","galleta ",clasicas,"9 de oro ",420g,800,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1730383544/gsijwhqvzsifpyp0nrey.webp,true
+"""67238ec27af30fcf2670ba56""","galleta ",azucaradas,"9 de oro ",420g,800,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1730383553/zagnu0tl87clmyk1eeio.webp,true
+"""67238ece7af30fcf2670ba57""","galleta ",agridulces,"9 de oro ",420g,800,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1730383566/ll2aw86pk7i9tqpjgd7t.webp,true
+"""67238ee17af30fcf2670ba58""","galleta ",granola,"9 de oro ",420g,750,galletas,https://res.cloudinary.com/dp7xhhcec/image/upload/v1730383584/oavosjhepdckkw8o9qsh.webp,true
+"""67238fe07af30fcf2670ba59""",cacao,en polvo,chocolino,180gr,1450,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1730383839/sm3pjs7p11ntm3ndrkfo.webp,true
+"""67238ffe7af30fcf2670ba5a""",cacao,en polvo,chocolino,360gr,2900,almacen,https://res.cloudinary.com/dp7xhhcec/image/upload/v1730383869/mewskb1qxj0ykpxtas8y.webp,true
+"""672d036528a44ef5040385b3""",fideos,cinta ancha,don yeyo,500g,1900,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1731003236/dqfzhg1wfqhyfhwuq6l7.webp,true
+"""672d037628a44ef5040385b4""",fideos,cinta fina,don yeyo,500g,1900,frescos,https://res.cloudinary.com/dp7xhhcec/image/upload/v1731003254/kz4ozuoyoujoovh5imef.webp,true

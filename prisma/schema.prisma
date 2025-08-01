@@ -3,44 +3,48 @@ generator client {
 }
 
 datasource db {
-  provider = "mongodb"
-  url      = env("DATABASE_URL")
+  provider  = "mongodb"
+  url       = env("DATABASE_URL")
   directUrl = env("DATABASE_URL")
 }
 
-enum Category {
-  almacen
-  bebidas_con_alcohol
-  bebidas_sin_alcohol
-  frescos
-  limpieza
-  golosinas
-  galletas
-  snacks
-  cafe
-  condimentos
-}
 
 model products {
-  id          String  @id @default(auto()) @map("_id") @db.ObjectId
+  id          String         @id @default(auto()) @map("_id") @db.ObjectId
   amount      String
   brand       String
-  category    Category
+  category    String
   description String
+  image       ProductsImage?
   price       Float
   stock       Boolean
   tipo        String
-  url         String?
-  image       Image? @map("image")
+  url         String
+  categoryModel CategoryModel @relation(fields: [categoryModelId], references: [id])
+  categoryModelId String @db.ObjectId
 }
 
-type Image {
-  url       String
+type ProductsImage {
   public_id String
+  url       String
 }
 
-model User{
-  id          String  @id @default(auto()) @map("_id") @db.ObjectId
-  email String @unique 
+model CategoryModel {
+  id   String @id @default(auto()) @map("_id") @db.ObjectId
+  name String
+  products products[]
+}
+
+model Image {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  productsId String @unique @db.ObjectId
+  public_id  String
+  url        String
+}
+
+model User {
+  id       String @id @default(auto()) @map("_id") @db.ObjectId
+  email    String @unique
   password String
 }
+
