@@ -17,19 +17,19 @@ export const AboutMe = () => {
       <div>
         <Title className="pb-4 text-xl font-bold text-gray-800">Pedidos</Title>
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4 list-none mt-6 text-gray-700">
-          <li className="flex items-center space-x-2 bg-gray-100 p-3 rounded-lg shadow-sm">
+          <li className="flex items-center space-x-2 bg-gray-100 p-3 rounded-lg shadow-xs">
             <span className="font-medium">🚚</span>
             <span>Hacemos envíos a todo Córdoba.</span>
           </li>
-          <li className="flex items-center space-x-2 bg-gray-100 p-3 rounded-lg shadow-sm">
+          <li className="flex items-center space-x-2 bg-gray-100 p-3 rounded-lg shadow-xs">
             <span className="font-medium">📦</span>
             <span>Elegí el producto y la cantidad deseada.</span>
           </li>
-          <li className="flex items-center space-x-2 bg-gray-100 p-3 rounded-lg shadow-sm">
+          <li className="flex items-center space-x-2 bg-gray-100 p-3 rounded-lg shadow-xs">
             <span className="font-medium">📍</span>
             <span>Selecciona dirección y forma de pago.</span>
           </li>
-          <li className="flex items-center space-x-2 bg-gray-100 p-3 rounded-lg shadow-sm">
+          <li className="flex items-center space-x-2 bg-gray-100 p-3 rounded-lg shadow-xs">
             <span className="font-medium">⏰</span>
             <span>Solo queda esperar que lleguemos a tu casa.</span>
           </li>

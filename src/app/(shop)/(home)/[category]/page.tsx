@@ -1,5 +1,3 @@
-import { ProductsGrid } from '@/components'
-
 interface Prop {
 	params: {
 		category: string

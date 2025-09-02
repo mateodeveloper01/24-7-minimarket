@@ -60,7 +60,7 @@ export const createProductsAction = async (formData: any) => {
 
   
 
-  const product = await prisma.products.create({
+  const product = await prisma.products.create({  
     data: {
       id,
       stock: stock === "true" ? true : false,

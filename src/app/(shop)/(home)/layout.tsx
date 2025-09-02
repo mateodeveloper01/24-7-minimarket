@@ -1,33 +1,21 @@
-import type { Metadata } from "next";
-
-import {
-  AboutMe,
-  BottomMenu,
-  WhatsappButton,
-} from "@/components";
+import { BottomMenu } from '@/components/menu/BottomMenu'
+import { WhatsappButton } from '@/components/menu/WhatsappButton'
+import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: "Mini market",
-};
+	title: 'Mini market'
+}
 
-export default async function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+	return (
+		<div className="flex flex-col items-center w-full">
+			{/* className="py-8 flex justify-center w-full" */}
 
+			{children}
 
-  return (
-    <div className="flex flex-col items-center w-full">
-{/* className="py-8 flex justify-center w-full" */}
+			<BottomMenu />
 
-      
-      {children}
-
-
-      <BottomMenu />
-
-      <WhatsappButton />
-    </div>
-  );
+			<WhatsappButton />
+		</div>
+	)
 }
