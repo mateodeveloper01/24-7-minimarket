@@ -5,10 +5,10 @@ import { Popover, PopoverContent, PopoverTrigger } from "../ui/popover"
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "../ui/command"
 import { useEffect, useState } from "react"
 import { getCategories } from "@/resources/category/api"
-import { ControllerRenderProps } from "react-hook-form"
+import { ControllerRenderProps, FieldPath, FieldValues } from "react-hook-form"
 import { cn } from "@/lib/utils"
 
-export const CategoryField = ({ field }: { field: ControllerRenderProps<any> }) => {
+export const CategoryField = <TFieldValues extends FieldValues = FieldValues, TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>>({ field }: { field: ControllerRenderProps<TFieldValues, TName> }) => {
   const [categories, setCategories] = useState<string[]>([])
   const [isLoading, setIsLoading] = useState(true)
   const [open, setOpen] = useState(false)

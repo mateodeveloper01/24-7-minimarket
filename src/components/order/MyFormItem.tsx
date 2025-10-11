@@ -3,11 +3,9 @@ import { ControllerRenderProps, FieldPath, FieldValues, useForm } from 'react-ho
 import { FormControl, FormItem, FormLabel, FormMessage } from '../ui/form'
 import { Input } from '../ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select'
-import { getCategories } from '@/resources/category/api'
-import { useEffect, useState } from 'react'
 import { CategoryField } from './CategoryField'
 
-export const MyFormItem =   <TFieldValues extends FieldValues = FieldValues, TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>>({
+export const MyFormItem = <TFieldValues extends FieldValues = FieldValues, TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>>({
 	field,
 	label,
 	placeholder,
