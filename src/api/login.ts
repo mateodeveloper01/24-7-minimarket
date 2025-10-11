@@ -3,7 +3,6 @@
 import * as z from "zod";
 import { AuthError } from "next-auth";
 
-import { signIn } from "@/auth";
 import { LoginSchema } from "@/schemas/loginSchema";
 import { getUserFromDb } from "@/utils/db";
 
@@ -26,11 +25,7 @@ export const login = async (
   }
 
   try {
-    await signIn("credentials", {
-      email,
-      password,
-      redirectTo: '/gestor',
-    });
+    
   } catch (error) {
     if (error instanceof AuthError) {
       switch (error.type) {
