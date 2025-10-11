@@ -13,9 +13,10 @@ import { getProducts } from '@/api'
 interface Prop {
 	category: string
 	className?: string
+	style?: React.CSSProperties
 }
 
-export const ProductsGrid = ({ category, className }: Prop) => {
+export const ProductsGrid = ({ category, className, style }: Prop) => {
 	const [brandState, setBrand] = useState<undefined | string>(undefined)
 	const [tipoState, setTipo] = useState<undefined | string>(undefined)
 	const [page, setPage] = useState(1)
@@ -47,7 +48,7 @@ export const ProductsGrid = ({ category, className }: Prop) => {
 
 			<div className="w-full flex  justify-around flex-col gap-5 md:gap-0 md:flex-row  ">
 				<ProductsFilters tipoState={tipoState} brandState={brandState} setBrand={setBrand} setTipo={setTipo} category={category} />
-				<div className={`w-full ${className}`}>{products?.data?.map((product) => <ProductItem {...product} key={product.id} />)}</div>
+				<div className={`w-full ${className}`} style={style}>{products?.data?.map((product) => <ProductItem {...product} key={product.id} />)}</div>
 			</div>
 			<PaginationComponent meta={products?.meta!} page={page} setPage={setPage} />
 		</div>

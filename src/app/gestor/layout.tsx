@@ -23,6 +23,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 				<Link href={'/'}>
 					<Button className="bg-gray-500">Volver</Button>
 				</Link>
+				<Link href={'/auth/logout'} >
+					<Button className="bg-blue-500 cursor-pointer">Desconectar</Button>
+				</Link>
 			</div>
 			{children}
 		</div>

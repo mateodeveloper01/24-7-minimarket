@@ -1,23 +1,19 @@
 "use client";
 import { useCartStore } from "@/stores/useCartStore";
 import { Product } from "@/types";
-import { Button } from "../ui/button";
-import { useToast } from "../ui/use-toast";
+import { toast } from "sonner";
 import { useState } from "react";
+import { Button } from "../ui/button";
 
 export const AddCartButton = ({ product }: { product: Product }) => {
   const [quantity, setQuantity] = useState<number>(1);
   const addToCart = useCartStore((state) => state.addToCart);
-  const { toast } = useToast();
 
   const add = () => {
     addToCart({ ...product, quantity });
-    toast({
-      title: "Agregado",
-      variant: "aggregate",
-      duration: 500,
-    });
+    toast("Agregado");
   };
+
   const incrementQuantity = () => {
     const newQuantity = quantity + 1;
     setQuantity(newQuantity);

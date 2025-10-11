@@ -7,26 +7,32 @@ import { auth0 } from "./lib/auth0";
 export async function middleware(request: NextRequest) {
   const authResponse = await auth0.middleware(request);
 
-  const session = await auth0.getSession(request);
-  if (
-    !session &&
-    !request.nextUrl.pathname.startsWith("/auth/login") &&
-    !request.nextUrl.pathname.startsWith("/login")
-  ) {
-    return NextResponse.redirect(new URL("/login", request.url));
+  // Si Auth0 está redirigiendo después del callback, cambiar el destino a /gestor
+  if (authResponse.status === 302 || authResponse.status === 307) {
+    const location = authResponse.headers.get('location');
+    
+    // Si está redirigiendo a la raíz después del callback, cambiar a /gestor
+    if (location === '/' || location === request.nextUrl.origin + '/') {
+      // Crear la URL completa para el redirect
+      const gestorUrl = new URL('/gestor', request.nextUrl.origin);
+      const redirectResponse = NextResponse.redirect(gestorUrl);
+      
+      // Copiar TODOS los headers de Auth0, especialmente las cookies de sesión
+      authResponse.headers.forEach((value, key) => {
+        if (key.toLowerCase() !== 'location') {
+          redirectResponse.headers.append(key, value);
+        }
+      });
+      
+      return redirectResponse;
+    }
   }
-
+ 
   return authResponse;
 }
 
 export const config = {
   matcher: [
-    /*
-     * Match all request paths except for the ones starting with:
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico, sitemap.xml, robots.txt (metadata files)
-     */
     "/((?!_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)",
   ],
 };

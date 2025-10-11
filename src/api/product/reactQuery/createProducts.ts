@@ -1,8 +1,9 @@
-import { toast } from "@/components";
-import { ProductSchemaType } from "@/app/dashboard/_components";
+import { ProductSchemaType } from "@/app/gestor/_components/ProductForm";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { Category, products } from "@prisma/client";
+import { CategoryModel, products } from "@prisma/client";
 import { createProductsAction } from "../actions/createProducts.action";
+import { toast } from "sonner"
+
 export type ResProduct = {
   data: products[];
   meta: {
@@ -35,7 +36,7 @@ export const createProduct = (pagination: any[]) => {
         id: Math.random().toString(),
         ...product,
         url: "",
-        category: category as Category,
+        // category: category as CategoryModel,//Todo: arreglar esto
         price: +price,
       };
       const previousProducts = queryClient.getQueryData<ResProduct>(createKey);
@@ -57,7 +58,7 @@ export const createProduct = (pagination: any[]) => {
       queryClient.setQueryData<ResProduct>(createKey, context.previousProducts);
     },
     onSuccess: (product: any, _: any, context: any) => {
-      const nwProduct = { ...product, category: product.category as Category };
+      const nwProduct = { ...product, category: product.category as CategoryModel };
 
       queryClient.setQueryData<ResProduct>(createKey, (old) => {
         if (!old) {
@@ -76,7 +77,7 @@ export const createProduct = (pagination: any[]) => {
         };
       });
 
-      toast({ variant: "success", title: "Cambio realizado" });
+      toast( "Cambio realizado" );
     },
   });
 

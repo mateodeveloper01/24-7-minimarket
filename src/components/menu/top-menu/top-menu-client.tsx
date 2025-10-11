@@ -8,8 +8,10 @@ import { Button } from '../../ui/button'
 import { Input } from '../../ui/input'
 import { usePathname, useRouter } from 'next/navigation'
 import { useCartStore } from '@/stores/useCartStore'
+import { useUser } from "@auth0/nextjs-auth0"
 
 export const TopMenuClient = ({ categories }: { categories: string[] }) => {
+	const { user, isLoading } = useUser()
 	const totalPrice = useCartStore((state) => state.totalPrice)
 	const [isScrolled, setIsScrolled] = useState(false) // Estado para el scroll
 	const router = useRouter()
@@ -45,7 +47,7 @@ export const TopMenuClient = ({ categories }: { categories: string[] }) => {
 							className="border-none "
 							placeholder="Buscar"
 							name="search"
-							// onChange={handleChange}
+						// onChange={handleChange}
 						/>
 						<button type="submit">
 							<Search />
@@ -82,19 +84,32 @@ export const TopMenuClient = ({ categories }: { categories: string[] }) => {
 							))}
 						</SheetContent>
 					</Sheet>
+					{
+						user && (
+							<>
+								<Link href={'/gestor'} >
+									<Button className="bg-blue-500 cursor-pointer">Gestor</Button>
+								</Link>
+								<Link href={'/auth/logout'} >
+									<Button className="bg-blue-500 cursor-pointer">Desconectar</Button>
+								</Link>
+							</>
+						)
+					}
 				</div>
 			</header>
-			<ul className="hidden gap-2 md:flex bg-secondary w-full justify-around ">
+			<ul className="hidden gap-2 md:flex w-full justify-around max-w-[1000px] ">
 				{categories.map((item) => (
 					<Link
 						key={item}
 						href={`/${item}`}
-						className={`capitalize text-xl font-semibold hover:bg-primary text-white drop-shadow-lg w-full py-2 text-center flex justify-center items-center ${pathname.slice(1) === item ? 'text-white bg-primary drop-shadow-2xl ' : ''}`}
+						className={`capitalize text-sm font-semibold text-[#424242] hover:text-gray-500 transform transition delay-50 w-full py-2 text-center flex justify-center items-center `}
 					>
 						{item.replace(/_/g, ' ')}
 					</Link>
 				))}
 			</ul>
+
 		</>
 	)
 }

@@ -1,11 +1,13 @@
-import { ControllerRenderProps, FieldPath, FieldValues } from 'react-hook-form'
+'use client'
+import { ControllerRenderProps, FieldPath, FieldValues, useForm } from 'react-hook-form'
 import { FormControl, FormItem, FormLabel, FormMessage } from '../ui/form'
 import { Input } from '../ui/input'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../ui/select'
 import { getCategories } from '@/resources/category/api'
-import { Suspense } from 'react'
+import { useEffect, useState } from 'react'
+import { CategoryField } from './CategoryField'
 
-export const MyFormItem = <TFieldValues extends FieldValues = FieldValues, TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>>({
+export const MyFormItem =   <TFieldValues extends FieldValues = FieldValues, TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>>({
 	field,
 	label,
 	placeholder,
@@ -18,6 +20,7 @@ export const MyFormItem = <TFieldValues extends FieldValues = FieldValues, TName
 	placeholder?: string
 	setDeliveryMethod?: (value: string) => void
 }) => {
+
 	if (field.name === 'pay_method') {
 		return (
 			<FormItem>
@@ -62,25 +65,8 @@ export const MyFormItem = <TFieldValues extends FieldValues = FieldValues, TName
 		)
 	}
 	if (field.name === 'category') {
-		// const categories = getCategories()
 		return (
-			<FormItem>
-				<FormLabel>Categoria</FormLabel>
-				<Select onValueChange={field.onChange} defaultValue={field.value}>
-					<SelectTrigger>
-						<SelectValue placeholder="[seleccione]" />
-					</SelectTrigger>
-					{/* <Suspense fallback={<div>Cargando...</div>}>
-						<SelectContent>
-							{categories.map((category: string) => (
-								<SelectItem key={category} value={category}>
-									{category}
-								</SelectItem>
-							))}
-						</SelectContent>
-					</Suspense> */}
-				</Select>
-			</FormItem>
+			<CategoryField field={field} />
 		)
 	}
 	return (
@@ -94,3 +80,4 @@ export const MyFormItem = <TFieldValues extends FieldValues = FieldValues, TName
 		</FormItem>
 	)
 }
+

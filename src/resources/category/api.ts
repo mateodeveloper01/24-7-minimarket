@@ -19,3 +19,21 @@ export const getCategories = async (): Promise<string[]> => {
   }
 
 
+
+
+export const createProductWithCategory = async (productName: string, categoryName: string) => {
+  // Verificar si la categoría existe
+  const existingCategory = await prisma.categoryModel.findFirst({
+    where: { name: categoryName },
+  })
+
+  // Si no existe, crearla
+//   if (!existingCategory) {
+//     await createCategory(categoryName)
+//   }
+
+  // Aquí puedes agregar la lógica para crear el producto
+  // Por ejemplo: await prisma.product.create({ data: { name: productName, category: categoryName } })
+
+  console.log(`Producto "${productName}" creado con categoría "${categoryName}"`)
+}

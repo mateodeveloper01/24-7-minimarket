@@ -2,7 +2,6 @@
 import fs from "fs";
 import sharp from "sharp";
 import prisma from "@/utils/db";
-import { Category } from "@prisma/client";
 import cloudinary from "@/utils/cloudinary";
 interface ProductFormData {
   id: string;
@@ -12,11 +11,14 @@ interface ProductFormData {
   description: string;
   tipo: string;
   image?: File;
-  category: Category;
+  category: string;
   price: number;
 }
 export const updateProductsAction = async (formData: any, id: string) => {
   const product = Object.fromEntries(formData.entries()) as ProductFormData;
+  
+  // Normalizar el nombre de la categoría: minúsculas, eliminar espacios y reemplazar por guion bajo
+  const normalizedCategory = product.category.trim().toLowerCase().replace(/\s+/g, '_');
 
   const productDB = await prisma.products.findUnique({
     where: { id },
@@ -35,9 +37,8 @@ export const updateProductsAction = async (formData: any, id: string) => {
         description: product.description.toLowerCase(),
         brand: product.brand.toLocaleLowerCase(),
         amount: product.amount.toLocaleLowerCase(),
-        url: "",
         price: +product.price,
-        category: product.category as Category,
+        category: normalizedCategory,
       },
     });
     return updateProduct;
@@ -46,7 +47,7 @@ export const updateProductsAction = async (formData: any, id: string) => {
       const imagedata = formData.getAll("image") as File[];
       const imageBuffer = await imagedata[0].arrayBuffer();
       const imageWebp = await sharp(Buffer.from(imageBuffer)).webp().toBuffer();
-      fs.writeFileSync(`temp.webp`, Buffer.from(imageWebp));
+      fs.writeFileSync(`temp.webp`, new Uint8Array(imageWebp));
     }
     const result = await cloudinary.uploader.upload(`temp.webp`, {
       folder: "products-diego",
@@ -61,7 +62,8 @@ export const updateProductsAction = async (formData: any, id: string) => {
         description: product.description.toLowerCase(),
         brand: product.brand.toLocaleLowerCase(),
         amount: product.amount.toLocaleLowerCase(),
-        category: product.category as Category,
+        url: result.secure_url,
+        category: normalizedCategory,
         price: +product.price,
         image: {
           url: result.secure_url,

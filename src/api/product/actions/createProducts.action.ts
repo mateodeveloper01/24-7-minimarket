@@ -1,6 +1,5 @@
 "use server";
 import prisma from "@/utils/db";
-import { Category } from "@prisma/client";
 import sharp from "sharp";
 import fs from "fs";
 import cloudinary from "@/utils/cloudinary";
@@ -14,7 +13,7 @@ interface ProductFormData {
   description: string;
   tipo: string;
   image?: File;
-  category: Category;
+  category: string;
   price: number;
 }
 
@@ -31,6 +30,9 @@ export const createProductsAction = async (formData: any) => {
     category,
     price,
   } = product;
+  
+  // Normalizar el nombre de la categoría: minúsculas, eliminar espacios y reemplazar por guion bajo
+  const normalizedCategory = category.trim().toLowerCase().replace(/\s+/g, '_');
   if (!image) {
     return await prisma.products.create({
       data: {
@@ -42,7 +44,17 @@ export const createProductsAction = async (formData: any) => {
         amount: amount.toLocaleLowerCase(),
         url: "",
         price: +price,
-        category: category as Category,
+        category: normalizedCategory,
+        categoryModel: {
+          connectOrCreate: {
+            where: {
+              name: normalizedCategory,
+            },
+            create: {
+              name: normalizedCategory,
+            },
+          },
+        },
       },
     });
   }else{
@@ -51,7 +63,7 @@ export const createProductsAction = async (formData: any) => {
     const imagedata = formData.getAll("image") as File[];
     const imageBuffer = await imagedata[0].arrayBuffer();
     const imageWebp = await sharp(Buffer.from(imageBuffer)).webp().toBuffer();
-    fs.writeFileSync(`temp.webp`, Buffer.from(imageWebp));
+    fs.writeFileSync(`temp.webp`, new Uint8Array(imageWebp));
   }
   const result = await cloudinary.uploader.upload(`temp.webp`, {
     folder: "products-diego",
@@ -68,11 +80,22 @@ export const createProductsAction = async (formData: any) => {
       description: description.toLowerCase(),
       brand: brand.toLocaleLowerCase(),
       amount: amount.toLocaleLowerCase(),
-      category: category as Category,
+      url: result.secure_url,
+      category: normalizedCategory,
       price: +price,
       image: {
         url: result.secure_url,
         public_id: result.public_id,
+      },
+      categoryModel: {
+        connectOrCreate: {
+          where: {
+            name: normalizedCategory,
+          },
+          create: {
+            name: normalizedCategory,
+          },
+        },
       },
     },
   });

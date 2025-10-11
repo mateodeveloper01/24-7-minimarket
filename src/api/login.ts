@@ -29,7 +29,7 @@ export const login = async (
     await signIn("credentials", {
       email,
       password,
-      redirectTo: '/dashboard',
+      redirectTo: '/gestor',
     });
   } catch (error) {
     if (error instanceof AuthError) {

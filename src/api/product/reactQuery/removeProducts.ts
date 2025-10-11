@@ -1,5 +1,5 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
-import { toast } from "@/components";
+import { toast } from "sonner"
 import { removeProductAction } from "../actions/removeProducts.action";
 
 export const removeProduct = () => {
@@ -8,7 +8,7 @@ export const removeProduct = () => {
     mutationKey: ["products"],
     mutationFn: async (id: string) => await removeProductAction(id),
     onSuccess: () => {
-      toast({ variant: "success", title: "Cambio realizado" });
+      toast( "Cambio realizado" );
       queryClient.invalidateQueries({ queryKey: ["products"] });
     },
   });

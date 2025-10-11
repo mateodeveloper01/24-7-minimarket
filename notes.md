@@ -1,0 +1,2 @@
+- [ ] sub categorias
+- [ ] no perder imagenes 

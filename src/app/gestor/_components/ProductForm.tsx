@@ -1,4 +1,4 @@
-'use client'
+'use client' 
 //TODO:CREAR UN SCRIPT PARA CAMBIAR DE product A Product
 import { MyFormItem } from '@/components/order/MyFormItem'
 import { ProductSchema } from '@/schemas/products'
