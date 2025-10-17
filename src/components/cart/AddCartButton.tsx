@@ -30,19 +30,19 @@ export const AddCartButton = ({ product }: { product: Product }) => {
       <div className="flex gap-4 items-center">
         <Button
           onClick={decrementQuantity}
-          className="rounded-full bg-gray-400 p-4"
+          className="rounded-full bg-gray-400 p-4 corsor-pointer"
         >
           -
         </Button>
         {quantity}
         <Button
           onClick={incrementQuantity}
-          className="rounded-full bg-gray-400 p-4"
+          className="rounded-full bg-gray-400 p-4 corsor-pointer"
         >
           +
         </Button>
       </div>
-      <Button className={"bg-secondary"} onClick={() => add()}>
+      <Button className={"bg-secondary corsor-pointer bg-gray-400"} onClick={() => add()}>
         Agregar
       </Button>
     </>

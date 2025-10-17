@@ -13,17 +13,23 @@ import { useUser } from "@auth0/nextjs-auth0"
 export const TopMenuClient = ({ categories }: { categories: string[] }) => {
 	const { user, isLoading } = useUser()
 	const totalPrice = useCartStore((state) => state.totalPrice)
-	const [isScrolled, setIsScrolled] = useState(false) // Estado para el scroll
+	const [isScrolled, setIsScrolled] = useState(false)
 	const router = useRouter()
 	const pathname = usePathname()
+
 	useEffect(() => {
+		let timeoutId: NodeJS.Timeout
 		const handleScroll = () => {
-			setIsScrolled(window.scrollY > 50)
+			clearTimeout(timeoutId)
+			timeoutId = setTimeout(() => {
+				setIsScrolled(window.scrollY > 100)
+			}, 50)
 		}
 
-		window.addEventListener('scroll', handleScroll)
+		window.addEventListener('scroll', handleScroll, { passive: true })
 
 		return () => {
+			clearTimeout(timeoutId)
 			window.removeEventListener('scroll', handleScroll)
 		}
 	}, [])
@@ -35,10 +41,16 @@ export const TopMenuClient = ({ categories }: { categories: string[] }) => {
 	}
 	return (
 		<>
-			<header className={`sticky top-0 flex justify-center bg-gray-200 p-5 md:px-10  z-50 w-full transition-all duration-300 ${isScrolled ? 'scrolled' : ''}`}>
+			<header className={`sticky top-0 flex justify-center bg-gray-200 z-50 w-full transition-all duration-300 ${isScrolled ? 'py-2 md:px-10' : 'p-5 md:px-10'}`}>
 				<div className="flex justify-between md:w-[900px] w-max items-center gap-1">
-					<Link href={'/'}>
-						<Image src="/favicon.ico" alt="Favicon" width={isScrolled ? 50 : 100} height={isScrolled ? 50 : 100} className="mr-2 transition-all duration-300 max-md:w-[60px]" />
+					<Link href={'/'} className="flex items-center">
+						<Image
+							src="/favicon.ico"
+							alt="Favicon"
+							width={100}
+							height={100}
+							className={`mr-2 transition-transform duration-300 max-md:w-[60px] max-md:h-[60px] ${isScrolled ? 'md:scale-50' : 'md:scale-100'}`}
+						/>
 					</Link>
 
 					{/* <Link href={"/buscador"} className=""> */}
@@ -55,7 +67,7 @@ export const TopMenuClient = ({ categories }: { categories: string[] }) => {
 					</form>
 					{/* </Link> */}
 					<Link href={'/pedido'}>
-						<Button className="flex gap-2 max-md:hidden  bg-primary hover:bg-black">
+						<Button className="cursor-pointer flex gap-2 max-md:hidden  bg-primary hover:bg-black">
 							<ShoppingCart />
 							<p>${totalPrice}</p>
 						</Button>
@@ -87,10 +99,10 @@ export const TopMenuClient = ({ categories }: { categories: string[] }) => {
 					{
 						user && (
 							<>
-								<Link href={'/gestor'} >
+								<Link href={'/gestor'} className="cursor-pointer">
 									<Button className="bg-blue-500 cursor-pointer">Gestor</Button>
 								</Link>
-								<Link href={'/auth/logout'} >
+								<Link href={'/auth/logout'} className="cursor-pointer">
 									<Button className="bg-blue-500 cursor-pointer">Desconectar</Button>
 								</Link>
 							</>
@@ -98,7 +110,7 @@ export const TopMenuClient = ({ categories }: { categories: string[] }) => {
 					}
 				</div>
 			</header>
-			<ul className="hidden gap-2 md:flex w-full justify-around max-w-[1000px] ">
+			<ul className="mt-4 hidden gap-2 md:flex w-full justify-around max-w-[1000px] ">
 				{categories.map((item) => (
 					<Link
 						key={item}

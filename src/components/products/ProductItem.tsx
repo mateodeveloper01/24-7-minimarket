@@ -2,7 +2,7 @@ import Image from "next/image";
 import { AddCartButton } from "../cart/AddCartButton";
 import { Product } from "@/types";
 import { ProductTitle } from "./ProductTitle";
-import { Dialog, DialogContent, DialogTrigger } from "../ui/dialog";
+import { Dialog, DialogContent, DialogTitle, DialogTrigger } from "../ui/dialog";
 import { Button } from "../ui/button";
 
 export const ProductItem = (item: Product) => {
@@ -32,11 +32,12 @@ export const ProductItem = (item: Product) => {
       <div className="flex justify-end max-md:justify-center">
         <Dialog>
           <DialogTrigger asChild>
-            <Button className="bg-secondary  text-shadow-lg ">
+            <Button className="bg-secondary  text-shadow-lg cursor-pointer">
               Ver/Agregar
             </Button>
           </DialogTrigger>
           <DialogContent className="flex flex-col items-center">
+            <DialogTitle className="sr-only">Detalles del producto</DialogTitle>
             <Image
               src={url ? url : "no_image_product.png"}
               width={250}
