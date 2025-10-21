@@ -1,4 +1,4 @@
-'use client' 
+'use client'
 //TODO:CREAR UN SCRIPT PARA CAMBIAR DE product A Product
 import { MyFormItem } from '@/components/order/MyFormItem'
 import { ProductSchema } from '@/schemas/products'
@@ -29,12 +29,12 @@ export const ProductForm = ({ product, pagination = [] }: Props) => {
 	const form = useForm<ProductSchemaType>({
 		resolver: zodResolver(ProductSchema),
 		defaultValues: {
-			tipo: product ? product.tipo : 'producto',
-			amount: product ? product.amount : 'producto',
-			brand: product ? product.brand : 'producto',
-			category: product ? product.category : 'almacen',
-			description: product ? product.description : 'producto',
-			price: product ? product.price.toString() : '123',
+			tipo: product ? product.tipo : '',
+			amount: product ? product.amount : '',
+			brand: product ? product.brand : '',
+			category: product ? product.category : '',
+			description: product ? product.description : '',
+			price: product ? product.price.toString() : '',
 			stock: product && product.stock
 		}
 	})
