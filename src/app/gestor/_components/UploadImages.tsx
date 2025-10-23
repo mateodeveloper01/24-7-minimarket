@@ -5,10 +5,11 @@ import { Button } from '@/components/ui/button'
 
 interface Props {
 	onUpload: (file: File | null) => void
+	url?: string | null
 }
 
-export const UploadImages = ({ onUpload }: Props) => {
-	const [imageSrc, setImageSrc] = useState<string | null>(null)
+export const UploadImages = ({ onUpload, url }: Props) => {
+	const [imageSrc, setImageSrc] = useState<string | null>(url || null)
 
 	const onDrop = useCallback(
 		(acceptedFiles: File[]) => {

@@ -18,7 +18,44 @@ export const getCategories = async (): Promise<string[]> => {
     return categories.map((category) => category.name)
   }
 
-
+export const deleteCategory = async (categoryName: string) => {
+    // Check if category exists
+    const category = await prisma.categoryModel.findFirst({
+      where: { name: categoryName },
+      include: { products: true }
+    })
+  
+    if (!category) {
+      throw new Error('Category not found')
+    }
+  
+    // Update associated products: disconnect category and deactivate them
+    if (category.products.length > 0) {
+      // Use raw MongoDB update to set categoryModelId to null
+      await prisma.$runCommandRaw({
+        update: 'products',
+        updates: [
+          {
+            q: { categoryModelId: { $oid: category.id } },
+            u: { 
+              $set: { 
+                categoryModelId: null,
+                stock: false 
+              } 
+            },
+            multi: true
+          }
+        ]
+      })
+    }
+  
+    // Delete the category
+    await prisma.categoryModel.delete({
+      where: { name: categoryName },
+    })
+  
+    expireTag(`${CACHE_TAG}-get`)
+  }
 
 
 export const createProductWithCategory = async (productName: string, categoryName: string) => {

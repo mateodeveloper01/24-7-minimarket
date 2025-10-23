@@ -71,7 +71,7 @@ export const ProductForm = ({ product, pagination = [] }: Props) => {
 						</FormItem>
 					)}
 				/>
-				<UploadImages onUpload={setImage} />
+				<UploadImages onUpload={setImage} url={product?.url} />
 				<DevTool control={form.control} />
 				<div className="flex justify-end">
 					<Button type="submit" className="w-1/3" disabled={create.isPending || update.isPending}>

@@ -19,8 +19,8 @@ model products {
   stock       Boolean
   tipo        String
   url         String
-  categoryModel CategoryModel @relation(fields: [categoryModelId], references: [id])
-  categoryModelId String @db.ObjectId
+  categoryModel CategoryModel? @relation(fields: [categoryModelId], references: [id])
+  categoryModelId String? @db.ObjectId
 }
 
 type ProductsImage {
