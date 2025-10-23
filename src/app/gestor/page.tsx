@@ -9,11 +9,15 @@ export default async function Dashboard() {
 	const session = await auth0.getSession();
 
 	return (
-		<>
-			<CategoriesAdmin />
-			<div className="container mx-auto py-4">
-				{session ? <DataTable columns={columns} /> : <LoginPage />}
-			</div>
-		</>
+		session ? (
+			<>
+				<CategoriesAdmin />
+				<div className="container mx-auto py-4">
+					<DataTable columns={columns} />
+				</div>
+			</>
+		) : (
+			<LoginPage />
+		)
 	)
 }
