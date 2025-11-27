@@ -10,7 +10,7 @@ import { usePathname, useRouter } from 'next/navigation'
 import { useCartStore } from '@/stores/useCartStore'
 import { useUser } from "@auth0/nextjs-auth0"
 
-export const TopMenuClient = ({ categories }: { categories: string[] }) => {
+export const TopMenuClient = ({ categories, promotion }: { categories: string[], promotion: string }) => {
 	const { user, isLoading } = useUser()
 	const totalPrice = useCartStore((state) => state.totalPrice)
 	const [isScrolled, setIsScrolled] = useState(false)
@@ -41,7 +41,12 @@ export const TopMenuClient = ({ categories }: { categories: string[] }) => {
 	}
 	return (
 		<>
-			<header className={`sticky top-0 flex justify-center bg-gray-200 z-50 w-full transition-all duration-300 ${isScrolled ? 'py-2 md:px-10' : 'p-5 md:px-10'}`}>
+			<div className="fixed top-0 left-0 right-0 bg-white text-black text-center py-3 z-50 text-sm font-semibold">
+				<p>{promotion}</p>
+			</div>
+			<header className={`sticky top-[40px] flex justify-center z-50 w-full transition-all duration-300 ${isScrolled ? 'py-2 md:px-10' : 'p-5 md:px-10'}`} style={{ backgroundImage: 'url(/backgroundMenu.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+
+
 				<div className="flex justify-between md:w-[900px] w-max items-center gap-1">
 					<Link href={'/'} className="flex items-center">
 						<Image
@@ -49,12 +54,21 @@ export const TopMenuClient = ({ categories }: { categories: string[] }) => {
 							alt="Favicon"
 							width={100}
 							height={100}
-							className={`mr-2 transition-transform duration-300 max-md:w-[60px] max-md:h-[60px] ${isScrolled ? 'md:scale-50' : 'md:scale-100'}`}
+							className={`hover:scale-105 mr-2 transition-transform duration-300 max-md:w-[60px] max-md:h-[60px] ${isScrolled ? 'md:scale-50' : 'md:scale-100'}`}
+						/>
+					</Link>
+					<Link href={'/'} className="flex items-center">
+						<Image
+							src="/logo-cruz-ceramica.png"
+							alt="Favicon"
+							width={100}
+							height={100}
+							className={`hover:scale-105 mr-2 transition-transform duration-300 max-md:w-[60px] max-md:h-[60px] ${isScrolled ? 'md:scale-50' : 'md:scale-100'}`}
 						/>
 					</Link>
 
 					{/* <Link href={"/buscador"} className=""> */}
-					<form onSubmit={handleSearch} className="w-3/5 only:flex gap-2 rounded-md border border-input px-2 flex">
+					<form onSubmit={handleSearch} className="bg-white w-3/5 only:flex gap-2 rounded-md border border-input px-2 flex">
 						<Input
 							className="border-none "
 							placeholder="Buscar"
@@ -110,7 +124,7 @@ export const TopMenuClient = ({ categories }: { categories: string[] }) => {
 					}
 				</div>
 			</header>
-			<ul className="mt-4 hidden gap-2 md:flex w-full justify-around max-w-[1000px] ">
+			<ul className="mt-12 hidden gap-2 md:flex w-full justify-around max-w-[1000px] ">
 				{categories.map((item) => (
 					<Link
 						key={item}

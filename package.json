@@ -84,6 +84,9 @@
       "@prisma/engines",
       "prisma",
       "sharp"
+    ],
+    "ignoredBuiltDependencies": [
+      "@tailwindcss/oxide"
     ]
   }
 }
