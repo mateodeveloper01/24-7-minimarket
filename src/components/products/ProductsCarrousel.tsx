@@ -11,7 +11,7 @@ interface Prop {
 	className?: string
 }
 export const ProductsCarrousel = async ({ category }: Prop) => {
-	const { data } = await getProducts({ category: category })
+	const { data } = await getProducts({ category: category, stock: true })
 	return data.length !== 0 ? (
 		<div className="w-4/5 flex flex-col gap-5">
 			<div className="border-t-2 border-black pt-4  flex justify-between ">
