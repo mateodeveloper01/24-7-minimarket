@@ -10,6 +10,25 @@ import { usePathname, useRouter } from 'next/navigation'
 import { useCartStore } from '@/stores/useCartStore'
 import { useUser } from "@auth0/nextjs-auth0"
 
+const PromotionMarquee = ({ text }: { text: string }) => {
+	return (
+		<div className="fixed top-0 left-0 right-0 bg-gradient-to-r from-red-600 to-red-500 text-white text-center py-3 z-50 text-sm font-semibold overflow-hidden">
+			<style>{`
+				@keyframes marquee {
+					0% { transform: translateX(900px); }
+					50% { transform: translateX(-900px); }
+					100% { transform: translateX(-900px); }
+				}
+				.marquee-text {
+					display: inline-block;
+					animation: marquee 40s ease-in-out infinite;
+				}
+			`}</style>
+			<div className="marquee-text">{text}</div>
+		</div>
+	)
+}
+
 export const TopMenuClient = ({ categories, promotion }: { categories: string[], promotion: string }) => {
 	const { user, isLoading } = useUser()
 	const totalPrice = useCartStore((state) => state.totalPrice)
@@ -41,10 +60,8 @@ export const TopMenuClient = ({ categories, promotion }: { categories: string[],
 	}
 	return (
 		<>
-			<div className="fixed top-0 left-0 right-0 bg-white text-black text-center py-3 z-50 text-sm font-semibold">
-				<p>{promotion}</p>
-			</div>
-			<header className={`sticky top-[40px] flex justify-center z-50 w-full transition-all duration-300 ${isScrolled ? 'py-2 md:px-10' : 'p-5 md:px-10'}`} style={{ backgroundImage: 'url(/backgroundMenu.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }}>
+			<PromotionMarquee text={promotion} />
+			<header className={`border-b  sticky top-[40px] flex justify-center z-50 w-full transition-all duration-300 ${isScrolled ? 'py-2 md:px-10' : 'p-5 md:px-10'}`} >
 
 
 				<div className="flex justify-between md:w-[900px] w-max items-center gap-1">
@@ -57,7 +74,7 @@ export const TopMenuClient = ({ categories, promotion }: { categories: string[],
 							className={`hover:scale-105 mr-2 transition-transform duration-300 max-md:w-[60px] max-md:h-[60px] ${isScrolled ? 'md:scale-50' : 'md:scale-100'}`}
 						/>
 					</Link>
-					<Link href={'/'} className="flex items-center">
+					{/* <Link href={'/'} className="flex items-center">
 						<Image
 							src="/logo-cruz-ceramica.png"
 							alt="Favicon"
@@ -65,7 +82,7 @@ export const TopMenuClient = ({ categories, promotion }: { categories: string[],
 							height={100}
 							className={`hover:scale-105 mr-2 transition-transform duration-300 max-md:w-[60px] max-md:h-[60px] ${isScrolled ? 'md:scale-50' : 'md:scale-100'}`}
 						/>
-					</Link>
+					</Link> */}
 
 					{/* <Link href={"/buscador"} className=""> */}
 					<form onSubmit={handleSearch} className="bg-white w-3/5 only:flex gap-2 rounded-md border border-input px-2 flex">
@@ -124,7 +141,7 @@ export const TopMenuClient = ({ categories, promotion }: { categories: string[],
 					}
 				</div>
 			</header>
-			<ul className="mt-12 hidden gap-2 md:flex w-full justify-around max-w-[1000px] ">
+			<ul className="mt-12 hidden gap-2 md:flex w-full justify-around max-w-[1000px]  ">
 				{categories.map((item) => (
 					<Link
 						key={item}
@@ -135,7 +152,7 @@ export const TopMenuClient = ({ categories, promotion }: { categories: string[],
 					</Link>
 				))}
 			</ul>
-
+			<div className="border-t w-full mt-2" />
 		</>
 	)
 }
