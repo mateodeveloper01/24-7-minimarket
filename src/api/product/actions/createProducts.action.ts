@@ -1,9 +1,6 @@
 "use server";
 import prisma from "@/utils/db";
 import sharp from "sharp";
-import fs from "fs";
-import path from "path";
-import os from "os";
 import cloudinary from "@/utils/cloudinary";
 
 

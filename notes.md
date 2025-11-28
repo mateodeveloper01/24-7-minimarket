@@ -1,2 +1,4 @@
-- [ ] sub categorias
-- [ ] no perder imagenes 
+- [x] agrerar promotionsImages al home
+- [x] hacer carrousel de imagenes cada 3 
+- [ ] revisar responsive
+- [ ] hacer tabs en el gestor 

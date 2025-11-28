@@ -52,3 +52,12 @@ model Promotion {
   id   String @id @default(auto()) @map("_id") @db.ObjectId
   name String @unique
 }
+
+model PromotionImage {
+  id         String @id @default(auto()) @map("_id") @db.ObjectId
+  public_id  String
+  url        String
+  index      Int
+
+  @@unique([index])
+}

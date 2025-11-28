@@ -9,6 +9,45 @@ import { Input } from '../../ui/input'
 import { usePathname, useRouter } from 'next/navigation'
 import { useCartStore } from '@/stores/useCartStore'
 import { useUser } from "@auth0/nextjs-auth0"
+import { type PromotionImage } from '@prisma/client'
+import {
+	Carousel,
+	CarouselContent,
+	CarouselItem,
+	CarouselNext,
+	CarouselPrevious,
+} from '@/components/ui/carousel'
+import Autoplay from "embla-carousel-autoplay"
+
+const PromotionCarousel = ({ promotionImages }: { promotionImages: PromotionImage[] }) => {
+	return (
+		<div className="w-full flex justify-center py-4">
+			<Carousel className="w-full max-w-6xl" plugins={[
+				Autoplay({
+					delay: 5000,
+				}),
+			]}>
+				<CarouselContent className="-ml-2 md:-ml-4">
+					{promotionImages.map(({ id, url }) => (
+						<CarouselItem key={id} className="pl-2 md:pl-4 basis-1/3">
+							<div className="flex justify-center">
+								<Image
+									src={url}
+									alt="Promotion"
+									width={400}
+									height={300}
+									className="w-full h-auto object-cover rounded-lg"
+								/>
+							</div>
+						</CarouselItem>
+					))}
+				</CarouselContent>
+				<CarouselPrevious />
+				<CarouselNext />
+			</Carousel>
+		</div>
+	)
+}
 
 const PromotionMarquee = ({ text }: { text: string }) => {
 	return (
@@ -29,7 +68,7 @@ const PromotionMarquee = ({ text }: { text: string }) => {
 	)
 }
 
-export const TopMenuClient = ({ categories, promotion }: { categories: string[], promotion: string }) => {
+export const TopMenuClient = ({ categories, promotion, promotionImages }: { categories: string[], promotion: string, promotionImages: PromotionImage[] }) => {
 	const { user, isLoading } = useUser()
 	const totalPrice = useCartStore((state) => state.totalPrice)
 	const [isScrolled, setIsScrolled] = useState(false)
@@ -106,12 +145,12 @@ export const TopMenuClient = ({ categories, promotion }: { categories: string[],
 					<Sheet>
 						<SheetTrigger className="md:hidden py-0" asChild>
 							<Button className="bg-secondary">
-								<AlignJustify className="text-4xl" />
+								<AlignJustify className="text-4xl text-black" />
 							</Button>
 						</SheetTrigger>
 						<SheetContent className="flex flex-col justify-between w-[215px]">
 							<SheetClose asChild>
-								<Link href={`/`} className={`hover:underline uppercase  border-black font-bold ${pathname === '/' && 'text-white bg-secondary '} rounded p-2`}>
+								<Link href={`/`} className={`hover:underline uppercase  border-black font-bold ${pathname === '/' && 'text-black bg-secondary '} rounded p-2`}>
 									Inicio
 								</Link>
 							</SheetClose>
@@ -119,7 +158,7 @@ export const TopMenuClient = ({ categories, promotion }: { categories: string[],
 								<SheetClose asChild key={item}>
 									<Link
 										href={`/${item}`}
-										className={`hover:underline uppercase   border-black font-bold ${pathname.slice(1) === item && 'text-white bg-secondary drop-shadow-2xl '} rounded p-2`}
+										className={`hover:underline uppercase   border-black font-bold ${pathname.slice(1) === item && 'text-black bg-secondary drop-shadow-2xl '} rounded p-2`}
 									>
 										{item.replace(/_/g, ' ')}
 									</Link>
@@ -153,19 +192,7 @@ export const TopMenuClient = ({ categories, promotion }: { categories: string[],
 				))}
 			</ul>
 			<div className="border-t w-full mt-2" />
-			<div className="w-full h-[600px] flex justify-center">
-				{['promo1.jpeg', 'promo2.jpeg', 'promo3.jpeg'].map((image) => (
-					<Image
-						key={image}
-						src={`/${image}`}
-						alt="Promotion"
-						width={100}
-						height={100}
-						className="w-auto h-[600px] object-cover"
-					/>
-				))}
-
-			</div>
+			<PromotionCarousel promotionImages={promotionImages} />
 		</>
 	)
 }

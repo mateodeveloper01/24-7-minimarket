@@ -12,7 +12,7 @@ interface Prop {
 }
 export const ProductsCarrousel = async ({ category }: Prop) => {
 	const { data } = await getProducts({ category: category, stock: true })
-	return data.length !== 0 ? (
+	return data.length !== 0 && (
 		<div className="w-4/5 flex flex-col gap-5">
 			<div className="border-t-2 border-black pt-4  flex justify-between ">
 				<Title>Productos {category.replace(/_/g, ' ')}</Title>
@@ -23,14 +23,12 @@ export const ProductsCarrousel = async ({ category }: Prop) => {
 			<Carousel className="w-full ">
 				<CarouselContent className="-ml-1">
 					{data.map((product) => (
-						<CarouselItem key={product.id} className="pl-1 basis-1/10 md:basis-1/6 sm:basis-1/3">
+						<CarouselItem key={product.id} className="pl-1 basis-1/2 sm:basis-1/3 md:basis-1/6">
 							<ProductItem {...product} />
 						</CarouselItem>
 					))}
 				</CarouselContent>
 			</Carousel>
 		</div>
-	) : (
-		<></>
 	)
 }

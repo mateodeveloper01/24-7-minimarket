@@ -21,6 +21,8 @@ import ProductSheet from './ProductSheet'
 import { AddProductButton } from './AddProductButton'
 import { getProducts } from '@/api'
 import { PaginationComponent } from '@/components/pagination/PaginationComponent'
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
 
 interface DataTableProps<TData, TValue> {
 	columns: ColumnDef<TData, TValue>[]
@@ -89,9 +91,12 @@ export function DataTable<TData, TValue>({ columns }: DataTableProps<TData, TVal
 
 	return (
 		<div>
-			<div className="flex py-4">
-				<AddProductButton pagination={[20, res?.meta!.totalPage!]} />
-			</div>
+			{/* <div className="flex py-4"> */}
+			{/* <AddProductButton pagination={[20, res?.meta!.totalPage!]} /> */}
+			{/* </div> */}
+			<Link href="/gestor/add-product">
+				<Button>Agregar Producto</Button>
+			</Link>
 			<TableToolbar table={table} handleSearch={handleSearch} resetSearch={resetSearch} />
 			<div className="rounded-md border">
 				<TableComponent table={table} columns={columns} setProduct={setProduct} setOpen={setOpen} />

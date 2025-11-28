@@ -52,7 +52,7 @@ export const ProductForm = ({ product, pagination = [] }: Props) => {
 	}
 	return (
 		<Form {...form}>
-			<form onSubmit={form.handleSubmit(onSubmit)} onError={(error) => console.log(error)} className="space-y-4">
+			<form onSubmit={form.handleSubmit(onSubmit)} onError={(error) => console.log(error)} className="space-y-4 ">
 				<FormField control={form.control} name="tipo" render={({ field }) => <MyFormItem field={field} label="Tipo" />} />
 				<FormField control={form.control} name="description" render={({ field }) => <MyFormItem field={field} label="Descripcion" />} />
 				<FormField control={form.control} name="brand" render={({ field }) => <MyFormItem field={field} label="Marca" />} />
