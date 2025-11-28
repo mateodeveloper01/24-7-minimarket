@@ -2,6 +2,8 @@
 import prisma from "@/utils/db";
 import sharp from "sharp";
 import fs from "fs";
+import path from "path";
+import os from "os";
 import cloudinary from "@/utils/cloudinary";
 
 
@@ -15,6 +17,12 @@ interface ProductFormData {
   image?: File;
   category: string;
   price: number;
+}
+
+interface CloudinaryUploadResult {
+  secure_url: string;
+  public_id: string;
+  [key: string]: any;
 }
 
 export const createProductsAction = async (formData: any) => {
@@ -59,16 +67,27 @@ export const createProductsAction = async (formData: any) => {
     });
   }else{
 
+  let result: CloudinaryUploadResult;
+  
   if (formData.getAll("image")) {
     const imagedata = formData.getAll("image") as File[];
     const imageBuffer = await imagedata[0].arrayBuffer();
     const imageWebp = await sharp(Buffer.from(imageBuffer)).webp().toBuffer();
-    fs.writeFileSync(`temp.webp`, new Uint8Array(imageWebp));
+    
+    // Upload directly from buffer to Cloudinary
+    result = await new Promise<CloudinaryUploadResult>((resolve, reject) => {
+      const uploadStream = cloudinary.uploader.upload_stream(
+        { folder: "products-diego" },
+        (error: any, result: any) => {
+          if (error) reject(error);
+          else resolve(result as CloudinaryUploadResult);
+        }
+      );
+      uploadStream.end(imageWebp);
+    });
+  } else {
+    throw new Error("No image provided");
   }
-  const result = await cloudinary.uploader.upload(`temp.webp`, {
-    folder: "products-diego",
-  });
-  fs.unlinkSync(`temp.webp`);
 
   
 
