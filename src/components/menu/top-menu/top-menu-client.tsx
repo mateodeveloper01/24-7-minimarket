@@ -61,7 +61,7 @@ export const TopMenuClient = ({ categories, promotion }: { categories: string[],
 	return (
 		<>
 			<PromotionMarquee text={promotion} />
-			<header className={`border-b  sticky top-[40px] flex justify-center z-50 w-full transition-all duration-300 ${isScrolled ? 'py-2 md:px-10' : 'p-5 md:px-10'}`} >
+			<header className={`bg-white border-b  sticky top-[40px] flex justify-center z-50 w-full transition-all duration-300 ${isScrolled ? 'py-2 md:px-10' : 'p-5 md:px-10'}`} >
 
 
 				<div className="flex justify-between md:w-[900px] w-max items-center gap-1">
@@ -157,7 +157,7 @@ export const TopMenuClient = ({ categories, promotion }: { categories: string[],
 				{['promo1.jpeg', 'promo2.jpeg', 'promo3.jpeg'].map((image) => (
 					<Image
 						key={image}
-						src={image}
+						src={`/${image}`}
 						alt="Promotion"
 						width={100}
 						height={100}
