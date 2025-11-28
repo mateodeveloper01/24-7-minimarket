@@ -32,7 +32,7 @@ export const ProductItem = (item: Product) => {
       <div className="flex justify-end max-md:justify-center">
         <Dialog>
           <DialogTrigger asChild>
-            <Button className="bg-secondary  text-shadow-lg cursor-pointer">
+            <Button className="text-shadow-lg cursor-pointer bg-[#ED26D9] text-white hover:bg-white hover:text-[#ED26D9] ">
               Ver/Agregar
             </Button>
           </DialogTrigger>

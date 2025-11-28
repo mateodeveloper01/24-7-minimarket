@@ -12,12 +12,12 @@ import { useUser } from "@auth0/nextjs-auth0"
 
 const PromotionMarquee = ({ text }: { text: string }) => {
 	return (
-		<div className="fixed top-0 left-0 right-0 bg-gradient-to-r from-red-600 to-red-500 text-white text-center py-3 z-50 text-sm font-semibold overflow-hidden">
+		<div className="fixed top-0 left-0 right-0 bg-gradient-to-r from-[#ED26D9] via-[#ED26D9] to-[#ED26D9] text-white text-center py-3 z-50 text-sm font-semibold overflow-hidden shadow-lg">
 			<style>{`
 				@keyframes marquee {
 					0% { transform: translateX(900px); }
-					50% { transform: translateX(-900px); }
-					100% { transform: translateX(-900px); }
+					50% { transform: translateX(-400px); }
+					100% { transform: translateX(-200px); }
 				}
 				.marquee-text {
 					display: inline-block;
@@ -153,6 +153,19 @@ export const TopMenuClient = ({ categories, promotion }: { categories: string[],
 				))}
 			</ul>
 			<div className="border-t w-full mt-2" />
+			<div className="w-full h-[600px] flex justify-center">
+				{['promo1.jpeg', 'promo2.jpeg', 'promo3.jpeg'].map((image) => (
+					<Image
+						key={image}
+						src={image}
+						alt="Promotion"
+						width={100}
+						height={100}
+						className="w-auto h-[600px] object-cover"
+					/>
+				))}
+
+			</div>
 		</>
 	)
 }
