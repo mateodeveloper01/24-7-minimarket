@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "sonner"
 import { removeProductAction } from "../actions/removeProducts.action";
 
-export const removeProduct = () => {
+export const useRemoveProduct = () => {
   const queryClient = useQueryClient()
   const remove = useMutation({
     mutationKey: ["products"],

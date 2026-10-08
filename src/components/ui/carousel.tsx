@@ -111,6 +111,7 @@ const Carousel = React.forwardRef<
         return
       }
 
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- Inicializar controles al recibir la API externa de Embla.
       onSelect(api)
       api.on("reInit", onSelect)
       api.on("select", onSelect)

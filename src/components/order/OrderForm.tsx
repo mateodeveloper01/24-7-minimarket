@@ -10,7 +10,6 @@ import { BuyButton } from "../cart/BuyButton";
 import useFromStore from "@/hooks/useFromStore";
 import { useCartStore } from "@/stores/useCartStore";
 import { formOrderSchema, Order } from "@/schemas/order";
-import { DevTool } from "@hookform/devtools";
 
 export const OrderForm = () => {
   const [deliveryMethod, setDeliveryMethod] = useState<string>();
@@ -90,7 +89,6 @@ export const OrderForm = () => {
             )}
           />
           <Button type="submit">Realizar pedido</Button>
-          <DevTool control={form.control} />
         </form>
       </Form>
     </div>

@@ -2,7 +2,7 @@
 
 import { Product } from "@/types";
 import { useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { ProductItem } from "../products/ProductItem";
 import { searchProduct } from "@/api";
 
@@ -10,19 +10,11 @@ export default function SearchBar() {
   const searchParams = useSearchParams();
   const search = searchParams.get("query");
 
-  const [results, setResults] = useState<Product[]>([]);
-
-  useEffect(() => {
-    if (search) {
-      performSearch(search);
-    }
-  }, [search]);
-
-  const performSearch = async (searchTerm: string) => {
-    const modifiedFilter = searchTerm.replace(/ /g, "_");
-    const res = await searchProduct(modifiedFilter);
-    setResults(res);
-  };
+  const { data: results = [] } = useQuery({
+    queryKey: ['products', 'search', search],
+    queryFn: () => searchProduct((search ?? '').replace(/ /g, '_')),
+    enabled: Boolean(search),
+  });
   return (
     <div className="w-4/5 flex flex-col gap-10 pt-10">
       {results.length === 0 ? (

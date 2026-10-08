@@ -8,8 +8,7 @@ import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { UploadImages } from './UploadImages'
 import { useState } from 'react'
-import { DevTool } from '@hookform/devtools'
-import { createProduct, updateProduct } from '@/api'
+import { useCreateProduct, useUpdateProduct } from '@/api'
 import { Button } from '@/components/ui/button'
 import { Form, FormControl, FormField, FormItem, FormLabel } from '@/components/ui/form'
 import { Switch } from '@/components/ui/switch'
@@ -21,8 +20,8 @@ interface Props {
 export type ProductSchemaType = z.infer<typeof ProductSchema>
 
 export const ProductForm = ({ product, pagination = [] }: Props) => {
-	const create = createProduct(pagination)
-	const update = updateProduct(pagination)
+	const create = useCreateProduct(pagination)
+	const update = useUpdateProduct(pagination)
 
 	const [image, setImage] = useState<File | null>(null)
 
@@ -72,7 +71,6 @@ export const ProductForm = ({ product, pagination = [] }: Props) => {
 					)}
 				/>
 				<UploadImages onUpload={setImage} url={product?.url} />
-				<DevTool control={form.control} />
 				<div className="flex justify-end">
 					<Button type="submit" className="w-1/3" disabled={create.isPending || update.isPending}>
 						{create.isPending || update.isPending ? 'Guardando...' : 'Guardar'}

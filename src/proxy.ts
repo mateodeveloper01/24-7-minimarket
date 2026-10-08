@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 
 import { auth0 } from "./lib/auth0";
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const authResponse = await auth0.middleware(request);
 
   // Si Auth0 está redirigiendo después del callback, cambiar el destino a /gestor

@@ -1,15 +1,16 @@
-import { flexRender, Table as ReactTable } from '@tanstack/react-table'
+import { flexRender, type RowData, type Table as ReactTable } from '@tanstack/react-table'
+import type { ProductTableFeatures } from './table-features'
 import { Product } from '@/types'
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
 
-interface TableComponentProps<TData> {
-	table: ReactTable<TData>
+interface TableComponentProps<TData extends RowData> {
+	table: ReactTable<ProductTableFeatures, TData>
 	columns: any[]
 	setProduct: (product: Product) => void
 	setOpen: (open: boolean) => void
 }
 
-const TableComponent = <TData,>({ table, columns, setProduct, setOpen }: TableComponentProps<TData>) => {
+const TableComponent = <TData extends RowData,>({ table, columns, setProduct, setOpen }: TableComponentProps<TData>) => {
 	return (
 		<Table>
 			<TableHeader>

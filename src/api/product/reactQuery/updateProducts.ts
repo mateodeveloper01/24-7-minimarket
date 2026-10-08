@@ -13,7 +13,7 @@ type ResProduct = {
   };
 };
 // Actualizar un producto con optimización optimista
-export const updateProduct = (pagination?: any[]) => {
+export const useUpdateProduct = (pagination?: any[]) => {
   const queryClient = useQueryClient();
   const updateKey = ["products", ...pagination!];
 

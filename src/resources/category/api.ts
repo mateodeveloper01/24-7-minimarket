@@ -2,21 +2,18 @@
 
 import prisma  from "@/utils/db"
 import {
-    unstable_expireTag as expireTag,
-    unstable_cacheLife as cacheLife,
-    unstable_cacheTag as cacheTag
+    unstable_cache,
+    updateTag
 } from 'next/cache'
 
 const CACHE_TAG = 'categories'
 
-export const getCategories = async (): Promise<string[]> => {
-    "use cache"
-    cacheTag(`${CACHE_TAG}-get`)
-    cacheLife("max")
-  
+const getCachedCategories = unstable_cache(async (): Promise<string[]> => {
     const categories = await prisma.categoryModel.findMany()
     return categories.map((category) => category.name)
-  }
+  }, [CACHE_TAG], { tags: [`${CACHE_TAG}-get`] })
+
+export const getCategories = async (): Promise<string[]> => getCachedCategories()
 
 export const deleteCategory = async (categoryName: string) => {
     // Check if category exists
@@ -54,7 +51,7 @@ export const deleteCategory = async (categoryName: string) => {
       where: { name: categoryName },
     })
   
-    expireTag(`${CACHE_TAG}-get`)
+    updateTag(`${CACHE_TAG}-get`)
   }
 
 

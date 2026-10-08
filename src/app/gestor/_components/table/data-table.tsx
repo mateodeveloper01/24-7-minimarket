@@ -3,14 +3,10 @@
 import {
 	ColumnDef,
 	ColumnFiltersState,
-	getCoreRowModel,
-	getFilteredRowModel,
-	getPaginationRowModel,
-	getSortedRowModel,
 	PaginationState,
 	SortingState,
-	useReactTable,
-	VisibilityState
+	useTable,
+	ColumnVisibilityState
 } from '@tanstack/react-table'
 import { useMemo, useState } from 'react'
 import { useQuery } from '@tanstack/react-query'
@@ -23,22 +19,23 @@ import { getProducts } from '@/api'
 import { PaginationComponent } from '@/components/pagination/PaginationComponent'
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { productTableFeatures, type ProductTableFeatures } from './table-features'
 
-interface DataTableProps<TData, TValue> {
-	columns: ColumnDef<TData, TValue>[]
+interface DataTableProps {
+	columns: ColumnDef<ProductTableFeatures, Product>[]
 }
 
-export function DataTable<TData, TValue>({ columns }: DataTableProps<TData, TValue>) {
+export function DataTable({ columns }: DataTableProps) {
 	const [page, setPage] = useState(1)
 	const [sorting, setSorting] = useState<SortingState>([])
 	const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
 	const [rowSelection, setRowSelection] = useState({})
-	const [columnVisibility, setColumnVisibility] = useState<VisibilityState>({})
+	const [columnVisibility, setColumnVisibility] = useState<ColumnVisibilityState>({})
 	const [pagination, setPagination] = useState<PaginationState>({
-		pageIndex: 1,
+		pageIndex: 0,
 		pageSize: 10
 	})
-	const [searchResults, setSearchResults] = useState<TData[]>([])
+	const [searchResults, setSearchResults] = useState<Product[]>([])
 	const [isSearching, setIsSearching] = useState(false)
 	const [open, setOpen] = useState(false)
 	const [product, setProduct] = useState<Product>({} as Product)
@@ -49,21 +46,18 @@ export function DataTable<TData, TValue>({ columns }: DataTableProps<TData, TVal
 		staleTime: 60 * 60 * 1000 // 1 hs
 	})
 
-	const defaultData = useMemo(() => [], [])
-	const data = isSearching ? searchResults : (res?.data as TData[]) ?? defaultData
+	const defaultData = useMemo<Product[]>(() => [], [])
+	const data = isSearching ? searchResults : res?.data ?? defaultData
 
-	const table = useReactTable({
+	const table = useTable({
+		features: productTableFeatures,
 		data,
 		columns,
-		getCoreRowModel: getCoreRowModel(),
-		getPaginationRowModel: getPaginationRowModel(),
 		onSortingChange: setSorting,
-		getSortedRowModel: getSortedRowModel(),
 		onColumnFiltersChange: setColumnFilters,
-		getFilteredRowModel: getFilteredRowModel(),
 		onColumnVisibilityChange: setColumnVisibility,
 		onRowSelectionChange: setRowSelection,
-		// onPaginationChange: setPagination,
+		onPaginationChange: setPagination,
 		manualPagination: true,
 		// pageCount: isSearching
 		//   ? Math.ceil(searchResults.length / pagination.pageSize)
@@ -77,7 +71,7 @@ export function DataTable<TData, TValue>({ columns }: DataTableProps<TData, TVal
 		}
 	})
 
-	const handleSearch = (results: TData[]) => {
+	const handleSearch = (results: Product[]) => {
 		setSearchResults(results)
 		setIsSearching(true)
 	}

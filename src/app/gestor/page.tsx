@@ -15,7 +15,7 @@ export default async function Dashboard() {
 	return (
 		session ? (
 			<div className="container mx-auto py-4">
-				<MaintenanceSwitch initialEnabled={maintenanceEnabled} />
+				<MaintenanceSwitch key={String(maintenanceEnabled)} initialEnabled={maintenanceEnabled} />
 				<Tabs defaultValue="products" className="w-full">
 					<TabsList className="grid w-full grid-cols-4">
 						<TabsTrigger value="products">Productos</TabsTrigger>

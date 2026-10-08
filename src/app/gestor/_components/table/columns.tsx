@@ -2,17 +2,18 @@
 
 import { Product } from '@/types'
 import { ColumnDef, FilterFn, Row } from '@tanstack/react-table'
+import type { ProductTableFeatures } from './table-features'
 import Image from 'next/image'
 import { ArrowUpDown, MoreHorizontal } from 'lucide-react'
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
-import { removeProduct } from '@/api'
+import { useRemoveProduct } from '@/api'
 import { Button } from '@/components/ui/button'
 import { Checkbox } from '@/components/ui/checkbox'
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
 
-const myCustomFilterFn: FilterFn<Product> = (row: Row<Product>, columnId: string, filterValue: string, addMeta: (meta: any) => void) => {
+const myCustomFilterFn: FilterFn<ProductTableFeatures, Product> = (row, columnId, filterValue: string) => {
 	const { tipo, brand, description, category } = row.original
 	filterValue = filterValue.toLowerCase()
 	const filterParts = filterValue.split(' ')
@@ -21,7 +22,7 @@ const myCustomFilterFn: FilterFn<Product> = (row: Row<Product>, columnId: string
 	return filterParts.every((part) => rowValues.includes(part))
 }
 
-const getImage = (row: Row<Product>) => {
+const getImage = (row: Row<ProductTableFeatures, Product>) => {
 	let result = 'no_image_product.png'
 	const { image, url } = row.original
 	if (image) {
@@ -33,7 +34,7 @@ const getImage = (row: Row<Product>) => {
 	return result
 }
 
-export const columns: ColumnDef<Product>[] = [
+export const columns: ColumnDef<ProductTableFeatures, Product>[] = [
 	{
 		id: 'select',
 		header: ({ table }) => (
@@ -89,9 +90,9 @@ export const columns: ColumnDef<Product>[] = [
 	},
 	{
 		id: 'actions',
-		cell: ({ row }) => {
+		cell: function ProductActions({ row }) {
 			const product = row.original
-			const remove = removeProduct()
+			const remove = useRemoveProduct()
 
 			return (
 				<DropdownMenu>

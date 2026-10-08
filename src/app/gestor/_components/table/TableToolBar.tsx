@@ -1,15 +1,16 @@
-import { Table } from '@tanstack/react-table'
+import type { RowData, Table } from '@tanstack/react-table'
+import type { ProductTableFeatures } from './table-features'
 import { DropdownMenu, DropdownMenuCheckboxItem, DropdownMenuContent, DropdownMenuTrigger } from '@/components/ui/dropdown-menu'
 import { Button } from '@/components/ui/button'
 import { SearchProduct } from '@/components/search/SearchProduct'
 
-interface TableToolbarProps<TData> {
-	table: Table<TData>
+interface TableToolbarProps<TData extends RowData> {
+	table: Table<ProductTableFeatures, TData>
 	handleSearch: (results: TData[]) => void
 	resetSearch: () => void
 }
 
-const TableToolbar = <TData,>({ table, handleSearch, resetSearch }: TableToolbarProps<TData>) => {
+const TableToolbar = <TData extends RowData,>({ table, handleSearch, resetSearch }: TableToolbarProps<TData>) => {
 	return (
 		<div className="flex flex-col md:flex-row gap-4 items-center justify-around">
 			<div className="flex items-center py-4 justify-around w-full">

@@ -22,7 +22,7 @@ export const PromotionsImagesAdmin = () => {
         fetchImages()
     }, [])
 
-    const fetchImages = async () => {
+    async function fetchImages() {
         try {
             const data = await getPromotionImages()
             console.log(data)

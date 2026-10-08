@@ -1,28 +1,6 @@
 const assert = require('node:assert/strict')
-const { readFileSync } = require('node:fs')
-const path = require('node:path')
 const { test } = require('node:test')
-const ts = require('typescript')
-
-// Ejecutar los módulos reales con límites externos simulados, sin escribir en MongoDB.
-function loadModule(file, dependencies) {
-  const source = readFileSync(path.join(__dirname, '..', file), 'utf8')
-  const { outputText } = ts.transpileModule(source, {
-    compilerOptions: {
-      module: ts.ModuleKind.CommonJS,
-      jsx: ts.JsxEmit.ReactJSX,
-      target: ts.ScriptTarget.ES2020,
-    },
-  })
-  const loadedModule = { exports: {} }
-  const mockRequire = (name) => {
-    if (Object.hasOwn(dependencies, name)) return dependencies[name]
-    if (name === 'react/jsx-runtime') return require(name)
-    throw new Error(`Dependencia sin simular: ${name}`)
-  }
-  new Function('require', 'module', 'exports', outputText)(mockRequire, loadedModule, loadedModule.exports)
-  return loadedModule.exports
-}
+const { loadModule } = require('./helpers/load-module.cjs')
 
 function settingsHarness({ stored = null, session = { user: { sub: 'admin' } }, fail = false } = {}) {
   const calls = { reads: [], writes: [], invalidations: [], connections: 0 }
@@ -31,7 +9,7 @@ function settingsHarness({ stored = null, session = { user: { sub: 'admin' } }, 
     'next/server': { connection: async () => { calls.connections++ } },
     '@/lib/auth0': { auth0: { getSession: async () => session } },
     '@/utils/db': {
-      default: { siteSettings: {
+      siteSettings: {
         findUnique: async (args) => {
           calls.reads.push(args)
           return stored
@@ -42,7 +20,7 @@ function settingsHarness({ stored = null, session = { user: { sub: 'admin' } }, 
           stored = { id: 'store', ...args.update }
           return stored
         },
-      } },
+      },
     },
   })
   return { api, calls }
@@ -130,7 +108,7 @@ test('el administrador sigue accesible y muestra el switch con su estado real', 
       './_components/table/data-table': { DataTable: () => null },
       './_components/table/columns': { columns: [] },
       '@/lib/auth0': { auth0: { getSession: async () => session } },
-      '../(shop)/(home)/admin/page': { default: LoginPage },
+      '../(shop)/(home)/admin/page': LoginPage,
       './_components/CategoriesAdmin': { CategoriesAdmin: () => null },
       './_components/PromotionForm': { PromotionForm: () => null },
       './_components/PromotionsImagesAdmin': { PromotionsImagesAdmin: () => null },

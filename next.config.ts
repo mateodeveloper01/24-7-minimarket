@@ -18,11 +18,10 @@ const nextConfig: NextConfig = {
     ],
   },
 	experimental: {
-    useCache: true,
     serverActions: {
       bodySizeLimit: '50mb',
     },
   },
 }
 
-module.exports = nextConfig
+export default nextConfig

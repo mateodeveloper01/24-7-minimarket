@@ -2,8 +2,7 @@
 import prisma from '@/utils/db'
 import sharp from 'sharp'
 import cloudinary from '@/utils/cloudinary'
-import { revalidateTag } from 'next/cache'
-import { cacheTag } from 'next/dist/server/use-cache/cache-tag'
+import { unstable_cache, updateTag } from 'next/cache'
 
 const CACHE_TAG = 'promotion-images'
 
@@ -75,7 +74,7 @@ export const uploadPromotionImage = async (formData: FormData) => {
       })
     }
 
-    revalidateTag(CACHE_TAG)
+    updateTag(CACHE_TAG)
     return promotionImage
   } catch (error) {
     console.error('Error uploading promotion image:', error)
@@ -105,7 +104,7 @@ export const deletePromotionImage = async (id: string) => {
       where: { id },
     })
 
-    revalidateTag(CACHE_TAG)
+    updateTag(CACHE_TAG)
     return { success: true }
   } catch (error) {
     console.error('Error deleting promotion image:', error)
@@ -113,9 +112,7 @@ export const deletePromotionImage = async (id: string) => {
   }
 }
 
-export const getPromotionImages = async () => {
-  'use cache'
-  cacheTag(CACHE_TAG)
+const getCachedPromotionImages = unstable_cache(async () => {
   try {
     const images = await prisma.promotionImage.findMany({
       orderBy: { index: 'asc' },
@@ -125,11 +122,11 @@ export const getPromotionImages = async () => {
     console.error('Error fetching promotion images:', error)
     return []
   }
-}
+}, [CACHE_TAG], { tags: [CACHE_TAG] })
 
-export const getPromotionImageByIndex = async (index: number) => {
-  'use cache'
-  cacheTag(CACHE_TAG)
+export const getPromotionImages = async () => getCachedPromotionImages()
+
+const getCachedPromotionImageByIndex = unstable_cache(async (index: number) => {
   try {
     const image = await prisma.promotionImage.findUnique({
       where: { index },
@@ -139,4 +136,6 @@ export const getPromotionImageByIndex = async (index: number) => {
     console.error('Error fetching promotion image:', error)
     return null
   }
-}
+}, [`${CACHE_TAG}-by-index`], { tags: [CACHE_TAG] })
+
+export const getPromotionImageByIndex = async (index: number) => getCachedPromotionImageByIndex(index)

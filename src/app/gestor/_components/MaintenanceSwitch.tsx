@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { toast } from 'sonner'
 import { Switch } from '@/components/ui/switch'
@@ -10,10 +10,6 @@ export function MaintenanceSwitch({ initialEnabled }: { initialEnabled: boolean 
   const [enabled, setEnabled] = useState(initialEnabled)
   const [saving, setSaving] = useState(false)
   const router = useRouter()
-
-  useEffect(() => {
-    setEnabled(initialEnabled)
-  }, [initialEnabled])
 
   const handleChange = async (checked: boolean) => {
     if (saving) return

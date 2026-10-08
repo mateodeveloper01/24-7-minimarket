@@ -1,6 +1,6 @@
-import { z, ZodType } from "zod";
+import { z } from "zod";
 
-export const fileSchema: ZodType<File> = z.custom<File>((file) => {
+export const fileSchema = z.custom<File>((file) => {
     if (!(file instanceof File)) {
       return false;
     }
@@ -10,6 +10,7 @@ export const fileSchema: ZodType<File> = z.custom<File>((file) => {
     if (!allowedTypes.includes(file.type)) {
       return false;
     }
+    return true;
     // if (file.size > maxSize) {
     //   return false;
     // }

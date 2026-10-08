@@ -12,7 +12,7 @@ export type ResProduct = {
     totalPage: number;
   };
 };
-export const createProduct = (pagination: any[]) => {
+export const useCreateProduct = (pagination: any[]) => {
   const queryClient = useQueryClient();
   const createKey = ["products", ...pagination];
 

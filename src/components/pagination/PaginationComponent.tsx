@@ -19,7 +19,7 @@ export const PaginationComponent = ({ meta, page, setPage }: Props) => {
 		if (page < meta.totalPage) setPage(page + 1)
 	}
 
-	const PaginationItems = () => {
+	const renderPaginationItems = () => {
 		const { totalPage } = meta
 		let startPage = 1
 		let endPage = meta.totalPage > 3 ? 3 : meta.totalPage
@@ -56,7 +56,7 @@ export const PaginationComponent = ({ meta, page, setPage }: Props) => {
 				<PaginationItem>
 					<PaginationPrevious className="cursor-pointer" onClick={handlePreviousPage} />
 				</PaginationItem>
-				<PaginationItems />
+				{renderPaginationItems()}
 
 				{/* {renderPaginationItems()} */}
 

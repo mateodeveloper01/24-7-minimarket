@@ -60,8 +60,8 @@ export const useCartStore = create(
           const updatedCart = cart.filter((item) => item.id !== product.id);
           set((state) => ({
             cart: updatedCart,
-            totalItems: state.totalItems - 1,
-            totalPrice: state.totalPrice - product.price * product.quantity!,
+            totalItems: state.totalItems - cartItem.quantity!,
+            totalPrice: state.totalPrice - cartItem.price * cartItem.quantity!,
           }));
         }
       },

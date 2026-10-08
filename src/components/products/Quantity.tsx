@@ -1,7 +1,6 @@
 "use client";
 import useFromStore from "@/hooks/useFromStore";
 import { Button } from "../ui/button";
-import { useEffect, useState } from "react";
 import { useCartStore } from "@/stores/useCartStore";
 
 interface Props {
@@ -9,27 +8,19 @@ interface Props {
 }
 
 export const Quantity = ({ id }: Props) => {
-  const [quantity, setQuantity] = useState<number>(0);
   const cart = useFromStore(useCartStore, (state) => state.cart);
   const updateCart = useCartStore((state) => state.updateCart);
 
-  useEffect(() => {
-    const item = cart?.find((item) => item.id === id);
-    if (item) {
-      setQuantity(item.quantity!);
-    }
-  }, [cart, id]);
+  const quantity = cart?.find((item) => item.id === id)?.quantity ?? 0;
 
   const incrementQuantity = () => {
     const newQuantity = quantity + 1;
-    setQuantity(newQuantity);
     updateCart(id, newQuantity); // Actualiza el carrito globalmente
   };
 
   const decrementQuantity = () => {
     if (quantity > 0) {
       const newQuantity = quantity - 1;
-      setQuantity(newQuantity);
       updateCart(id, newQuantity); // Actualiza el carrito globalmente
     }
   };
