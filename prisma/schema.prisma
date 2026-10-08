@@ -61,3 +61,8 @@ model PromotionImage {
 
   @@unique([index])
 }
+
+model SiteSettings {
+  id              String  @id @map("_id")
+  maintenanceMode Boolean @default(false)
+}

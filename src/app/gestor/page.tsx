@@ -7,11 +7,15 @@ import { CategoriesAdmin } from './_components/CategoriesAdmin';
 import { PromotionForm } from './_components/PromotionForm';
 import { PromotionsImagesAdmin } from './_components/PromotionsImagesAdmin';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { MaintenanceSwitch } from './_components/MaintenanceSwitch';
+import { getMaintenanceMode } from '@/resources/site-settings/api';
 export default async function Dashboard() {
 	const session = await auth0.getSession();
+	const maintenanceEnabled = session ? await getMaintenanceMode() : false;
 	return (
 		session ? (
 			<div className="container mx-auto py-4">
+				<MaintenanceSwitch initialEnabled={maintenanceEnabled} />
 				<Tabs defaultValue="products" className="w-full">
 					<TabsList className="grid w-full grid-cols-4">
 						<TabsTrigger value="products">Productos</TabsTrigger>
