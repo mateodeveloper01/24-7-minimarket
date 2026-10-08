@@ -1,6 +1,8 @@
 const assert = require('node:assert/strict')
 const { test } = require('node:test')
 const { loadModule } = require('./helpers/load-module.cjs')
+const { createElement } = require('react')
+const { renderToStaticMarkup } = require('react-dom/server')
 
 function settingsHarness({ stored = null, session = { user: { sub: 'admin' } }, fail = false } = {}) {
   const calls = { reads: [], writes: [], invalidations: [], connections: 0 }
@@ -76,7 +78,7 @@ test('una falla al guardar no invalida ni cambia el estado anterior', async () =
   assert.equal(calls.invalidations.length, 0)
 })
 
-test('el layout oculta menú, catálogo y pedido únicamente durante el mantenimiento', async () => {
+test('el layout conserva menú e información del negocio y oculta catálogo y pedido durante el mantenimiento', async () => {
   const MaintenanceScreen = () => null
   const TopMenu = () => null
   const AboutMe = () => null
@@ -88,15 +90,25 @@ test('el layout oculta menú, catálogo y pedido únicamente durante el mantenim
       '@/resources/site-settings/api': { getMaintenanceMode: async () => enabled },
     })
     const screen = await ShopLayout({ children: 'contenido de la tienda' })
+    assert.equal(screen.props.children[0].type, TopMenu)
+    assert.equal(screen.props.children[2].type, AboutMe)
     if (enabled) {
-      assert.equal(screen.type, MaintenanceScreen)
-      assert.equal(screen.props.children, undefined)
+      assert.equal(screen.props.children[1].type, MaintenanceScreen)
+      assert.equal(screen.props.children[1].props.children, undefined)
     } else {
-      assert.equal(screen.props.children[0].type, TopMenu)
       assert.equal(screen.props.children[1], 'contenido de la tienda')
-      assert.equal(screen.props.children[2].type, AboutMe)
     }
   }
+})
+
+test('el aviso de mantenimiento no ofrece un enlace al administrador', () => {
+  const { MaintenanceScreen } = loadModule('src/components/maintenance/MaintenanceScreen.tsx', {
+    'lucide-react': { Wrench: () => null },
+    'next/link': { default: (props) => createElement('a', props) },
+  })
+  const html = renderToStaticMarkup(MaintenanceScreen())
+  assert.match(html, /Estamos en mantenimiento/)
+  assert.doesNotMatch(html, /<a\b|\/gestor|Acceso al administrador/)
 })
 
 test('el administrador sigue accesible y muestra el switch con su estado real', async () => {

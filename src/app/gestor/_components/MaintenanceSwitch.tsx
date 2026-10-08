@@ -33,7 +33,7 @@ export function MaintenanceSwitch({ initialEnabled }: { initialEnabled: boolean 
           Modo mantenimiento
         </label>
         <p id="maintenance-description" className="mt-1 text-sm text-gray-500">
-          Oculta la tienda a los visitantes. El administrador sigue disponible.
+          Oculta el catálogo y los pedidos, manteniendo el menú y la información del negocio. El administrador sigue disponible.
         </p>
         <p className="mt-2 text-sm font-medium" role="status">
           {saving ? 'Guardando…' : enabled ? 'La tienda está en mantenimiento' : 'La tienda está abierta'}

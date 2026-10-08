@@ -9,13 +9,11 @@ export const metadata: Metadata = {
 }
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
-	if (await getMaintenanceMode()) {
-		return <MaintenanceScreen />
-	}
+	const maintenanceEnabled = await getMaintenanceMode()
 	return (
 		<>
 			<TopMenu />
-			{children}
+			{maintenanceEnabled ? <MaintenanceScreen /> : children}
 			<AboutMe />
 		</>
 	)

@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { Wrench } from 'lucide-react'
 
 export function MaintenanceScreen() {
@@ -10,9 +9,6 @@ export function MaintenanceScreen() {
         Estamos mejorando nuestra tienda. Volvé a visitarnos en un rato.
         ¡Gracias por tu paciencia!
       </p>
-      <Link href="/gestor" className="mt-6 text-sm text-gray-500 underline">
-        Acceso al administrador
-      </Link>
     </section>
   )
 }
